@@ -1,91 +1,220 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './style.module.scss'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
 
 export default function HomeContainer() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div className="resume">
+        <div className="resume_left">
+          <div className="resume_profile">
+            <Image src="/public/favicon.ico" alt="profile_pic" width={50} height={50} />
+          </div>
+          <div className="resume_content">
+            <div className="resume_item resume_info">
+              <div className="title">
+                <p className="bold">stephen colbert</p>
+                <p className="regular">Designer</p>
+              </div>
+              <ul>
+                <li>
+                  <div className="icon">
+                    <i className="fas fa-map-signs"></i>
+                  </div>
+                  <div className="data">
+                    21 Street, Texas <br /> USA
+                  </div>
+                </li>
+                <li>
+                  <div className="icon">
+                    <i className="fas fa-mobile-alt"></i>
+                  </div>
+                  <div className="data">
+                    +324 4445678
+                  </div>
+                </li>
+                <li>
+                  <div className="icon">
+                    <i className="fas fa-envelope"></i>
+                  </div>
+                  <div className="data">
+                    stephen@gmail.com
+                  </div>
+                </li>
+                <li>
+                  <div className="icon">
+                    <i className="fab fa-weebly"></i>
+                  </div>
+                  <div className="data">
+                    www.stephen.com
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="resume_item resume_skills">
+              <div className="title">
+                <p className="bold">skills</p>
+              </div>
+              <ul>
+                <li>
+                  <div className="skill_name">
+                    HTML
+                  </div>
+                  <div className="skill_progress">
+                    <span></span>
+                  </div>
+                  <div className="skill_per">80%</div>
+                </li>
+                <li>
+                  <div className="skill_name">
+                    CSS
+                  </div>
+                  <div className="skill_progress">
+                    <span></span>
+                  </div>
+                  <div className="skill_per">70%</div>
+                </li>
+                <li>
+                  <div className="skill_name">
+                    SASS
+                  </div>
+                  <div className="skill_progress">
+                    <span ></span>
+                  </div>
+                  <div className="skill_per">90%</div>
+                </li>
+                <li>
+                  <div className="skill_name">
+                    JS
+                  </div>
+                  <div className="skill_progress">
+                    <span ></span>
+                  </div>
+                  <div className="skill_per">60%</div>
+                </li>
+                <li>
+                  <div className="skill_name">
+                    JQUERY
+                  </div>
+                  <div className="skill_progress">
+                    <span></span>
+                  </div>
+                  <div className="skill_per">88%</div>
+                </li>
+              </ul>
+            </div>
+            <div className="resume_item resume_social">
+              <div className="title">
+                <p className="bold">Social</p>
+              </div>
+              <ul>
+                <li>
+                  <div className="icon">
+                    <i className="fab fa-facebook-square"></i>
+                  </div>
+                  <div className="data">
+                    <p className="semi-bold">Facebook</p>
+                    <p>Stephen@facebook</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon">
+                    <i className="fab fa-twitter-square"></i>
+                  </div>
+                  <div className="data">
+                    <p className="semi-bold">Twitter</p>
+                    <p>Stephen@twitter</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon">
+                    <i className="fab fa-youtube"></i>
+                  </div>
+                  <div className="data">
+                    <p className="semi-bold">Youtube</p>
+                    <p>Stephen@youtube</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon">
+                    <i className="fab fa-linkedin"></i>
+                  </div>
+                  <div className="data">
+                    <p className="semi-bold">Linkedin</p>
+                    <p>Stephen@linkedin</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="resume_right">
+          <div className="resume_item resume_about">
+            <div className="title">
+              <p className="bold">About us</p>
+            </div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
+          </div>
+          <div className="resume_item resume_work">
+            <div className="title">
+              <p className="bold">Work Experience</p>
+            </div>
+            <ul>
+              <li>
+                <div className="date">2013 - 2015</div>
+                <div className="info">
+                  <p className="semi-bold">Lorem ipsum dolor sit amet.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                </div>
+              </li>
+              <li>
+                <div className="date">2015 - 2017</div>
+                <div className="info">
+                  <p className="semi-bold">Lorem ipsum dolor sit amet.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                </div>
+              </li>
+              <li>
+                <div className="date">2017 - Present</div>
+                <div className="info">
+                  <p className="semi-bold">Lorem ipsum dolor sit amet.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="resume_item resume_education">
+            <div className="title">
+              <p className="bold">Education</p>
+            </div>
+            <ul>
+              <li>
+                <div className="date">2010 - 2013</div>
+                <div className="info">
+                  <p className="semi-bold">Web Designing (Texas University)</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                </div>
+              </li>
+              <li>
+                <div className="date">2000 - 2010</div>
+                <div className="info">
+                  <p className="semi-bold">Texas International School</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="resume_item resume_hobby">
+            <div className="title">
+              <p className="bold">Hobby</p>
+            </div>
+            <ul>
+              <li><i className="fas fa-book"></i></li>
+              <li><i className="fas fa-gamepad"></i></li>
+              <li><i className="fas fa-music"></i></li>
+              <li><i className="fab fa-pagelines"></i></li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   )
 }
