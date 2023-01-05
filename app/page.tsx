@@ -5,6 +5,6 @@ async function delay(ms: number) {
 }
 
 export default async function HomePage() {
-  await delay(5000);
+  await delay(1000);
   return <HomeContainer />;
 }
