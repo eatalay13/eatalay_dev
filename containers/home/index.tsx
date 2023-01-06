@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 import UserPicture from "@img/user-picture.jpg";
+import Link from "next/link";
+import SocialAccounts from "@comp/socialAccount";
 
 export default function HomeContainer() {
     return (
@@ -61,7 +63,7 @@ export default function HomeContainer() {
                                         HTML
                                     </div>
                                     <div className="skill_progress">
-                                        <span></span>
+                                        <span style={{width: "80%"}}></span>
                                     </div>
                                     <div className="skill_per">80%</div>
                                 </li>
@@ -70,7 +72,7 @@ export default function HomeContainer() {
                                         CSS
                                     </div>
                                     <div className="skill_progress">
-                                        <span></span>
+                                        <span style={{width: "70%"}}></span>
                                     </div>
                                     <div className="skill_per">70%</div>
                                 </li>
@@ -79,7 +81,7 @@ export default function HomeContainer() {
                                         SASS
                                     </div>
                                     <div className="skill_progress">
-                                        <span ></span>
+                                        <span style={{width: "90%"}}></span>
                                     </div>
                                     <div className="skill_per">90%</div>
                                 </li>
@@ -88,7 +90,7 @@ export default function HomeContainer() {
                                         JS
                                     </div>
                                     <div className="skill_progress">
-                                        <span ></span>
+                                        <span style={{width: "60%"}}></span>
                                     </div>
                                     <div className="skill_per">60%</div>
                                 </li>
@@ -97,61 +99,23 @@ export default function HomeContainer() {
                                         JQUERY
                                     </div>
                                     <div className="skill_progress">
-                                        <span></span>
+                                        <span style={{width: "88%"}}></span>
                                     </div>
                                     <div className="skill_per">88%</div>
                                 </li>
                             </ul>
                         </div>
-                        <div className="resume_item resume_social">
-                            <div className="title">
-                                <p className="bold">Social</p>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div className="icon">
-                                        <i className="fab fa-facebook-square"></i>
-                                    </div>
-                                    <div className="data">
-                                        <p className="semi-bold">Facebook</p>
-                                        <p>Stephen@facebook</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <i className="fab fa-twitter-square"></i>
-                                    </div>
-                                    <div className="data">
-                                        <p className="semi-bold">Twitter</p>
-                                        <p>Stephen@twitter</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <i className="fab fa-youtube"></i>
-                                    </div>
-                                    <div className="data">
-                                        <p className="semi-bold">Youtube</p>
-                                        <p>Stephen@youtube</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <i className="fab fa-linkedin"></i>
-                                    </div>
-                                    <div className="data">
-                                        <p className="semi-bold">Linkedin</p>
-                                        <p>Stephen@linkedin</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <SocialAccounts/>
                     </div>
                 </div>
                 <div className="resume_right">
                     <div className="resume_item resume_about">
                         <div className="title">
-                            <p className="bold">About us</p>
+                            <p className="bold">
+                                <Link href="/project">
+                                About us
+                                </Link>
+                            </p>
                         </div>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
                     </div>
