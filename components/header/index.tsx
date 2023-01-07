@@ -1,5 +1,9 @@
+import BrodcastManager from "@comp/brodcastManager";
+
 export default function Header() {
   return (
-    <header>Header</header>
+    <header>
+      <BrodcastManager />
+    </header>
   )
 }
