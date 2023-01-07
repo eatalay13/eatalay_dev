@@ -1,5 +1,3 @@
-import SocialAccounts from "@comp/socialAccount";
-
 export default function Footer() {
   return (
     <footer>

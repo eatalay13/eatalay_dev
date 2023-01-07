@@ -1,8 +1,8 @@
 import Image from "next/image";
-
-import UserPicture from "@img/user-picture.jpg";
 import Link from "next/link";
+
 import SocialAccounts from "@comp/socialAccount";
+import UserPicture from "@img/user-picture.jpg";
 
 export default function HomeContainer() {
     return (

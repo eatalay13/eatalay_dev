@@ -1,5 +1,4 @@
-import React from 'react'
-import { socialAccounts } from '@data/social_account'
+import { socialAccounts } from '@data/social_account';
 
 export default function SocialAccounts() {
     let _socialAccounts = socialAccounts;

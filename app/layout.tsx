@@ -1,10 +1,10 @@
-import { Inter } from '@next/font/google'
+import { Inter } from '@next/font/google';
 
-import "@sty/normalize.scss";
+import "@sty/1_normalize.scss";
 import "@sty/globals.scss";
 
-import Header from "@comp/header";
 import Footer from "@comp/footer";
+import Header from "@comp/header";
 
 const inter = Inter({ subsets: ['latin'] })
 
