@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,47 +17,6 @@
     "plugins": [
       {
         "name": "next"
-      },
-      {
-        "name": "typescript-plugin-styled-components",
-        "options": {
-          "displayName": true
-        }
-      },
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.module\\.css$",
-          "camelCase": true
-        }
-      },
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.module\\.scss$",
-          "camelCase": true
-        }
-      },
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.module\\.sass$",
-          "camelCase": true
-        }
-      },
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.module\\.less$",
-          "camelCase": true
-        }
-      },
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.module\\.styl$",
-          "camelCase": true
-        }
       }
     ],
     "paths": {
