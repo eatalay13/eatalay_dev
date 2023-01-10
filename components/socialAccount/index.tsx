@@ -1,6 +1,6 @@
 import { socialAccounts } from '@data/social_account';
 
-export default function SocialAccounts() {
+export default  function SocialAccounts() {
     let _socialAccounts = socialAccounts;
 
     if (_socialAccounts.length === 0) return null;

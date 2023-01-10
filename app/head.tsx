@@ -1,4 +1,4 @@
-import Robots, { RobotType } from "@comp/robots";
+import Robots, { RobotType } from "@comp/meta/robots";
 
 export default function Head() {
   return (

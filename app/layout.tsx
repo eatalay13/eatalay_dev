@@ -1,7 +1,7 @@
 import { Inter } from '@next/font/google';
 
-import "@sty/1_normalize.scss";
-import "@sty/globals.scss";
+import "@sty/1_normalize.css";
+import "@sty/globals.css";
 
 import Footer from "@comp/footer";
 import Header from "@comp/header";

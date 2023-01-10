@@ -1,5 +1,5 @@
 export enum RobotType {
-    INDEX = 'index',
+    INDEX = 'index,follow',
     NOINDEX = 'noindex',
 }
 
@@ -11,7 +11,7 @@ export default function Robots(props: Props) {
 
     let { robotType = RobotType.INDEX } = props;
 
-    let content: string = robotType == RobotType.NOINDEX ? 'noindex' : 'index';
+    let content: string = robotType;
 
     return <meta name="robots" content={content} />;
 }
