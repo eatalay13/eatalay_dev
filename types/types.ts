@@ -1,7 +1,8 @@
+
 declare global {
-	interface Window {
-		gtag: any;
-	}
+    interface Window {
+        gtag: any;
+    }
 }
 
 export type Project = {
@@ -11,5 +12,12 @@ export type Project = {
     url: string;
     github: string;
     isActive: boolean;
+    icon: string;
+}
+
+export type SocialAccount = {
+    id: number;
+    name: string;
+    url: string;
     icon: string;
 }

@@ -1,5 +1,5 @@
 import TopProjectCardList from "@comp/cards/topProjectCard";
-import { Project } from "types/project";
+import { Project } from "types/types";
 
 export default function HomeContainer() {
     let projects: Project[] = [

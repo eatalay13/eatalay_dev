@@ -1,22 +1,34 @@
-class SocialAccount {
-    id: number;
-    name: string;
-    url: string;
-    icon: string;
-
-    constructor(id: number, name: string, url: string, icon: string) {
-        this.id = id;
-        this.name = name;
-        this.url = url;
-        this.icon = icon;
-    }
-}
+import { SocialAccount } from "types/types";
 
 export let socialAccounts: SocialAccount[] = [
-    new SocialAccount(1, 'Facebook', 'https://www.facebook.com/', 'facebook'),
-    new SocialAccount(2, 'Twitter', 'https://twitter.com/', 'twitter'),
-    new SocialAccount(3, 'LinkedIn', 'https://www.linkedin.com/', 'linkedin'),
-    new SocialAccount(4, 'Pinterest', 'https://www.pinterest.com/', 'pinterest'),
-    new SocialAccount(5, 'Instagram', 'https://www.instagram.com/', 'instagram'),
-    new SocialAccount(6, 'Youtube', 'https://www.youtube.com/@emrahatalay', 'youtube'),
+    {
+        id: 1,
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/andrew-kravchenko-0b1b3b1b3/",
+        icon: "fab fa-linkedin-in"
+    },
+    {
+        id: 2,
+        name: "GitHub",
+        url: "",
+        icon: "fab fa-github"
+    },
+    {
+        id: 3,
+        name: "Facebook",
+        url: "",
+        icon: "fab fa-facebook-f"
+    },
+    {
+        id: 4,
+        name: "Twitter",
+        url: "",
+        icon: "fab fa-twitter"
+    },
+    {
+        id: 5,
+        name: "Instagram",
+        url: "",
+        icon: "fab fa-instagram"
+    },
 ];
