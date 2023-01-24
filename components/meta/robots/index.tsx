@@ -7,7 +7,7 @@ interface Props {
     robotType: RobotType;
 }
 
-export default function Robots(props: Props) {
+export default function Robots(props: Props): JSX.Element {
 
     let { robotType = RobotType.INDEX } = props;
 
