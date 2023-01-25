@@ -8,11 +8,11 @@ import Header from "@comp/header";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode;
-}) {
+}
+
+function RootLayout({ children }: Props): JSX.Element {
   return (
     <html lang="tr" className={inter.className}>
       <head />
@@ -26,3 +26,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export default RootLayout;

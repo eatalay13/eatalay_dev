@@ -8,7 +8,7 @@ interface Props {
     projects: Project[];
 }
 
-export default function TopProjectCardList(props: Props): JSX.Element {
+function TopProjectCardList(props: Props): JSX.Element {
     let [projects, setProjects] = useState<Project[]>(props.projects);
 
     function changeActiveProject(project: Project) {
@@ -30,3 +30,5 @@ export default function TopProjectCardList(props: Props): JSX.Element {
         </div>
     );
 }
+
+export default TopProjectCardList;
