@@ -1,6 +1,5 @@
 import { Inter } from '@next/font/google';
 
-import "@sty/1_normalize.css";
 import "@sty/globals.css";
 
 import Footer from "@comp/footer";
@@ -16,7 +15,7 @@ function RootLayout({ children }: Props): JSX.Element {
   return (
     <html lang="tr" className={inter.className}>
       <head />
-      <body>
+      <body className='flex flex-col h-screen justify-between'>
         <Header />
         <main>
           {children}
