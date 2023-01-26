@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function ProjectCard(props: Props): JSX.Element {
-    let { project, onClick: changeActiveProject } = props;
+    let { project, onClick } = props;
 
     let activeStyle = {
         background: "",
@@ -25,7 +25,7 @@ export default function ProjectCard(props: Props): JSX.Element {
     _style.background = "url(" + project.image + ")";
     return (
         <div className={"option " + (project.isActive ? "active" : "")}
-            style={_style} onClick={() => changeActiveProject(project)}>
+            style={_style} onClick={() => onClick(project)}>
             <div className="shadow"></div>
             <div className="label">
                 <div className="icon">
