@@ -27,10 +27,15 @@
       "@container/*": ["containers/*"],
       "@img/*": ["public/images/*"],
       "@data/*": ["data/*"],
-      "@services/*": ["services/*"],
-  
+      "@services/*": ["services/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "build/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
