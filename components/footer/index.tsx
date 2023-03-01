@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer():JSX.Element {
   let year = new Date().getFullYear();
   return (
     <footer className="bg-slate-50 h-1/8">
