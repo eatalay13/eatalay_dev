@@ -4,21 +4,22 @@ import "@sty/globals.css";
 
 import Footer from "@comp/footer";
 import Header from "@comp/header";
+import { PropsWithChildren } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-interface Props {
+interface Props extends PropsWithChildren {
   children: React.ReactNode;
 }
 
-function RootLayout({ children }: Props): JSX.Element {
+function RootLayout(props: Props): JSX.Element {
   return (
     <html lang="tr" className={inter.className}>
       <head />
       <body className='flex flex-col h-screen justify-between'>
         <Header />
         <main>
-          {children}
+          {props.children}
         </main>
         <Footer />
       </body>
