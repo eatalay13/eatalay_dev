@@ -1,30 +1,23 @@
-import { Inter } from 'next/font/google';
-
-import "@sty/globals.css";
-
-import Footer from "@comp/footer";
-import Header from "@comp/header";
-import { PropsWithChildren } from 'react';
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-interface Props extends PropsWithChildren {
-  children: React.ReactNode;
+export const metadata: Metadata = {
+  title: 'Emrah Atalay',
+  description: 'Emrah Atalay is a software developer based in Bitlis, Turkey.',
+  robots: 'noindex, nofollow',
 }
 
-function RootLayout(props: Props): JSX.Element {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="tr" className={inter.className}>
-      <head />
-      <body className='flex flex-col h-screen justify-between'>
-        <Header />
-        <main>
-          {props.children}
-        </main>
-        <Footer />
-      </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
-  );
+  )
 }
-
-export default RootLayout;
