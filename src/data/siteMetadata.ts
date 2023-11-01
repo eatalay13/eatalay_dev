@@ -19,4 +19,4 @@ const siteMetadata = {
   locale: "tr-TR",
 };
 
-module.exports = siteMetadata;
+export default siteMetadata;
