@@ -1,13 +1,15 @@
-import '@styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
+import siteMetadata from '@/data/siteMetadata'
+import '@styles/globals.css'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Emrah Atalay',
-  description: 'Emrah Atalay is a software developer based in Bitlis, Turkey.',
+  title: siteMetadata.title,
+  description: siteMetadata.description,
   robots: 'noindex, nofollow',
   viewport: 'width=device-width, initial-scale=1',
   keywords: 'Emrah Atalay, Emrah, Atalay, Software Developer, Bitlis, Turkey',
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
-    <html lang="tr">
+    <html lang={siteMetadata.language} suppressHydrationWarning>
       <body className={inter.className}>{children}</body>
     </html>
   )
