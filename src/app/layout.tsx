@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
-    <html lang={siteMetadata.language} suppressHydrationWarning>
+    <html lang={siteMetadata.language}>
       <body className={inter.className}>{children}</body>
     </html>
   )
