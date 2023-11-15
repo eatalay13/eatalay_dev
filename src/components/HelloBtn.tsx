@@ -1,17 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HelloBtn(): JSX.Element {
     const [message, setMessage] = useState<string>("Hello World!");
 
-    function handleClick() {
-        setMessage("Hello Next.js!");
-    }
+    useEffect(() => {
+        console.log("HelloBtn mounted");
+
+        return () => {
+            console.log("HelloBtn unmounted");
+        };
+    }, []);
 
     return (
         <>
-            <button onClick={handleClick}>Hello</button>
+            <button onClick={() => setMessage("Hello Next.js!")}>Hello</button>
             <p>{message}</p>
         </>
     );
