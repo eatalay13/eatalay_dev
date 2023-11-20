@@ -10,11 +10,11 @@ const siteMetadata = {
   siteLogo: "/static/images/logo.png",
   socialBanner: "/static/images/twitter-card.png",
   email: "emrahatalay92@gmail.com",
-  github: "https://github.com",
-  twitter: "https://twitter.com/Twitter",
-  facebook: "https://facebook.com",
-  youtube: "https://youtube.com",
-  linkedin: "https://www.linkedin.com",
+  github: "https://github.com/eatalay13",
+  twitter: "https://twitter.com/emrhatalay",
+  instagram: "https://www.instagram.com/emrhatalay",
+  youtube: "https://youtube.com/@emrahatalay",
+  linkedin: "https://www.linkedin.com/in/emrah-atalay-934919184",
   locale: "tr-TR",
 };
 
