@@ -30,12 +30,15 @@ export const metadata: Metadata = {
   verification: {
     google: 'JG6V9Zq7EYJZ9k4m5rW6a6Lg1sZ5YQ',
     yandex: '3a5a6c2a0b1e0a7a',
-  },
+  }
 }
 
 export default function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
     <html lang={siteMetadata.language}>
+      <head>
+        <meta name="p:domain_verify" content="41a41b27ccfc852bd17685f940c46315" />
+      </head>
       <body className={inter.className}>
         <div className="-z-10 w-full min-h-screen flex justify-center bg-white dark:bg-dark-900 text-dark-200 dark:text-light-900 transition duration-300">
           <div className="max-w-screen-lg w-full relative p-4 sm:p-6 md:p-8 flex flex-col items-center justify-between">
