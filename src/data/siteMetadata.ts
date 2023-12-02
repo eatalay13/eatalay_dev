@@ -18,4 +18,13 @@ const siteMetadata = {
   locale: "tr-TR",
 };
 
+export const NavLinks = [
+  { href: "/about", key: "about", label: "About" },
+  { href: "/education", key: "education", label: "Education" },
+  { href: "/experience", key: "experience", label: "Experience" },
+  { href: "/media", key: "media", label: "Media" },
+  { href: "/connect", key: "connect", label: "Connect" },
+];
+
+
 export default siteMetadata;
