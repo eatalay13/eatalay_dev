@@ -1,4 +1,4 @@
-import NavBar from '@/components/Navbar';
+import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import { ThemeSwitcher } from '@/components/theme/ThemeSwitcher';
 import { ThemeProvider } from '@/components/theme/themeProvider';
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: PropsWithChildren<{}>) {
           <main>
             <Sidebar />
             <div className="main-content">
-              <NavBar />
+              <Navbar />
               {children}
             </div>
           </main>
