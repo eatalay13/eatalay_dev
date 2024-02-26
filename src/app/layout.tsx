@@ -1,11 +1,10 @@
-import Footer from '@/components/Footer';
-import NavBar from '@/components/NavBar';
+import NavBar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 import { ThemeSwitcher } from '@/components/theme/ThemeSwitcher';
 import { ThemeProvider } from '@/components/theme/themeProvider';
-import MainFont from "@/constants/fontStyle";
 import siteMetadata from '@/data/siteMetadata';
-import '@/styles/globals.css';
-import type { Metadata } from 'next';
+import '@/styles/style.css';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 
@@ -23,28 +22,36 @@ export const metadata: Metadata = {
     yandex: '3a5a6c2a0b1e0a7a',
   }
 }
+export const viewPort: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  minimumScale: 1.0,
+  maximumScale: 5.0,
+}
 
 export default function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
-
     <html lang={siteMetadata.language} suppressHydrationWarning>
       <head>
         <meta name="p:domain_verify" content="41a41b27ccfc852bd17685f940c46315" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" />
       </head>
-      <body className={`${MainFont.className} bodyTheme`}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={true}
         >
-          <div className="relative flex flex-col h-screen">
-            <NavBar />
-            <main className="py-6 pb-5 md:pb-10 mt-20 md:mt-24 xs:mx-6 sm:mx-12 md:mx-16 flex-grow">
+          <main>
+            <Sidebar />
+            <div className="main-content">
+              <NavBar />
               {children}
-            </main>
-            <ThemeSwitcher />
-            <Footer />
-          </div>
+            </div>
+          </main>
+          <ThemeSwitcher />
         </ThemeProvider>
       </body>
     </html>

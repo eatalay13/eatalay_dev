@@ -1,8 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import IconMoon from "../icons/IconMoon";
-import IconSun from "../icons/IconSun";
+
 
 export const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false);
@@ -23,7 +22,7 @@ export const ThemeSwitcher = () => {
                 className="w-11 h-11 rounded-full shadow-md inline-flex justify-center items-center focus:outline-none cardTheme"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-                {theme === "dark" ? <IconMoon /> : <IconSun />}
+                {theme === "dark" ? "< /> " : "<IconSun />"}
             </button>
         </div>
     );
