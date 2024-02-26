@@ -1,4 +1,4 @@
-export default function NavBar() {
+function Navbar() {
     return (
         <nav className="navbar">
             <ul className="navbar-list">
@@ -21,3 +21,5 @@ export default function NavBar() {
         </nav>
     );
 }
+
+export default Navbar;
