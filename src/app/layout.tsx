@@ -1,12 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
-import { ThemeSwitcher } from '@/components/theme/ThemeSwitcher';
-import { ThemeProvider } from '@/components/theme/themeProvider';
+import {ThemeSwitcher} from '@/components/theme/ThemeSwitcher';
+import {ThemeProvider} from '@/components/theme/themeProvider';
 import siteMetadata from '@/data/siteMetadata';
 import '@/styles/style.css';
-import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
-import { PropsWithChildren } from 'react';
+import type {Metadata} from 'next';
+import {Inter} from 'next/font/google';
+import {PropsWithChildren} from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,17 +22,12 @@ export const metadata: Metadata = {
     yandex: '3a5a6c2a0b1e0a7a',
   }
 }
-export const viewPort: Viewport = {
-  width: 'device-width',
-  initialScale: 1.0,
-  minimumScale: 1.0,
-  maximumScale: 5.0,
-}
 
 export default function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
     <html lang={siteMetadata.language} suppressHydrationWarning>
       <head>
+        <title>{siteMetadata.title}</title>
         <meta name="p:domain_verify" content="41a41b27ccfc852bd17685f940c46315" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
