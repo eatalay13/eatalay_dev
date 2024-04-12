@@ -1,15 +1,13 @@
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
-import {ThemeSwitcher} from '@/components/theme/ThemeSwitcher';
-import {ThemeProvider} from '@/components/theme/themeProvider';
+import { ThemeSwitcher } from '@/components/theme/ThemeSwitcher';
+import { ThemeProvider } from '@/components/theme/themeProvider';
 import siteMetadata from '@/data/siteMetadata';
 import '@/styles/style.css';
-import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
-import {PropsWithChildren} from 'react';
+import type { Metadata, Viewport } from 'next';
+import { PropsWithChildren } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
-
+//#region MetaData
 export const metadata: Metadata = {
   title: siteMetadata.title,
   description: siteMetadata.description,
@@ -22,16 +20,23 @@ export const metadata: Metadata = {
     yandex: '3a5a6c2a0b1e0a7a',
   }
 }
+//#endregion
 
-export default function RootLayout({ children }: PropsWithChildren<{}>) {
+export const viewPort: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: 'black',
+}
+
+function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
     <html lang={siteMetadata.language} suppressHydrationWarning>
       <head>
-        <title>{siteMetadata.title}</title>
         <meta name="p:domain_verify" content="41a41b27ccfc852bd17685f940c46315" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" />
       </head>
       <body>
         <ThemeProvider
@@ -52,3 +57,5 @@ export default function RootLayout({ children }: PropsWithChildren<{}>) {
     </html>
   )
 }
+
+export default RootLayout;
