@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 //#endregion
 
-export const viewPort: Viewport = {
+export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
