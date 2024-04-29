@@ -18,7 +18,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'JG6V9Zq7EYJZ9k4m5rW6a6Lg1sZ5YQ',
     yandex: '3a5a6c2a0b1e0a7a',
-  }
+    other: {
+      'p:domain_verify': "41a41b27ccfc852bd17685f940c46315",
+    },
+  },
 }
 //#endregion
 
@@ -34,7 +37,6 @@ function RootLayout({ children }: PropsWithChildren<{}>) {
   return (
     <html lang={siteMetadata.language} suppressHydrationWarning>
       <head>
-        <meta name="p:domain_verify" content="41a41b27ccfc852bd17685f940c46315" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </head>
