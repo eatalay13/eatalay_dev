@@ -2,7 +2,7 @@ import Button from "@/components/button";
 
 export default function Home() {
   return (
-    <main className="flex w-full space-x-4">
+    <main className="flex-col-reverse space-x-4 space-y-4 m-3">
       <Button variant="primary">
         Primary
       </Button>
@@ -30,6 +30,9 @@ export default function Home() {
       <Button variant="link">
         Link
       </Button>
+      <div className="h-72 bg-green-900">
+
+      </div>
     </main>
   );
 }
