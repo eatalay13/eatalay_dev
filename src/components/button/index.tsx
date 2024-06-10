@@ -1,9 +1,19 @@
+import cn from 'classnames';
+
+import { ReactNode } from 'react';
 import styles from './styles.module.css';
 
-function Button() {
+interface ButtonProps extends Readonly<{
+    children?: ReactNode;
+}> {
+    className?: string;
+    variant: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" | "link";
+};
+
+function Button(props: ButtonProps) {
     return (
-        <button className={styles.base}>
-            Click me
+        <button className={cn(styles.base, styles?.[props.variant], props.className)}>
+            {props.children}
         </button>
     )
 }
