@@ -24,6 +24,7 @@ const siteMetadata: Metadata = {
 
 const siteViewport: Viewport = {
     width: "device-width",
+    height: "device-height",
     initialScale: 1,
     maximumScale: 1,
     userScalable: false,
@@ -32,6 +33,8 @@ const siteViewport: Viewport = {
         { color: "#000000", media: "(prefers-color-scheme: dark)" },
         { color: "#ffffff", media: "(prefers-color-scheme: light)" }
     ],
+    viewportFit: "cover",
+    colorScheme: "dark light",
 };
 
 export {
