@@ -3,8 +3,9 @@ import {
   siteViewport
 } from "@/data/siteMetadata";
 
-import { inter } from "@/lib/fonts";
+import { firaCode } from "@/lib/fonts";
 import "@/styles/globals.css";
+import cn from "classnames";
 
 export const metadata = siteMetadata;
 
@@ -17,7 +18,7 @@ interface HomeProps extends Readonly<{
 function RootLayout({ children }: HomeProps) {
   return (
     <html lang="tr">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(firaCode.className, "bg-white")}>{children}</body>
     </html>
   );
 }
