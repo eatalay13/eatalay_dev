@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '431px',
+      },
+      extend: {},
+      fontFamily: {
+        "serif": ["Inter",],
+      },
+      fontSize: {
+        base: '1.6rem',
+        lg: '2rem',
+      },
       colors: {
         green: {
           DEFAULT: "#9DC08B",

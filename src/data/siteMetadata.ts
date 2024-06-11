@@ -26,7 +26,6 @@ const siteViewport: Viewport = {
     width: "device-width",
     height: "device-height",
     initialScale: 1,
-    maximumScale: 1,
     userScalable: false,
     minimumScale: 1,
     themeColor: [

@@ -18,7 +18,9 @@ interface HomeProps extends Readonly<{
 function RootLayout({ children }: HomeProps) {
   return (
     <html lang="tr">
-      <body className={cn(firaCode.className, "bg-white")}>{children}</body>
+      <body className={cn(firaCode.className, "bg-black text-white font-serif font-light text-[2rem] sm:text-base tracking-[-0.4px] leading-[150.5%] animate-fade animate-once animate-ease-in w-screen")}>
+        {children}
+      </body>
     </html>
   );
 }
