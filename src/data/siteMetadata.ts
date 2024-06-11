@@ -16,8 +16,8 @@ const siteMetadata: Metadata = {
     },
     title: {
         template: "%s | Kişisel Web Sitesi",
-        absolute: "Kişisel Web Sitesi",
-        default: "Kişisel Web Sitesi",
+        absolute: "Emrah Atalay Kişisel Web Sitesi",
+        default: "Emrah Atalay Kişisel Web Sitesi",
     },
     description: "Emrah Atalay'ın kişisel web sitesi",
 };
@@ -40,4 +40,3 @@ const siteViewport: Viewport = {
 export {
     siteMetadata, siteViewport
 };
-

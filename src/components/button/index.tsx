@@ -7,12 +7,12 @@ interface ButtonProps extends Readonly<{
     children?: ReactNode;
 }> {
     className?: string;
-    variant: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" | "link";
+    variant?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" | "link";
 };
 
 function Button(props: ButtonProps) {
     return (
-        <button className={cn(styles.base, styles?.[props.variant], props.className)}>
+        <button className={cn(styles.base, styles?.[props.variant ?? "primary"], props.className)}>
             {props.children}
         </button>
     )
