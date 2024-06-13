@@ -1,6 +1,25 @@
+import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 
-export default function Home() {
+const prisma = new PrismaClient();
+
+async function Home() {
+  let user = await prisma.user.findFirst({
+    where: {
+      name: "Emrah Atalay"
+    }
+  });
+
+  if (!user) {
+    user = await prisma.user.create({
+      data: {
+        name: "Emrah Atalay",
+        email: "emrahatalay92@gmail.com",
+        password: "123456",
+      },
+    });
+  }
+
   return (
     <div className="w-[35rem] sm:w-[116rem] h-[56.6rem] mx-auto">
       <div className="sm:w-[116rem] sm:mt-[6rem] sm:mx-auto">
@@ -39,7 +58,7 @@ export default function Home() {
         </div>
         <div className="text-[#636363] mb-[2.4rem] w-[35rem]  sm:w-[59.6rem]">
           <p className="text-[3.2rem] sm:text-lg mb-[1.6rem] text-white">
-            Hi, I’m Emrah.
+            Hi, I’m {user.name}.
           </p>
           <p>
             A Software Developer who develops well-architected applications.
@@ -76,3 +95,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
