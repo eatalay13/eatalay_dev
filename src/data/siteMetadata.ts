@@ -1,7 +1,16 @@
 import { Metadata, Viewport } from "next";
 
 const siteMetadata: Metadata = {
-    keywords: ["Emrah Atalay", "eatalay.dev", "Emrah Atalay'ın kişisel web sitesi", "Emrah Atalay'ın blogu", "Emrah Atalay'ın portfolyosu", "Emrah Atalay'ın projeleri", "Emrah Atalay'ın hakkında", "Emrah Atalay'ın iletişim bilgileri"],
+    keywords: [
+        "Emrah Atalay",
+        "eatalay.dev",
+        "Emrah Atalay'ın kişisel web sitesi",
+        "Emrah Atalay'ın blogu",
+        "Emrah Atalay'ın portfolyosu",
+        "Emrah Atalay'ın projeleri",
+        "Emrah Atalay'ın hakkında",
+        "Emrah Atalay'ın iletişim bilgileri"
+    ],
     authors: [{
         name: "Emrah Atalay",
         url: "eatalay.dev",

@@ -7,4 +7,3 @@ const firaCode = Fira_Code({ subsets: ["latin"], weight: "400" });
 export {
     firaCode, inter
 };
-
