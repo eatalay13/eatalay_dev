@@ -10,3 +10,9 @@ body {
     tracking-normal
     overflow-x-hidden;
 }
+
+main {
+  @apply flex flex-col 
+  items-center 
+  justify-center;
+}

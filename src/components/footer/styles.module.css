@@ -1,0 +1,7 @@
+.footer {
+  @apply bg-gray-800
+   text-white
+    text-center
+    mt-5
+    p-4;
+}
