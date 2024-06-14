@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer className={styles.footer}>
             <p>Emrah Atalay &copy; {new Date().getFullYear()} -
-                Her hakkı saklıdır.
+                Made with ❤️ in Turkey
             </p>
 
         </footer>
