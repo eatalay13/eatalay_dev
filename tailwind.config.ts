@@ -8,34 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens: {
-        sm: '431px',
-      },
-      extend: {},
-      fontFamily: {
-        "serif": ["Inter",],
-      },
-      fontSize: {
-        base: '1.6rem',
-        lg: '2rem',
-      },
-      colors: {
-        green: {
-          DEFAULT: "#9DC08B",
-          50: "#EDF1D6",
-          100: "#E4EBC6",
-          200: "#C8D89F",
-          300: "#ACCA78",
-          400: "#91BD51",
-          500: "#609966",
-          600: "#4A7D4D",
-          700: "#345134",
-          800: "#1E352B",
-          900: "#40513B",
-          950: "#2A3A2F",
-        },
-
-      }
     },
     plugins: [],
   }
