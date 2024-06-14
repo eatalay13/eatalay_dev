@@ -1,3 +1,5 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import {
   siteMetadata,
   siteViewport
@@ -6,6 +8,7 @@ import {
 import { firaCode } from "@/lib/fonts";
 import "@/styles/globals.css";
 import cn from "classnames";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = siteMetadata;
 
@@ -18,8 +21,14 @@ interface HomeProps extends Readonly<{
 function RootLayout({ children }: HomeProps) {
   return (
     <html lang="tr">
-      <body className={cn(firaCode.className, "bg-white text-black font-serif font-light text-[2rem] sm:text-base tracking-[-0.4px] leading-[150.5%] animate-fade animate-once animate-ease-in w-screen")}>
-        {children}
+      <body className={cn(firaCode.className)}>
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
