@@ -1,16 +1,25 @@
+'use client';
+
+import routes from "@/lib/routes";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./styles.module.css";
 
 function Header() {
+    const pathname = usePathname();
     return (
         <header className={styles.header}>
-            <h1 className={styles.logo}>Emrah Atalay</h1>
+            <h1 className={styles.logo}>
+                <Link href="/">
+                    Emrah Atalay
+                </Link>
+            </h1>
             <nav className={styles.nav}>
-                <Link href="/">Anasayfa</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/project">Projeler</Link>
-                <Link href="/about">Hakkımda</Link>
-                <Link href="/contact">İletişim</Link>
+                {routes.map((route) => (
+                    <Link key={route.path} href={route.path} className={route.path === pathname ? styles.active : ''}>
+                        {route.name}
+                    </Link>
+                ))}
             </nav>
         </header>
     );
