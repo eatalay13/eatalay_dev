@@ -11,6 +11,12 @@ const siteMetadata: Metadata = {
         "Emrah Atalay'ın hakkında",
         "Emrah Atalay'ın iletişim bilgileri"
     ],
+    alternates: {
+        canonical: "https://eatalay.dev",
+        languages: {
+            tr: 'https://eatalay.dev/tr',
+        }
+    },
     authors: [{
         name: "Emrah Atalay",
         url: "eatalay.dev",
@@ -48,3 +54,4 @@ const siteViewport: Viewport = {
 export {
     siteMetadata, siteViewport
 };
+
