@@ -4,21 +4,11 @@ import Image from "next/image";
 const prisma = new PrismaClient();
 
 async function Home() {
-  let user = await prisma.user.findFirst({
+  const user = await prisma.user.findFirst({
     where: {
       name: "Emrah Atalay"
     }
   });
-
-  if (!user) {
-    user = await prisma.user.create({
-      data: {
-        name: "Emrah Atalay",
-        email: "emrahatalay92@gmail.com",
-        password: "123456",
-      },
-    });
-  }
 
   return (
     <div className="text-gray-900 dark:text-gray-100 dark:bg-gray-950">
@@ -32,7 +22,8 @@ async function Home() {
           />
           Next.js + Prisma
         </h1>
-        <p className="text-center mt-4">Welcome, {user.name}!</p>
+        <p className="text-center mt-4">Welcome, {user?.name}!</p>
+        <p className="text-center mt-2 text-xs">Email: {user?.email}</p>
       </div>
     </div>
   );
