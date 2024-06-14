@@ -8,7 +8,7 @@ function Header() {
             <nav className={styles.nav}>
                 <Link href="/">Anasayfa</Link>
                 <Link href="/blog">Blog</Link>
-                <Link href="/projects">Projeler</Link>
+                <Link href="/project">Projeler</Link>
                 <Link href="/about">Hakkımda</Link>
                 <Link href="/contact">İletişim</Link>
             </nav>
