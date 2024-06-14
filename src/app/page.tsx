@@ -57,7 +57,7 @@ async function Home() {
           />
         </div>
         <div className="text-[#636363] mb-[2.4rem] w-[35rem]  sm:w-[59.6rem]">
-          <p className="text-[3.2rem] sm:text-lg mb-[1.6rem] text-white">
+          <p className="text-[3.2rem] sm:text-lg mb-[1.6rem]">
             Hi, I’m {user.name}.
           </p>
           <p>
