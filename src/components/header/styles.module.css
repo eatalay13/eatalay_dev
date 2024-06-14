@@ -6,6 +6,7 @@
     top-0
     z-10
     flex
+    backdrop-blur-sm
     items-center;
 }
 
