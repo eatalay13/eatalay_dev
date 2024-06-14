@@ -8,6 +8,7 @@ import {
 import { firaCode } from "@/lib/fonts";
 import "@/styles/globals.css";
 import cn from "classnames";
+import { ThemeProvider } from "next-themes";
 
 export const metadata = siteMetadata;
 
@@ -21,11 +22,13 @@ function RootLayout({ children }: HomeProps) {
   return (
     <html lang="tr">
       <body className={cn(firaCode.className)}>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
