@@ -12,7 +12,7 @@ function Footer() {
         <footer className={styles.footer}>
             <div className='sm:flex sm:items-center sm:justify-between'>
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400" >Emrah Atalay &copy; {new Date().getFullYear()} -
-                    Made with ❤️ in Turkey
+                    Made with ❤️
                 </span>
                 <div className='flex mt-4 space-x-6 sm:justify-center sm:mt-0'>
                     <a className="text-gray-500 hover:text-gray-900 dark:hover:text-white" href="" target='_blank'>
