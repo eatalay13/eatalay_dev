@@ -7,7 +7,10 @@ body {
     dark:bg-gray-800
     text-gray-800
     dark:text-white
+    flex
+    flex-col
     font-sans 
+    min-h-screen
     antialiased
     leading-normal
     tracking-normal
@@ -15,7 +18,7 @@ body {
 }
 
 main {
-  @apply flex flex-col items-center justify-center min-h-[48rem];
+  @apply flex-grow;
 }
 
 * {

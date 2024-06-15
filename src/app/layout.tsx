@@ -25,7 +25,9 @@ function RootLayout({ children }: HomeProps) {
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
           <Header />
           <main>
-            {children}
+            <div className="flex items-center justify-center h-full">
+              {children}
+            </div>
           </main>
           <Footer />
         </ThemeProvider>
