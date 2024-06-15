@@ -1,3 +1,4 @@
+import AboutContainer from "@/containers/about-container";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,10 +6,6 @@ export const metadata: Metadata = {
     description: "Emrah Atalay'ın kişisel web sitesi",
 };
 
-function AboutPage() {
-    return (
-        <div>AboutPage</div>
-    )
-}
+const AboutPage = () => <AboutContainer />;
 
 export default AboutPage;
