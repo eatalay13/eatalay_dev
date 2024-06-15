@@ -44,7 +44,7 @@ const siteViewport: Viewport = {
     userScalable: false,
     minimumScale: 1,
     themeColor: [
-        { color: "#000000", media: "(prefers-color-scheme: dark)" },
+        { color: "#0E0E0E", media: "(prefers-color-scheme: dark)" },
         { color: "#ffffff", media: "(prefers-color-scheme: light)" }
     ],
     viewportFit: "cover",
