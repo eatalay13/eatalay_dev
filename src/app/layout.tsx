@@ -20,9 +20,9 @@ interface HomeProps extends Readonly<{
 
 function RootLayout({ children }: HomeProps) {
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <body className={cn(firaCode.className)}>
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
           <Header />
           <main>
             {children}
