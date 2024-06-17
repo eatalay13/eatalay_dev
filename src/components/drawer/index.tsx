@@ -28,11 +28,6 @@ function Drawer({ isDrawerOpen, closeDrawer }: DrawerProps) {
                             ))}
                         </ul>
                     </div>
-                    <div className="p-4">
-                        <button className="w-full py-2 text-sm text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 rounded focus:outline-none">
-                            {1 === 1 ? 'Light Mode' : 'Dark Mode'}
-                        </button>
-                    </div>
                 </div>
             </div>
         </>
