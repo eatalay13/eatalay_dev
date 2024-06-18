@@ -35,6 +35,7 @@ const siteMetadata: Metadata = {
         default: "Emrah Atalay Kişisel Web Sitesi",
     },
     description: "Emrah Atalay'ın kişisel web sitesi",
+    manifest: "/manifest.json",
 };
 
 const siteViewport: Viewport = {
