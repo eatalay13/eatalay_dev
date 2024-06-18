@@ -2,25 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gray-50
-    dark:bg-gray-800
-    text-gray-800
-    dark:text-white
-    flex
-    flex-col
-    font-sans 
-    min-h-screen
-    antialiased
-    leading-normal
-    tracking-normal
-    overflow-x-hidden;
-}
-
-main {
-  @apply flex-grow;
-}
-
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);

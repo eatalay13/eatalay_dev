@@ -1,5 +1,3 @@
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import {
   siteMetadata,
   siteViewport
@@ -19,15 +17,9 @@ interface HomeProps extends Readonly<{
 
 function RootLayout({ children }: HomeProps) {
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html lang="tr">
       <body className={cn(firaCode.className)}>
-        <Header />
-        <main>
-          <div className="flex items-center justify-center h-full">
-            {children}
-          </div>
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
