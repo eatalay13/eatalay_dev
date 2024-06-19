@@ -3,9 +3,7 @@ import {
   siteViewport
 } from "@/data/siteMetadata";
 
-import { firaCode } from "@/lib/fonts";
 import "@/styles/globals.css";
-import cn from "classnames";
 
 export const metadata = siteMetadata;
 
@@ -18,7 +16,7 @@ interface HomeProps extends Readonly<{
 function RootLayout({ children }: HomeProps) {
   return (
     <html lang="tr">
-      <body className={cn(firaCode.className)}>
+      <body>
         {children}
       </body>
     </html>
