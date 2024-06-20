@@ -83,7 +83,7 @@ export function TableSkeleton() {
     return (
         <div className="mt-6 flow-root">
             <div className="inline-block min-w-full align-middle">
-                <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
+                <div className="rounded-lg bg-gray-50 p-2 md:pt-0 dark:bg-gray-900">
                     <div className="md:hidden">
                         <InvoicesMobileSkeleton />
                         <InvoicesMobileSkeleton />
@@ -118,7 +118,7 @@ export function TableSkeleton() {
                                 </th>
                             </tr>
                         </thead>
-                        <tbody className="bg-white">
+                        <tbody className="bg-white dark:bg-gray-900">
                             <TableRowSkeleton />
                             <TableRowSkeleton />
                             <TableRowSkeleton />
