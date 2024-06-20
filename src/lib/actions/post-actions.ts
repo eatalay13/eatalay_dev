@@ -1,16 +1,12 @@
 'use server';
 
-import { PostCategory, PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createPostCategoryShema } from "../shemas/post-shemas";
 import { FormState } from "../types";
 
 const prisma = new PrismaClient();
-
-async function getPostCategories(): Promise<PostCategory[]> {
-    return await prisma.postCategory.findMany();
-}
 
 export type createPostCategoryState = FormState<{
     name: string;
@@ -56,4 +52,4 @@ async function createPostCategory(prevState: any, formData: FormData): Promise<c
     redirect("/admin/category");
 }
 
-export { createPostCategory, getPostCategories };
+export { createPostCategory };
