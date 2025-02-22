@@ -27,7 +27,7 @@ export default function CodeBlock({
       <div className="pl-3 sm:pl-4">
         <p className="mb-2 text-sm sm:text-base">
           <span className="text-editor-variable">description:</span>{" "}
-          <span className="text-editor-string">"{description}"</span>,
+          <span className="text-editor-string">&quot;{description}&quot;</span>,
         </p>
 
         <p className="mb-2 text-sm sm:text-base break-words">
@@ -35,7 +35,7 @@ export default function CodeBlock({
           <span className="text-editor-function">[</span>
           {technologies.map((tech, index) => (
             <React.Fragment key={tech}>
-              <span className="text-editor-string">"{tech}"</span>
+              <span className="text-editor-string">&quot;{tech}&quot;</span>
               {index < technologies.length - 1 && ", "}
             </React.Fragment>
           ))}
@@ -50,7 +50,7 @@ export default function CodeBlock({
             rel="noopener noreferrer"
             className="text-editor-string hover:text-editor-function"
           >
-            "{link}"
+            &quot;{link}&quot;
           </a>
           ;
         </p>

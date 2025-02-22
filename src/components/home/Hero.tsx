@@ -12,17 +12,17 @@ export default function Hero() {
           <span className="text-editor-keyword">const</span>{" "}
           <span className="text-editor-variable">developer</span>{" "}
           <span className="text-editor-keyword">=</span>{" "}
-          <span className="text-editor-string">"Emrah Atalay"</span>;
+          <span className="text-editor-string">&quot;Emrah Atalay&quot;</span>;
         </h1>
 
         <p className="text-editor-comment mb-4 text-sm sm:text-base">
-          // Fullstack Developer
+          {"// Fullstack Developer"}
         </p>
 
         <p className="text-base sm:text-lg leading-relaxed">
           Modern web teknolojileri ile kullanıcı dostu ve ölçeklenebilir
-          uygulamalar geliştiriyorum. Clean code ve best practice'leri takip
-          ederek sürdürülebilir çözümler üretiyorum.
+          uygulamalar geliştiriyorum. Clean code ve best practice&apos;leri
+          takip ederek sürdürülebilir çözümler üretiyorum.
         </p>
       </div>
     </section>

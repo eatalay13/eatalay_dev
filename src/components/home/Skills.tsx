@@ -20,7 +20,7 @@ export default function Skills() {
                   key={index}
                   className="text-editor-text text-sm sm:text-base"
                 >
-                  <span className="text-editor-comment">// </span>
+                  <span className="text-editor-comment">{"// "}</span>
                   {skill}
                 </div>
               ))}

@@ -15,7 +15,7 @@ export default function Contact() {
             href="mailto:emrahatalay92@gmail.com"
             className="text-editor-string hover:text-editor-function break-all"
           >
-            "emrahatalay92@gmail.com"
+            &quot;emrahatalay92@gmail.com&quot;
           </a>
           ;
         </div>
@@ -30,7 +30,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="text-editor-string hover:text-editor-function break-all"
           >
-            "github.com/eatalay13"
+            &quot;github.com/eatalay13&quot;
           </a>
           ;
         </div>
@@ -45,7 +45,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="text-editor-string hover:text-editor-function break-all"
           >
-            "linkedin.com/in/emrahatalay"
+            &quot;linkedin.com/in/emrahatalay&quot;
           </a>
           ;
         </div>
