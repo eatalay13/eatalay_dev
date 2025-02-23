@@ -8,9 +8,9 @@ export default function Contact() {
 
       <div className="pl-3 sm:pl-4 space-y-3 sm:space-y-4 text-sm sm:text-base">
         <div className="flex items-center flex-wrap">
-          <span className="text-editor-keyword">const</span>{" "}
-          <span className="text-editor-variable">email</span>{" "}
-          <span className="text-editor-keyword">=</span>{" "}
+          <span className="text-editor-keyword mr-2">const</span>
+          <span className="text-editor-variable mr-2">email </span>
+          <span className="text-editor-keyword mr-2">=</span>{" "}
           <a
             href="mailto:emrahatalay92@gmail.com"
             className="text-editor-string hover:text-editor-function break-all"
@@ -21,9 +21,9 @@ export default function Contact() {
         </div>
 
         <div className="flex items-center flex-wrap">
-          <span className="text-editor-keyword">const</span>{" "}
-          <span className="text-editor-variable">github</span>{" "}
-          <span className="text-editor-keyword">=</span>{" "}
+          <span className="text-editor-keyword mr-2">const</span>
+          <span className="text-editor-variable mr-2">github</span>
+          <span className="text-editor-keyword mr-2">=</span>
           <a
             href="https://github.com/eatalay13"
             target="_blank"
@@ -36,9 +36,9 @@ export default function Contact() {
         </div>
 
         <div className="flex items-center flex-wrap">
-          <span className="text-editor-keyword">const</span>{" "}
-          <span className="text-editor-variable">linkedin</span>{" "}
-          <span className="text-editor-keyword">=</span>{" "}
+          <span className="text-editor-keyword mr-2">const</span>
+          <span className="text-editor-variable mr-2">linkedin</span>
+          <span className="text-editor-keyword mr-2">=</span>
           <a
             href="https://linkedin.com/in/emrahatalay"
             target="_blank"
