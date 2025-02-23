@@ -3,8 +3,8 @@ import ConsoleText from "../ui/ConsoleText";
 export default function Hero() {
   return (
     <section className="py-6 sm:py-12">
-      <ConsoleText prefix="visitor@portfolio:~$" delay={50}>
-        eatalay_dev
+      <ConsoleText prefix="root@porfolio:~$" delay={50}>
+        whoami
       </ConsoleText>
 
       <div className="mt-4 text-editor-text">

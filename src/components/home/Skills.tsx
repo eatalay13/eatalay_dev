@@ -8,7 +8,7 @@ export default function Skills() {
         <span className="text-editor-function">DeveloperSkills</span> {"{"}
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pl-3 sm:pl-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pl-3 sm:pl-4">
         {Object.entries(skills).map(([category, items]) => (
           <div key={category} className="mb-4 sm:mb-6">
             <h3 className="text-editor-variable mb-2 text-sm sm:text-base">
