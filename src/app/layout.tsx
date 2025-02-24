@@ -1,3 +1,6 @@
+import Explorer from "@/components/layout/Explorer";
+import Header from "@/components/layout/Header";
+import Provider from "@/context";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Fira_Code, JetBrains_Mono } from "next/font/google";
@@ -40,7 +43,15 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} ${firaCode.variable} bg-[#1E1E1E] text-gray-300`}
       >
-        {children}
+        <Provider>
+          <div className="flex flex-col h-screen">
+            <Header />
+            <div className="flex flex-1 overflow-hidden">
+              <Explorer />
+              <main className="flex-1 overflow-auto">{children}</main>
+            </div>
+          </div>
+        </Provider>
       </body>
     </html>
   );
