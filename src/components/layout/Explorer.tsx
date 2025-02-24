@@ -141,8 +141,20 @@ function ExplorerItem({
 export default function Explorer() {
   const [width, setWidth] = useState(256);
   const [isResizing, setIsResizing] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const explorerRef = useRef<HTMLDivElement>(null);
   const { isExplorerOpen, toggleExplorer } = useExplorer();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -192,7 +204,7 @@ export default function Explorer() {
         `}
         style={{
           width: isExplorerOpen
-            ? window.innerWidth >= 1024
+            ? !isMobile
               ? `${width}px`
               : "80%"
             : undefined,
