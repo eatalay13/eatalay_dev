@@ -1,9 +1,10 @@
 import Footer from "@/components/Footer";
-import { geistMono, geistSans } from "@/lib/fonts";
+import Navbar from "@/components/Navbar";
+import Providers from "@/lib/Providers";
+import { geistMono, geistSans, inter } from "@/lib/fonts";
 import siteMetadata from "@/lib/siteMetadata";
-import "@/styles/globals.css";
 import type { Metadata } from "next";
-
+import "../styles/globals.css";
 export const metadata: Metadata = siteMetadata;
 
 type RootLayoutProps = {
@@ -12,12 +13,15 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   description: "Emrah Atalay is a software engineer",
 };
 
-function Home() {
+export default function Home() {
   return <HomeIndexContainer />;
 }
-
-export default Home;
