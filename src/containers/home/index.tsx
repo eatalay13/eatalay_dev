@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 
 import { FaGithub } from "react-icons/fa";
@@ -21,8 +22,10 @@ function HomeIndexContainer() {
             <div className="relative mb-8 group">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 opacity-70 blur-md group-hover:opacity-100 transition duration-1000"></div>
               <div className="relative rounded-full p-1 bg-white dark:bg-gray-950">
-                <img
+                <Image
                   src="https://avatars.githubusercontent.com/u/30194127"
+                  priority
+                  fill
                   alt="Avatar"
                   className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover"
                 />
@@ -105,9 +108,10 @@ function HomeIndexContainer() {
                 uygulamalar geliştirmeye tutkuyla bağlıyım.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 transition-colors">
-                Frontend'de React, Next.js ve Tailwind CSS; backend'de ise
-                Node.js, .NET Core ve veritabanı teknolojileri ile çalışıyorum.
-                Sürekli öğrenmeye ve yeni teknolojileri keşfetmeye açığım.
+                Frontend&apos;de React, Next.js ve Tailwind CSS; backend&apos;de
+                ise Node.js, .NET Core ve veritabanı teknolojileri ile
+                çalışıyorum. Sürekli öğrenmeye ve yeni teknolojileri keşfetmeye
+                açığım.
               </p>
               <div className="flex flex-wrap gap-3">
                 <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
@@ -196,9 +200,11 @@ function HomeIndexContainer() {
             {/* Project Card */}
             <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <img
+                <Image
                   src="https://via.placeholder.com/600x400?text=Proje+1"
                   alt="Proje 1"
+                  priority
+                  fill
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -242,9 +248,11 @@ function HomeIndexContainer() {
             {/* Project Card */}
             <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <img
+                <Image
                   src="https://via.placeholder.com/600x400?text=Proje+2"
                   alt="Proje 2"
+                  priority
+                  fill
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -287,9 +295,11 @@ function HomeIndexContainer() {
             {/* Project Card */}
             <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <img
+                <Image
                   src="https://via.placeholder.com/600x400?text=Proje+3"
                   alt="Proje 3"
+                  priority
+                  fill
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
