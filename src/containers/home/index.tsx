@@ -25,7 +25,8 @@ function HomeIndexContainer() {
                 <Image
                   src="https://avatars.githubusercontent.com/u/30194127"
                   priority
-                  fill
+                  width={100}
+                  height={100}
                   alt="Avatar"
                   className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover"
                 />
@@ -201,10 +202,10 @@ function HomeIndexContainer() {
             <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <Image
-                  src="https://via.placeholder.com/600x400?text=Proje+1"
+                  src="https://avatars.githubusercontent.com/u/30194127"
+                  width={100}
+                  height={100}
                   alt="Proje 1"
-                  priority
-                  fill
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -249,10 +250,11 @@ function HomeIndexContainer() {
             <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <Image
-                  src="https://via.placeholder.com/600x400?text=Proje+2"
-                  alt="Proje 2"
+                  src="https://avatars.githubusercontent.com/u/30194127"
                   priority
-                  fill
+                  width={100}
+                  height={100}
+                  alt="Proje 2"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -296,10 +298,11 @@ function HomeIndexContainer() {
             <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <Image
-                  src="https://via.placeholder.com/600x400?text=Proje+3"
-                  alt="Proje 3"
+                  src="https://avatars.githubusercontent.com/u/30194127"
                   priority
-                  fill
+                  width={100}
+                  height={100}
+                  alt="Proje 3"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
