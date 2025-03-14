@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         hostname: "play-lh.googleusercontent.com",
         pathname: "/**",
       },
+      {
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
     ],
   },
 };
