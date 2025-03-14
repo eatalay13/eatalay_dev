@@ -53,19 +53,19 @@ const Navbar = () => {
               Ana Sayfa
             </Link>
             <Link
-              href="#about"
+              href="/#about"
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Hakkımda
             </Link>
             <Link
-              href="#projects"
+              href="/projeler"
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               Projeler
             </Link>
             <Link
-              href="#contact"
+              href="/iletisim"
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               İletişim
@@ -103,21 +103,21 @@ const Navbar = () => {
             Ana Sayfa
           </Link>
           <Link
-            href="#about"
+            href="/#about"
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Hakkımda
           </Link>
           <Link
-            href="#projects"
+            href="/projeler"
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Projeler
           </Link>
           <Link
-            href="#contact"
+            href="/iletisim"
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >

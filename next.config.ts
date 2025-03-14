@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         hostname: "avatars.githubusercontent.com",
         pathname: "/**",
       },
+      {
+        hostname: "play-lh.googleusercontent.com",
+        pathname: "/**",
+      },
     ],
   },
 };
