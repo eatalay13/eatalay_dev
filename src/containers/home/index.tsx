@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 
+import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import {
@@ -15,7 +16,7 @@ function HomeIndexContainer() {
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/70 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-500"></div>
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] opacity-50"></div>
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"></div>
 
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -25,8 +26,8 @@ function HomeIndexContainer() {
                 <Image
                   src="https://avatars.githubusercontent.com/u/30194127"
                   priority
-                  width={100}
-                  height={100}
+                  width={400}
+                  height={400}
                   alt="Avatar"
                   className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover"
                 />
@@ -49,12 +50,12 @@ function HomeIndexContainer() {
             </p>
 
             <div className="flex gap-4 mb-12 animate-fadeIn animation-delay-1200">
-              <a
-                href="#"
+              <Link
+                href="/iletisim"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20"
               >
                 İletişime Geç
-              </a>
+              </Link>
               <a
                 href="#projects"
                 className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-400/20 dark:focus:ring-gray-700/20"
@@ -203,8 +204,8 @@ function HomeIndexContainer() {
               <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <Image
                   src="https://avatars.githubusercontent.com/u/30194127"
-                  width={100}
-                  height={100}
+                  width={400}
+                  height={400}
                   alt="Proje 1"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -252,8 +253,8 @@ function HomeIndexContainer() {
                 <Image
                   src="https://avatars.githubusercontent.com/u/30194127"
                   priority
-                  width={100}
-                  height={100}
+                  width={400}
+                  height={400}
                   alt="Proje 2"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -300,8 +301,8 @@ function HomeIndexContainer() {
                 <Image
                   src="https://avatars.githubusercontent.com/u/30194127"
                   priority
-                  width={100}
-                  height={100}
+                  width={400}
+                  height={400}
                   alt="Proje 3"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -354,97 +355,22 @@ function HomeIndexContainer() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="py-20 bg-white dark:bg-gray-950 transition-colors"
-      >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">
-              İletişime Geç
-            </h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto transition-colors">
-              Projeleriniz veya işbirliği fırsatları hakkında konuşmak
-              isterseniz benimle iletişime geçebilirsiniz
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors"
-                  >
-                    İsim
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
-                    placeholder="İsminizi girin"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors"
-                  >
-                    E-posta
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
-                    placeholder="E-posta adresinizi girin"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors"
-                >
-                  Konu
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
-                  placeholder="Mesajınızın konusu"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors"
-                >
-                  Mesaj
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
-                  placeholder="Mesajınızı buraya yazın..."
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20"
-                >
-                  Mesaj Gönder
-                </button>
-              </div>
-            </form>
-          </div>
+      {/* Contact Section - Removed and moved to its own page */}
+      <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
+            Benimle İletişime Geçmek İster misiniz?
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto transition-colors">
+            Projeleriniz veya işbirliği fırsatları hakkında konuşmak için
+            iletişim sayfamı ziyaret edin.
+          </p>
+          <Link
+            href="/iletisim"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20"
+          >
+            İletişim Sayfasına Git
+          </Link>
         </div>
       </section>
     </>
