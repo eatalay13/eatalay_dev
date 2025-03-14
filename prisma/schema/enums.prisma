@@ -1,0 +1,25 @@
+enum ContactStatus {
+    PENDING
+    PROCESSING
+    COMPLETED
+    REJECTED
+}
+
+enum UserRole {
+    ADMIN
+    EDITOR
+    USER
+}
+
+enum BlogStatus {
+    DRAFT
+    PUBLISHED
+    ARCHIVED
+}
+
+enum CommentStatus {
+    PENDING
+    APPROVED
+    REJECTED
+    SPAM
+}
