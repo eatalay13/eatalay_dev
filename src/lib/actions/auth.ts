@@ -2,10 +2,23 @@
 
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { cache } from "react";
 import { LoginRequest, loginSchema } from "../schemas/authSchema";
-import { createSession, deleteSession } from "../session";
+import { createSession, decrypt, deleteSession } from "../session";
 import { FormState } from "../types";
+
+export const verifySession = cache(async () => {
+  const cookie = (await cookies()).get("session")?.value;
+  const session = await decrypt(cookie);
+
+  if (!session?.userId) {
+    redirect("/admin/login");
+  }
+
+  return { isAuth: true, ...session };
+});
 
 export type LoginState = FormState<LoginRequest>;
 

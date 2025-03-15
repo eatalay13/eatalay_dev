@@ -3,10 +3,5 @@ type AdminAuthLayoutProps = {
 };
 
 export default function AdminAuthLayout({ children }: AdminAuthLayoutProps) {
-  return (
-    <div>
-      <h1>Admin Auth Layout</h1>
-      {children}
-    </div>
-  );
+  return <div className="min-h-screen bg-gray-900">{children}</div>;
 }
