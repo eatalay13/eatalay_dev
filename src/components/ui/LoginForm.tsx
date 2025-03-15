@@ -85,7 +85,7 @@ export default function LoginForm() {
             {...register("username")}
             type="text"
             name="username"
-            className="block w-full pl-10 px-4 py-3 rounded-md bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+            className="block w-full pl-10 px-4 py-3 rounded-md bg-zinc-700 border-gray-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
             placeholder="Kullanıcı adınız"
           />
         </div>
@@ -122,7 +122,7 @@ export default function LoginForm() {
             {...register("password")}
             type="password"
             name="password"
-            className="block w-full pl-10 px-4 py-3 rounded-md bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
+            className="block w-full pl-10 px-4 py-3 rounded-md bg-zinc-700 border-gray-600 text-white placeholder-gray-400 focus:border-indigo-500 focus:ring-indigo-500 transition-colors duration-200"
             placeholder="••••••••"
           />
         </div>

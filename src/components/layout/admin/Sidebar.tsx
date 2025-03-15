@@ -184,7 +184,7 @@ export default function Sidebar() {
       {/* Mobil menü butonu */}
       <button
         type="button"
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md text-gray-400 hover:text-white hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         <span className="sr-only">Menüyü Aç</span>
@@ -221,9 +221,9 @@ export default function Sidebar() {
       <aside
         className={`fixed top-0 left-0 z-40 h-screen transition-transform ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 w-64 bg-gray-800 text-white`}
+        } lg:translate-x-0 w-64 bg-zinc-900 text-white`}
       >
-        <div className="flex items-center justify-center h-16 border-b border-gray-700">
+        <div className="flex items-center justify-center h-16 border-b border-gray-800">
           <h1 className="text-xl font-bold">Admin Panel</h1>
         </div>
         <nav className="mt-5 px-2 space-y-1">
@@ -236,8 +236,8 @@ export default function Sidebar() {
                 href={item.href}
                 className={`group flex items-center px-2 py-2 text-base font-medium rounded-md ${
                   isActive
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                    ? "bg-zinc-950 text-white"
+                    : "text-gray-300 hover:bg-zinc-800 hover:text-white"
                 }`}
               >
                 <item.icon
