@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -40,8 +40,12 @@ export async function login(
 
   const { username, password } = validatedFields.data;
 
-  const user = await prisma.user.findUnique({
-    where: { username },
+  const user = await prisma.user.findFirst({
+    where: {
+      username: {
+        equals: username,
+      },
+    },
   });
 
   if (!user || !(await bcrypt.compare(password, user.password))) {

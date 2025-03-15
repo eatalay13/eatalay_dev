@@ -3,7 +3,7 @@
 import { login } from "@/lib/actions/auth";
 import { LoginRequest, loginSchema } from "@/lib/schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { useForm } from "react-hook-form";
 
@@ -48,7 +48,7 @@ function SubmitButton() {
 }
 
 export default function LoginForm() {
-  const [error, setError] = useState("");
+  const [state, action] = useActionState(login, { errors: {}, message: "" });
 
   const {
     register,
@@ -57,15 +57,8 @@ export default function LoginForm() {
     resolver: zodResolver(loginSchema),
   });
 
-  async function handleSubmit(formData: FormData) {
-    const result = await login({ errors: {}, message: "" }, formData);
-    if (result?.message) {
-      setError(result.message);
-    }
-  }
-
   return (
-    <form action={handleSubmit} className="space-y-5">
+    <form action={action} className="space-y-5">
       <div>
         <label
           htmlFor="username"
@@ -140,9 +133,9 @@ export default function LoginForm() {
         )}
       </div>
 
-      {error && (
+      {state.message && (
         <div className="p-3 rounded-lg bg-red-900/30">
-          <p className="text-sm text-red-400">{error}</p>
+          <p className="text-sm text-red-400">{state.message}</p>
         </div>
       )}
 
