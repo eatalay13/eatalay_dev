@@ -1,23 +1,22 @@
 model Blog {
-    id               String         @id @default(uuid())
-    userId           String
-    user             User           @relation(fields: [userId], references: [id])
-    HtmlSeoContentId String
-    HtmlSeoContent   HtmlSeoContent @relation(fields: [HtmlSeoContentId], references: [id])
-    title            String         @db.VarChar(255)
-    slug             String         @db.VarChar(255)
-    content          String         @db.Text
-    image            String         @db.VarChar(255)
-    readCount        Int            @default(0)
-    status           BlogStatus     @default(DRAFT)
-    publishedAt      DateTime?
-    createdAt        DateTime       @default(now())
-    updatedAt        DateTime       @updatedAt
-    comments         Comment[]
-    categories       BlogCategory[]
-    tags             Tag[]          @relation("BlogToTag")
+  id               String         @id @default(uuid())
+  userId           String
+  HtmlSeoContentId String
+  title            String         @db.VarChar(255)
+  slug             String         @db.VarChar(255)
+  content          String
+  image            String         @db.VarChar(255)
+  readCount        Int            @default(0)
+  status           BlogStatus     @default(DRAFT)
+  publishedAt      DateTime?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  HtmlSeoContent   HtmlSeoContent @relation(fields: [HtmlSeoContentId], references: [id])
+  user             User           @relation(fields: [userId], references: [id])
+  categories       BlogCategory[]
+  comments         Comment[]
+  tags             Tag[]          @relation("BlogToTag")
 
-    @@index([id])
-    @@index([userId])
-    @@map("blogs")
+  @@index([id])
+  @@index([userId])
 }

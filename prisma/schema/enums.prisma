@@ -1,25 +1,25 @@
 enum ContactStatus {
-    PENDING
-    PROCESSING
-    COMPLETED
-    REJECTED
+  PENDING
+  PROCESSING
+  COMPLETED
+  REJECTED
 }
 
 enum UserRole {
-    ADMIN
-    EDITOR
-    USER
+  ADMIN
+  EDITOR
+  USER
 }
 
 enum BlogStatus {
-    DRAFT
-    PUBLISHED
-    ARCHIVED
+  DRAFT
+  PUBLISHED
+  ARCHIVED
 }
 
 enum CommentStatus {
-    PENDING
-    APPROVED
-    REJECTED
-    SPAM
+  PENDING
+  APPROVED
+  REJECTED
+  SPAM
 }

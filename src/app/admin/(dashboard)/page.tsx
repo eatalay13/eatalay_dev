@@ -1,3 +1,4 @@
+import DashboardContainer from "@/containers/admin/DashboardContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function AdminHome() {
-  return <div>Admin Home</div>;
+  return <DashboardContainer />;
 }
