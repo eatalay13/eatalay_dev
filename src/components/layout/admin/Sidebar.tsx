@@ -167,6 +167,10 @@ export default function Sidebar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  function handleClick() {
+    setIsMobileMenuOpen(false);
+  }
+
   // Mobil menüyü kapatmak için ekran boyutu değiştiğinde kontrol et
   useEffect(() => {
     const handleResize = () => {
@@ -234,9 +238,10 @@ export default function Sidebar() {
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={handleClick}
                 className={`group flex items-center px-2 py-2 text-base font-medium rounded-md ${
                   isActive
-                    ? "bg-zinc-950 text-white"
+                    ? "bg-yellow-500 text-white dark:bg-yellow-700"
                     : "text-gray-300 hover:bg-zinc-800 hover:text-white"
                 }`}
               >

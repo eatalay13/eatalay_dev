@@ -37,10 +37,12 @@ export default function ProjectsContainer() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 dark:text-white">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Projeler</h1>
-          <p className="mt-2 text-sm text-gray-600">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+            Projeler
+          </h1>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Tüm projelerinizi buradan yönetebilirsiniz.
           </p>
         </div>
@@ -71,7 +73,7 @@ export default function ProjectsContainer() {
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
         </div>
       ) : projects.length === 0 ? (
-        <div className="bg-white rounded-lg shadow-md p-8 text-center">
+        <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-md p-8 text-center">
           <svg
             className="mx-auto h-12 w-12 text-gray-400"
             xmlns="http://www.w3.org/2000/svg"
@@ -86,10 +88,10 @@ export default function ProjectsContainer() {
               d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
             />
           </svg>
-          <h3 className="mt-2 text-sm font-medium text-gray-900">
+          <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-white">
             Proje bulunamadı
           </h3>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Henüz hiç proje eklenmemiş.
           </p>
           <div className="mt-6">
@@ -114,54 +116,54 @@ export default function ProjectsContainer() {
           </div>
         </div>
       ) : (
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+        <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-lg overflow-hidden border border-gray-100">
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-zinc-800 text-gray-900 dark:text-white">
+              <thead className="bg-gray-50 dark:bg-zinc-900">
                 <tr>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                   >
                     Görsel
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                   >
                     Proje Adı
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                   >
                     Slug
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                   >
                     Okunma Sayısı
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                   >
                     Oluşturulma Tarihi
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider"
                   >
                     İşlemler
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white dark:bg-zinc-900 divide-y divide-gray-200">
                 {projects.map((project) => (
                   <tr
                     key={project.id}
-                    className="hover:bg-gray-50 transition-colors duration-150"
+                    className="hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors duration-150"
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="h-10 w-10 rounded-md overflow-hidden">
@@ -173,12 +175,12 @@ export default function ProjectsContainer() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-sm font-medium text-gray-900 dark:text-white">
                         {project.name}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-500">
+                      <div className="text-sm text-gray-500 dark:text-gray-200">
                         {project.slug}
                       </div>
                     </td>
@@ -188,7 +190,7 @@ export default function ProjectsContainer() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-500">
+                      <div className="text-sm text-gray-500 dark:text-gray-200">
                         {new Date(project.createdAt).toLocaleDateString(
                           "tr-TR"
                         )}
