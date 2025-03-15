@@ -11,9 +11,9 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="tr" className="dark:bg-zinc-950" suppressHydrationWarning>
+    <html lang="tr">
       <body
-        className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased dark:bg-zinc-950 dark:text-gray-100`}
+        className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
