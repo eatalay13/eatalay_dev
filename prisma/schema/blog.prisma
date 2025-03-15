@@ -4,6 +4,9 @@ model Blog {
     user             User           @relation(fields: [userId], references: [id])
     HtmlSeoContentId String
     HtmlSeoContent   HtmlSeoContent @relation(fields: [HtmlSeoContentId], references: [id])
+    title            String         @db.VarChar(255)
+    slug             String         @db.VarChar(255)
+    content          String         @db.Text
     image            String         @db.VarChar(255)
     readCount        Int            @default(0)
     status           BlogStatus     @default(DRAFT)
@@ -13,29 +16,8 @@ model Blog {
     comments         Comment[]
     categories       BlogCategory[]
     tags             Tag[]          @relation("BlogToTag")
-    translations     BlogI18n[]
 
     @@index([id])
     @@index([userId])
     @@map("blogs")
-}
-
-model BlogI18n {
-    id         String   @id @default(uuid())
-    blogId     String
-    blog       Blog     @relation(fields: [blogId], references: [id], onDelete: Cascade)
-    languageId String
-    language   Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
-    title      String   @db.VarChar(255)
-    slug       String   @db.VarChar(255)
-    content    String   @db.Text
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
-
-    @@unique([blogId, languageId])
-    @@unique([slug, languageId])
-    @@index([blogId])
-    @@index([languageId])
-    @@index([slug])
-    @@map("blog_i18n")
 }

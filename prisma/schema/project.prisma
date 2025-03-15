@@ -2,33 +2,15 @@ model Project {
     id               String         @id @default(uuid())
     HtmlSeoContentId String
     HtmlSeoContent   HtmlSeoContent @relation(fields: [HtmlSeoContentId], references: [id])
+    name             String         @db.VarChar(255)
+    slug             String         @db.VarChar(255)
+    content          String         @db.Text
     image            String         @db.VarChar(255)
     readCount        Int            @default(0)
     createdAt        DateTime       @default(now())
     updatedAt        DateTime       @updatedAt
-    translations     ProjectI18n[]
 
     @@index([id])
     @@index([HtmlSeoContentId])
     @@map("projects")
-}
-
-model ProjectI18n {
-    id         String   @id @default(uuid())
-    projectId  String
-    project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
-    languageId String
-    language   Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
-    name       String   @db.VarChar(255)
-    slug       String   @db.VarChar(255)
-    content    String   @db.Text
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
-
-    @@unique([projectId, languageId])
-    @@unique([slug, languageId])
-    @@index([projectId])
-    @@index([languageId])
-    @@index([slug])
-    @@map("project_i18n")
 }

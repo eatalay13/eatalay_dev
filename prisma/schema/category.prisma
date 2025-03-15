@@ -4,34 +4,16 @@ model Category {
     parent           Category?      @relation("CategoryToCategory", fields: [parentId], references: [id])
     htmlSeoContentId String
     htmlSeoContent   HtmlSeoContent @relation(fields: [htmlSeoContentId], references: [id])
+    name             String         @db.VarChar(255)
+    slug             String         @db.VarChar(255)
     createdAt        DateTime       @default(now())
     updatedAt        DateTime       @updatedAt
     children         Category[]     @relation("CategoryToCategory")
     blogs            BlogCategory[]
-    translations     CategoryI18n[]
 
     @@index([id])
     @@index([parentId])
     @@map("categories")
-}
-
-model CategoryI18n {
-    id         String   @id @default(uuid())
-    categoryId String
-    category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-    languageId String
-    language   Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
-    name       String   @db.VarChar(255)
-    slug       String   @db.VarChar(255)
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
-
-    @@unique([categoryId, languageId])
-    @@unique([slug, languageId])
-    @@index([categoryId])
-    @@index([languageId])
-    @@index([slug])
-    @@map("category_i18n")
 }
 
 model BlogCategory {

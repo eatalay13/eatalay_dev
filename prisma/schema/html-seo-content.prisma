@@ -1,31 +1,15 @@
 model HtmlSeoContent {
-    id           String               @id @default(uuid())
-    createdAt    DateTime             @default(now())
-    updatedAt    DateTime             @updatedAt
-    blogs        Blog[]
-    categories   Category[]
-    projects     Project[]
-    translations HtmlSeoContentI18n[]
+    id          String     @id @default(uuid())
+    title       String     @db.VarChar(255)
+    description String     @db.VarChar(1000)
+    keywords    String     @db.VarChar(1000)
+    content     String     @db.Text
+    createdAt   DateTime   @default(now())
+    updatedAt   DateTime   @updatedAt
+    blogs       Blog[]
+    categories  Category[]
+    projects    Project[]
 
     @@index([id])
     @@map("html_seo_contents")
-}
-
-model HtmlSeoContentI18n {
-    id               String         @id @default(uuid())
-    htmlSeoContentId String
-    htmlSeoContent   HtmlSeoContent @relation(fields: [htmlSeoContentId], references: [id], onDelete: Cascade)
-    languageId       String
-    language         Language       @relation(fields: [languageId], references: [id], onDelete: Cascade)
-    title            String         @db.VarChar(255)
-    description      String         @db.VarChar(1000)
-    keywords         String         @db.VarChar(1000)
-    content          String         @db.Text
-    createdAt        DateTime       @default(now())
-    updatedAt        DateTime       @updatedAt
-
-    @@unique([htmlSeoContentId, languageId])
-    @@index([htmlSeoContentId])
-    @@index([languageId])
-    @@map("html_seo_content_i18n")
 }

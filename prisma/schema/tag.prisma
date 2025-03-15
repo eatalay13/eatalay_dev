@@ -1,29 +1,11 @@
 model Tag {
-    id           String    @id @default(uuid())
-    createdAt    DateTime  @default(now())
-    updatedAt    DateTime  @updatedAt
-    blogs        Blog[]    @relation("BlogToTag")
-    translations TagI18n[]
+    id        String   @id @default(uuid())
+    name      String   @db.VarChar(100)
+    slug      String   @db.VarChar(100)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    blogs     Blog[]   @relation("BlogToTag")
 
     @@index([id])
     @@map("tags")
-}
-
-model TagI18n {
-    id         String   @id @default(uuid())
-    tagId      String
-    tag        Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
-    languageId String
-    language   Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
-    name       String   @db.VarChar(100)
-    slug       String   @db.VarChar(100)
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
-
-    @@unique([tagId, languageId])
-    @@unique([slug, languageId])
-    @@index([tagId])
-    @@index([languageId])
-    @@index([slug])
-    @@map("tag_i18n")
 }
