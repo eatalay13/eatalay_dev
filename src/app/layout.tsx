@@ -1,4 +1,3 @@
-import { geistMono, geistSans, inter } from "@/lib/fonts";
 import siteMetadata from "@/lib/siteMetadata";
 import type { Metadata } from "next";
 import "../styles/globals.css";
@@ -12,11 +11,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="tr">
-      <body
-        className={`${inter.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
