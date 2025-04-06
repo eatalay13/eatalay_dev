@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 // Prisma istemcisi için global tip tanımı
 declare global {
+  // eslint-disable-next-line no-var
   var prisma: PrismaClient | undefined;
 }
 
