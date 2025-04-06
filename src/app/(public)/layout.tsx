@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import PalestineBanner from "@/components/layout/PalestineBanner";
 import Navbar from "@/components/Navbar";
 
 type PublicLayoutProps = {
@@ -11,6 +12,7 @@ export default function PublicLayout({ children }: PublicLayoutProps) {
       <Navbar />
       <main className="min-h-screen">{children}</main>
       <Footer />
+      <PalestineBanner />
     </>
   );
 }
