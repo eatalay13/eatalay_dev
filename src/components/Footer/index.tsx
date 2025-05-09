@@ -53,7 +53,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  href="#projects"
+                  href="/projeler"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
                 >
                   Projelerim
@@ -105,11 +105,8 @@ function Footer() {
 
         {/* Alt Kısım */}
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400 transition-colors">
-            © {new Date().getFullYear()} Emrah Atalay. Tüm hakları saklıdır.
-          </p>
-          <p className="text-xs text-gray-500 dark:text-gray-500 mt-2 transition-colors">
-            Next.js, Tailwind CSS ve React ile geliştirilmiştir.
+          <p className="text-sm font-medium text-gray-600 dark:text-gray-400 transition-colors hover:text-blue-600 dark:hover:text-blue-500">
+            © {new Date().getFullYear()} Emrah Atalay ✨ Sevgiyle kodlandı 💙
           </p>
         </div>
       </div>

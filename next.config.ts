@@ -18,6 +18,30 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  rewrites: async () => {
+    return [
+      {
+        source: "/iletisim",
+        destination: "/contact",
+      },
+      {
+        source: "/hakkimda",
+        destination: "/about",
+      },
+      {
+        source: "/proje",
+        destination: "/projects",
+      },
+      {
+        source: "/proje/:slug*",
+        destination: "/projects/:slug*",
+      },
+      {
+        source: "/blog/:slug*",
+        destination: "/blog/:slug*",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
