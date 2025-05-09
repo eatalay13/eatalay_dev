@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 
@@ -16,28 +16,23 @@ function Footer() {
             <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">
               Modern web teknolojileri ile yenilikçi çözümler geliştiren Full
               Stack Developer.
-            </p>
+            </p>{" "}
             <div className="flex space-x-5 mt-4">
               <a
-                href="#"
+                href="https://github.com/eatalay13"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors transform hover:scale-110 duration-300"
                 aria-label="GitHub"
               >
                 <FaGithub className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/emrahatalay"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors transform hover:scale-110 duration-300"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors transform hover:scale-110 duration-300"
-                aria-label="Twitter"
-              >
-                <FaTwitter className="h-5 w-5" />
               </a>
             </div>
           </div>

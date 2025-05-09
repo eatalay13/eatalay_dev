@@ -3,7 +3,6 @@ import { FaLinkedin } from "react-icons/fa";
 
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa6";
 import {
   HiOutlineCode,
   HiOutlineDesktopComputer,
@@ -33,7 +32,6 @@ function HomeIndexContainer() {
                 />
               </div>
             </div>
-
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white transition-colors">
               <span className="inline-block animate-fadeIn">Merhaba, </span>
               <span className="inline-block animate-fadeIn animation-delay-300">
@@ -43,12 +41,10 @@ function HomeIndexContainer() {
                 Emrah Atalay
               </span>
             </h1>
-
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto transition-colors animate-fadeIn animation-delay-900">
               Full Stack Developer olarak modern web teknolojileri ile yenilikçi
               çözümler geliştiriyorum.
             </p>
-
             <div className="flex gap-4 mb-12 animate-fadeIn animation-delay-1200">
               <Link
                 href="/iletisim"
@@ -62,26 +58,21 @@ function HomeIndexContainer() {
               >
                 Projelerimi Gör
               </Link>
-            </div>
-
+            </div>{" "}
             <div className="flex gap-6 animate-fadeIn animation-delay-1500">
               <a
-                href="#"
+                href="https://github.com/eatalay13"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
               >
                 <FaGithub className="h-7 w-7" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/emrahatalay"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
               >
                 <FaLinkedin className="h-7 w-7" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
-              >
-                <FaTwitter className="h-7 w-7" />
               </a>
             </div>
           </div>

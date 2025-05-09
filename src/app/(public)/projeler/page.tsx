@@ -1,7 +1,27 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectsPage() {
+export const metadata: Metadata = {
+  title: "Projelerim",
+  description:
+    "Emrah Atalay'ın projeleri. Web ve mobil uygulama geliştirme, tasarım ve daha fazlası.",
+  openGraph: {
+    title: "Projelerim",
+    description:
+      "Emrah Atalay'ın projeleri. Web ve mobil uygulama geliştirme, tasarım ve daha fazlası.",
+    url: "/projeler",
+    images: [
+      {
+        url: "https://example.com/image.jpg",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
+};
+
+function ProjectsPage() {
   return (
     <>
       <section className="relative py-16 md:py-24 overflow-hidden">
@@ -201,3 +221,5 @@ export default function ProjectsPage() {
     </>
   );
 }
+
+export default ProjectsPage;

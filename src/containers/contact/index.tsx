@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaEnvelope, FaMapLocationDot } from "react-icons/fa6";
-import { HiOutlinePhone } from "react-icons/hi";
 
 function ContactContainer() {
   return (
@@ -93,20 +92,6 @@ function ContactContainer() {
                       >
                         emrahatalay92@gmail.com
                       </Link>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg mr-4 transition-colors">
-                      <HiOutlinePhone className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white transition-colors">
-                        Telefon
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400 transition-colors">
-                        +90 (539) 409 18 30
-                      </p>
                     </div>
                   </div>
                 </div>
