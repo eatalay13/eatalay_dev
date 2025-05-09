@@ -1,9 +1,61 @@
+"use client";
+
+import { generateFormToken, sendContactMessage } from "@/lib/actions/contact";
 import Image from "next/image";
 import Link from "next/link";
+import { useActionState, useEffect, useRef, useState } from "react";
+import { useFormStatus } from "react-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaEnvelope, FaMapLocationDot } from "react-icons/fa6";
 
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20 disabled:opacity-70 disabled:cursor-not-allowed"
+    >
+      {pending ? "Gönderiliyor..." : "Mesaj Gönder"}
+    </button>
+  );
+}
+
 function ContactContainer() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [token, setToken] = useState<string>("");
+  const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
+  const [state, formAction] = useActionState(sendContactMessage, {
+    success: false,
+  });
+
+  // Form token oluştur
+  useEffect(() => {
+    const getToken = async () => {
+      const token = await generateFormToken();
+      setToken(token);
+    };
+
+    getToken();
+  }, []);
+
+  // Form state değiştiğinde mesajı göster ve formu sıfırla
+  useEffect(() => {
+    if (state) {
+      if (state.success) {
+        setMessage({
+          type: "success",
+          text: "Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.",
+        });
+        formRef.current?.reset();
+      } else if (state.error) {
+        setMessage({ type: "error", text: state.error });
+      }
+    }
+  }, [state]);
   return (
     <>
       {/* Hero Section */}
@@ -126,7 +178,36 @@ function ContactContainer() {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
                   Mesaj Gönder
                 </h3>
-                <form className="space-y-6">
+
+                {/* Başarı veya hata mesajı */}
+                {message && (
+                  <div
+                    className={`mb-6 p-4 rounded-lg ${
+                      message.type === "success"
+                        ? "bg-green-50 text-green-800 dark:bg-green-900/30 dark:text-green-300"
+                        : "bg-red-50 text-red-800 dark:bg-red-900/30 dark:text-red-300"
+                    }`}
+                  >
+                    {message.text}
+                  </div>
+                )}
+
+                <form ref={formRef} action={formAction} className="space-y-6">
+                  {/* CSRF token */}
+                  <input type="hidden" name="formToken" value={token} />
+
+                  {/* Honeypot alan (botlar için tuzak) */}
+                  <div className="hidden">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label
@@ -139,9 +220,15 @@ function ContactContainer() {
                         type="text"
                         id="name"
                         name="name"
+                        required
                         className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
                         placeholder="İsminizi girin"
                       />
+                      {state?.fieldErrors?.name && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                          {state.fieldErrors.name}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <label
@@ -154,9 +241,15 @@ function ContactContainer() {
                         type="email"
                         id="email"
                         name="email"
+                        required
                         className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
                         placeholder="E-posta adresinizi girin"
                       />
+                      {state?.fieldErrors?.email && (
+                        <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                          {state.fieldErrors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div>
@@ -170,9 +263,15 @@ function ContactContainer() {
                       type="text"
                       id="subject"
                       name="subject"
+                      required
                       className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
                       placeholder="Mesajınızın konusu"
                     />
+                    {state?.fieldErrors?.title && (
+                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {state.fieldErrors.title}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label
@@ -184,18 +283,19 @@ function ContactContainer() {
                     <textarea
                       id="message"
                       name="message"
+                      required
                       rows={5}
                       className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
                       placeholder="Mesajınızı buraya yazın..."
                     ></textarea>
+                    {state?.fieldErrors?.message && (
+                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {state.fieldErrors.message}
+                      </p>
+                    )}
                   </div>
                   <div>
-                    <button
-                      type="submit"
-                      className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20"
-                    >
-                      Mesaj Gönder
-                    </button>
+                    <SubmitButton />
                   </div>
                 </form>
               </div>
