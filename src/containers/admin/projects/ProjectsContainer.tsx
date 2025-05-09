@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { FaProjectDiagram } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 
+import Image from "next/image";
+
 export default function ProjectsContainer() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
@@ -131,7 +133,8 @@ export default function ProjectsContainer() {
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="h-10 w-10 rounded-md overflow-hidden">
-                        <img
+                        <Image
+                          width={40}
                           src={project.image}
                           alt={project.name}
                           className="h-full w-full object-cover"
