@@ -11,7 +11,7 @@ import { format } from "date-fns";
 import { tr } from "date-fns/locale";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   FiCheck,
   FiClock,
@@ -58,8 +58,8 @@ export default function ContactsContainer({
     hasPrevPage: false,
   });
 
-  // İletişim mesajlarını yükle
-  const loadContacts = async () => {
+  // İletişim mesajlarını yükle (useCallback ile sonsuz döngü oluşmasını önlüyoruz)
+  const loadContacts = useCallback(async () => {
     setLoading(true);
     try {
       const data = await getContactMessages(page, 10, status);
@@ -70,7 +70,7 @@ export default function ContactsContainer({
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, status]);
 
   // Durum değiştiğinde ya da sayfa değiştiğinde listeyi güncelle
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function ContactsContainer({
     const query = searchParams.toString();
     const url = query ? `/admin/contacts?${query}` : "/admin/contacts";
     router.push(url, { scroll: false });
-  }, [page, status, router]);
+  }, [page, status, router, loadContacts]);
 
   // Mesaj durumunu güncelle
   const handleStatusChange = async (id: string, newStatus: ContactStatus) => {
