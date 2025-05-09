@@ -1,8 +1,8 @@
 "use client";
 
 import PageHeader from "@/components/layout/admin/PageHeader";
+import type { Project } from "@/generated/prisma-client";
 import { deleteProject, getAllProjects } from "@/lib/actions/project";
-import { Project } from "@prisma/client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaProjectDiagram } from "react-icons/fa";
