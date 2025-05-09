@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/prisma";
+import { ContactStatus } from "@prisma/client";
 import { randomBytes } from "crypto";
 import { cookies } from "next/headers";
 import { z } from "zod";
@@ -99,5 +100,96 @@ export async function sendContactMessage(
       error:
         "Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
     };
+  }
+}
+
+// İletişim mesajlarını sayfalı olarak getirme
+export async function getContactMessages(
+  page = 1,
+  limit = 10,
+  status?: ContactStatus
+) {
+  try {
+    // Sayfa ve limit değerleri 1'den küçük olamaz
+    page = Math.max(1, page);
+    limit = Math.max(1, limit);
+
+    // Skip değeri hesaplama (pagination için)
+    const skip = (page - 1) * limit;
+
+    // Filtreleme koşulları
+    const where = status ? { status } : {};
+
+    // Toplam kayıt sayısını al
+    const totalCount = await prisma.contact.count({
+      where,
+    });
+
+    // İletişim mesajlarını getir
+    const messages = await prisma.contact.findMany({
+      where,
+      orderBy: {
+        createdAt: "desc", // Yeni mesajlar önce gelsin
+      },
+      take: limit,
+      skip,
+    });
+
+    // Toplam sayfa sayısını hesapla
+    const totalPages = Math.ceil(totalCount / limit);
+
+    return {
+      messages,
+      pagination: {
+        totalCount,
+        totalPages,
+        currentPage: page,
+        limit,
+        hasNextPage: page < totalPages,
+        hasPrevPage: page > 1,
+      },
+    };
+  } catch (error) {
+    console.error("İletişim mesajları getirilirken hata:", error);
+    throw error;
+  }
+}
+
+// İletişim mesajının durumunu güncelleme
+export async function updateContactStatus(
+  id: string,
+  status: ContactStatus,
+  isRead: boolean = true
+) {
+  try {
+    const updatedContact = await prisma.contact.update({
+      where: { id },
+      data: {
+        status,
+        isRead,
+      },
+    });
+
+    return { success: true, contact: updatedContact };
+  } catch (error) {
+    console.error("İletişim mesajı durumu güncellenirken hata:", error);
+    return {
+      success: false,
+      error: "Mesaj durumu güncellenirken bir hata oluştu.",
+    };
+  }
+}
+
+// İletişim mesajını silme
+export async function deleteContactMessage(id: string) {
+  try {
+    await prisma.contact.delete({
+      where: { id },
+    });
+
+    return { success: true };
+  } catch (error) {
+    console.error("İletişim mesajı silinirken hata:", error);
+    return { success: false, error: "Mesaj silinirken bir hata oluştu." };
   }
 }
