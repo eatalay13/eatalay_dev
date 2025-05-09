@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Projelerim",
     description:
       "Emrah Atalay'ın projeleri. Web ve mobil uygulama geliştirme, tasarım ve daha fazlası.",
-    url: "/projeler",
+    url: "/proje",
     images: [
       {
         url: "https://example.com/image.jpg",
@@ -57,7 +57,7 @@ function ProjectsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 md:gap-1">
             {/* Project Card - Beste5 */}
             <Link
-              href="/projeler/beste5"
+              href="/proje/beste5"
               className="group block relative overflow-hidden"
             >
               <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">

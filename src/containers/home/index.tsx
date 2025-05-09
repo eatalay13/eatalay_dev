@@ -53,7 +53,7 @@ function HomeIndexContainer() {
                 İletişime Geç
               </Link>
               <Link
-                href="/projeler"
+                href="/proje"
                 className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-400/20 dark:focus:ring-gray-700/20"
               >
                 Projelerimi Gör
@@ -337,7 +337,7 @@ function HomeIndexContainer() {
 
           <div className="text-center mt-12">
             <Link
-              href="/projeler"
+              href="/proje"
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-lg font-medium transition-colors hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white"
             >
               Tüm Projeleri Görüntüle
