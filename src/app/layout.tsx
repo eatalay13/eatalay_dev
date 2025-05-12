@@ -1,9 +1,10 @@
-import siteMetadata from "@/lib/siteMetadata";
+import { siteMetadata, siteViewport } from "@/lib/siteMetadata";
 import "@/styles/globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = siteMetadata;
+export const viewport: Viewport = siteViewport;
 
 type RootLayoutProps = {
   children: React.ReactNode;
