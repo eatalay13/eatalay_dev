@@ -1,3 +1,4 @@
+import { geistMono, geistSans, inter } from "@/lib/fonts";
 import { siteMetadata, siteViewport } from "@/lib/siteMetadata";
 import "@/styles/globals.css";
 import type { Metadata, Viewport } from "next";
@@ -13,7 +14,9 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="tr">
-      <body className="antialiased">
+      <body
+        className={`${geistSans.className} ${geistMono.className} ${inter.className} antialiased`}
+      >
         {children}
         <div>
           <Toaster position="bottom-right" />

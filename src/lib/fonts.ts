@@ -1,4 +1,4 @@
-/* import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,4 +16,3 @@ const inter = Inter({
 });
 
 export { geistMono, geistSans, inter };
- */
