@@ -61,7 +61,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/iletisim"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
                 >
                   İletişim
@@ -69,7 +69,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/blog"
                   className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
                 >
                   Blog
