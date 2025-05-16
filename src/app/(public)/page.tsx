@@ -1,10 +1,10 @@
-import HomeIndexContainer from "@/containers/home";
+import HomeContainer from "@/containers/home";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Emrah Atalay | Full Stack Developer",
+  title: "Emrah Atalay - Full Stack Developer | Kişisel Web Sitesi",
   description:
-    "Emrah Atalay, modern web teknolojileri ile yenilikçi çözümler geliştiren Full Stack Developer",
+    "Full Stack Developer olarak, modern web teknolojilerini kullanarak kullanıcı dostu, ölçeklenebilir ve performans odaklı yenilikçi çözümler geliştiriyorum.",
   keywords:
     "Emrah Atalay, Full Stack Developer, Web Geliştirme, React, Next.js, .NET Core",
   authors: [{ name: "Emrah Atalay", url: "https://emrahatalay.dev" }],
@@ -34,6 +34,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  return <HomeIndexContainer />;
+export default function HomePage() {
+  return <HomeContainer />;
 }

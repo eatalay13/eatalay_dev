@@ -15,7 +15,7 @@ import {
 } from "react-icons/tb";
 
 // Ana container
-function HomeIndexContainer() {
+function HomeContainer() {
   return (
     <>
       <HeroSection />
@@ -232,23 +232,40 @@ const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const skills = [
+  const skillCategories = [
     {
       name: "Frontend",
-      items: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
-      level: 90,
+      description: "Kullanıcı deneyimi ve arayüz geliştirme",
+      technologies: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Redux",
+        "Vue.js",
+      ],
     },
     {
       name: "Backend",
-      items: [".NET Core", "Node.js", "Express", "RESTful API"],
-      level: 85,
+      description: "Sunucu mimarisi ve API tasarımı",
+      technologies: [
+        ".NET Core",
+        "Node.js",
+        "Express",
+        "RESTful API",
+        "GraphQL",
+      ],
     },
     {
       name: "Veritabanı",
-      items: ["SQL Server", "MongoDB", "PostgreSQL", "Redis"],
-      level: 80,
+      description: "Veri yönetimi ve tasarımı",
+      technologies: ["SQL Server", "MongoDB", "PostgreSQL", "Redis"],
     },
-    { name: "DevOps", items: ["Git", "Docker", "CI/CD", "Azure"], level: 75 },
+    {
+      name: "DevOps & Araçlar",
+      description: "Yazılım geliştirme süreçleri",
+      technologies: ["Git", "Docker", "CI/CD", "Azure"],
+    },
   ];
 
   useEffect(() => {
@@ -270,49 +287,102 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-950">
-      <div className="container px-4 mx-auto max-w-6xl">
+    <section
+      id="skills"
+      className="py-20 bg-gray-50 dark:bg-gray-950 relative overflow-hidden"
+    >
+      {/* Kod Dekorasyonu - Arka Plan */}
+      <div className="absolute inset-0 overflow-hidden select-none pointer-events-none">
+        {/* Sol Üst - Kod Deseni */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-teal-50 to-transparent dark:from-teal-950/20 dark:to-transparent rounded-3xl opacity-50"></div>
+        <div
+          className="absolute top-20 left-20 font-mono text-teal-600/30 dark:text-teal-500/20 text-sm whitespace-pre leading-relaxed"
+          style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
+        >
+          {`import React from 'react';
+import { motion } from 'framer-motion';
+import { skills } from '@/data';`}
+        </div>
+
+        {/* Sağ Üst - Kod Deseni */}
+        <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-l from-indigo-50 to-transparent dark:from-indigo-950/20 dark:to-transparent rounded-3xl opacity-50"></div>
+        <div className="absolute top-60 right-20 font-mono text-indigo-600/30 dark:text-indigo-500/20 text-sm whitespace-pre leading-relaxed">
+          {`function Developer() {
+  const [skills, setSkills] = useState([]);
+  
+  useEffect(() => {
+    // Load skills
+  }, []);`}
+        </div>
+
+        {/* Sol Alt - Kod Deseni */}
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-blue-50 to-transparent dark:from-blue-950/20 dark:to-transparent rounded-3xl opacity-50"></div>
+        <div className="absolute bottom-40 left-40 font-mono text-blue-600/30 dark:text-blue-500/20 text-sm whitespace-pre leading-relaxed">
+          {`<div className="skill-card">
+  {technologies.map((tech) => (
+    <TechBadge key={tech} name={tech} />
+  ))}
+</div>`}
+        </div>
+
+        {/* Sağ Alt - Kod Deseni */}
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-gradient-to-tl from-purple-50 to-transparent dark:from-purple-950/20 dark:to-transparent rounded-3xl opacity-50"></div>
+        <div className="absolute bottom-30 right-40 font-mono text-purple-600/30 dark:text-purple-500/20 text-sm whitespace-pre leading-relaxed">
+          {`export default function Skills() {
+  return (
+    <section>
+      <Title>Yeteneklerim</Title>
+      <SkillGrid />
+    </section>
+  );
+}`}
+        </div>
+      </div>
+
+      <div className="container px-4 mx-auto max-w-6xl relative z-10">
         <SectionHeader
           title="Yeteneklerim"
-          subtitle="Uzmanlaştığım ve sürekli geliştirdiğim teknolojiler"
+          subtitle="Uzmanlaştığım ve sürekli geliştirdiğim teknoloji ekosistemleri"
         />
 
-        <div
-          ref={ref}
-          className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12"
-        >
-          {skills.map((skill, index) => (
-            <div key={skill.name} className="space-y-2">
-              <div className="flex justify-between items-center">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  {skill.name}
+        <div ref={ref} className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800"
+            >
+              <div className="mb-5">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  {category.name}
                 </h3>
-                <span className="text-sm font-medium text-teal-500">
-                  {skill.level}%
-                </span>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  {category.description}
+                </p>
               </div>
 
-              <div className="h-2 w-full bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-teal-500 rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: isVisible ? `${skill.level}%` : "0%",
-                    transitionDelay: `${index * 150}ms`,
-                  }}
-                ></div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-3">
-                {skill.items.map((item) => (
+              <div className="flex flex-wrap gap-2">
+                {category.technologies.map((tech, techIndex) => (
                   <span
-                    key={item}
-                    className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded"
+                    key={tech}
+                    className="px-3 py-2 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm"
+                    style={{
+                      opacity: isVisible ? 1 : 0,
+                      transform: isVisible
+                        ? "translateY(0)"
+                        : "translateY(10px)",
+                      transition: `all 0.3s ease-out ${
+                        categoryIndex * 0.1 + techIndex * 0.05
+                      }s`,
+                    }}
                   >
-                    {item}
+                    {tech}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -555,4 +625,4 @@ const InfoCard = ({
   </div>
 );
 
-export default HomeIndexContainer;
+export default HomeContainer;
