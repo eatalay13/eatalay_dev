@@ -1,5 +1,15 @@
 {
     "Home": {
         "welcome": "Welcome"
+    },
+    "Languages": {
+        "tr": "Turkish",
+        "en": "English",
+        "de": "German"
+    },
+    "Meta": {
+        "title": "Emrah Atalay - Full-Stack Developer",
+        "description": "Emrah Atalay - Full-Stack Developer - Portfolio Personal Website",
+        "keywords": "Emrah Atalay, Full-Stack Developer, Portfolio, Software Engineer, Web Developer, Frontend Developer, Backend Developer"
     }
 }
