@@ -13,23 +13,21 @@ function HomeContainer() {
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between gap-12 mb-24">
         <div className="flex-1 space-y-6">
-          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300">
+          {" "}
+          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
             <span>{t("availability")}</span>
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white">
+          </div>{" "}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
             {t("hello")} <br />
-            <span className="text-teal-500">{t("iAm")}</span>
+            <span className="text-blue-700">{t("iAm")}</span>
           </h1>
-
-          <p className="text-xl text-zinc-600 dark:text-zinc-300 max-w-2xl">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl">
             {t("introduction")}
           </p>
-
           <div className="flex flex-wrap gap-4 pt-4">
             <Link
               href="#projects"
-              className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-teal-500 rounded-lg hover:bg-teal-600 transition-colors"
+              className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 transition-colors"
             >
               {t("viewProjects")}
               <FiArrowRight className="w-4 h-4" />
@@ -37,34 +35,34 @@ function HomeContainer() {
 
             <Link
               href="/contact"
-              className="flex items-center gap-2 px-6 py-3 font-medium text-zinc-700 dark:text-white bg-zinc-100 dark:bg-zinc-800 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+              className="flex items-center gap-2 px-6 py-3 font-medium text-slate-700 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
               {t("contactMe")}
             </Link>
           </div>
-
           <div className="flex items-center gap-4 pt-4">
+            {" "}
             <a
               href="https://github.com/eatalay13"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-white hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
               aria-label="GitHub"
             >
               <FiGithub className="w-5 h-5" />
-            </a>
+            </a>{" "}
             <a
               href="https://www.linkedin.com/in/emrahatalay"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-white hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
               aria-label="LinkedIn"
             >
               <FiLinkedin className="w-5 h-5" />
-            </a>
+            </a>{" "}
             <a
               href="mailto:info@emrahatalay.com"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-white hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
               aria-label="Email"
             >
               <FiMail className="w-5 h-5" />
@@ -73,7 +71,7 @@ function HomeContainer() {
         </div>
 
         <div className="flex-1 flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-xl">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl">
             <Image
               src="/images/profile.jpg"
               alt="Emrah Atalay"
@@ -88,17 +86,18 @@ function HomeContainer() {
       {/* Skills Section */}
       <section className="mb-24">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-4">
+          {" "}
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
             {t("skills")}
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             {t("skillsDescription")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mb-6">
+            <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center text-indigo-600 dark:text-indigo-300 mb-6">
               <TbCode className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
@@ -120,7 +119,7 @@ function HomeContainer() {
           </div>
 
           <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mb-6">
+            <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center text-indigo-600 dark:text-indigo-300 mb-6">
               <CiLaptop className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
@@ -142,7 +141,7 @@ function HomeContainer() {
           </div>
 
           <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mb-6">
+            <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center text-indigo-600 dark:text-indigo-300 mb-6">
               <CiLaptop className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
@@ -210,7 +209,7 @@ function HomeContainer() {
                 <div className="flex gap-4">
                   <Link
                     href={`/projects/${project}`}
-                    className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+                    className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
                   >
                     {t("viewDetails")} →
                   </Link>
@@ -231,7 +230,7 @@ function HomeContainer() {
         <div className="text-center mt-12">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-6 py-3 font-medium text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 rounded-lg hover:bg-teal-100 dark:hover:bg-teal-900/30 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors"
           >
             {t("viewAllProjects")}
             <FiArrowRight className="w-4 h-4" />
@@ -240,14 +239,14 @@ function HomeContainer() {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl p-10 md:p-16 text-center text-white">
+      <section className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl p-10 md:p-16 text-center text-white">
         <h2 className="text-3xl font-bold mb-4">{t("letsWork")}</h2>
-        <p className="text-lg text-teal-50 max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-indigo-50 max-w-2xl mx-auto mb-8">
           {t("ctaDescription")}
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 font-medium text-teal-700 bg-white rounded-lg hover:bg-teal-50 transition-colors"
+          className="inline-flex items-center gap-2 px-8 py-4 font-medium text-indigo-700 bg-white rounded-lg hover:bg-indigo-50 transition-colors"
         >
           {t("getInTouch")}
           <FiArrowRight className="w-4 h-4" />

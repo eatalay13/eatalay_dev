@@ -65,7 +65,7 @@ async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang={locale} dir="ltr" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />

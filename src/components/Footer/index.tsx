@@ -12,11 +12,11 @@ export default function Footer() {
   return (
     <footer className="relative py-12 overflow-hidden backdrop-blur-md">
       {/* Modern gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-purple-500/10 to-blue-600/20 dark:from-teal-700/20 dark:via-purple-800/10 dark:to-blue-900/20 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 via-purple-500/10 to-blue-600/20 dark:from-indigo-700/20 dark:via-purple-800/10 dark:to-blue-900/20 -z-10"></div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>
-      <div className="absolute -top-24 -left-24 w-64 h-64 bg-teal-500/10 dark:bg-teal-700/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+      <div className="absolute -top-24 -left-24 w-64 h-64 bg-indigo-500/10 dark:bg-indigo-700/10 rounded-full filter blur-3xl"></div>
       <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-purple-500/10 dark:bg-purple-700/10 rounded-full filter blur-3xl"></div>
 
       <div className="container mx-auto max-w-5xl px-6 relative z-10">
@@ -33,7 +33,7 @@ export default function Footer() {
                 href="https://github.com/eatalay13"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-all hover:scale-110"
+                className="text-zinc-500 hover:text-indigo-500 dark:text-zinc-400 dark:hover:text-indigo-400 transition-all hover:scale-110"
                 aria-label="GitHub"
               >
                 <FiGithub className="h-5 w-5" />
@@ -42,14 +42,14 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/emrahatalay"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-all hover:scale-110"
+                className="text-zinc-500 hover:text-indigo-500 dark:text-zinc-400 dark:hover:text-indigo-400 transition-all hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:info@emrahatalay.com"
-                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-all hover:scale-110"
+                className="text-zinc-500 hover:text-indigo-500 dark:text-zinc-400 dark:hover:text-indigo-400 transition-all hover:scale-110"
                 aria-label="Email"
               >
                 <FiMail className="h-5 w-5" />
@@ -66,7 +66,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-zinc-600 dark:text-zinc-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                 >
                   {t("home")}
                 </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#about"
-                  className="text-zinc-600 dark:text-zinc-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                 >
                   {t("about")}
                 </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects"
-                  className="text-zinc-600 dark:text-zinc-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                 >
                   {t("projects")}
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-zinc-600 dark:text-zinc-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                 >
                   {t("contact")}
                 </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@emrahatalay.com"
-                  className="text-zinc-600 dark:text-zinc-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                  className="text-zinc-600 dark:text-zinc-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                 >
                   info@emrahatalay.com
                 </a>
