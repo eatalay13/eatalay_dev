@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/index";
 import { routing } from "@/i18n/routing";
 import "@/styles/globals.css";
 import { env } from "@/utils/env";
@@ -55,7 +56,10 @@ async function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Navbar />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
