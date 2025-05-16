@@ -23,7 +23,6 @@ export default function LocaleSwitcher() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
   const currentLocale = locales.find((l) => l.code === locale) || locales[0];
 
   // Handle outside click to close dropdown
@@ -42,6 +41,20 @@ export default function LocaleSwitcher() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // Close dropdown with Escape key
+  useEffect(() => {
+    function handleEscapeKey(event: KeyboardEvent) {
+      if (event.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isOpen]);
   function handleLocaleChange(newLocale: string) {
     // Pathnames in Next.js locale system are formatted as /{locale}/{path}
     // We need to determine the rest of the path after the locale
@@ -97,33 +110,36 @@ export default function LocaleSwitcher() {
         <span className="hidden sm:inline ml-2">{currentLocale.name}</span>
         <FiGlobe className="h-4 w-4 ml-1" />
       </button>
-
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-          <div className="py-1">
-            {locales.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => handleLocaleChange(l.code)}
-                className={`flex items-center w-full px-4 py-2 text-sm ${
-                  l.code === locale
-                    ? "bg-zinc-100 text-zinc-900 font-medium"
-                    : "text-zinc-700 hover:bg-zinc-100"
-                }`}
-              >
-                <Image
-                  src={l.flag}
-                  alt={l.name}
-                  width={20}
-                  height={20}
-                  className="rounded-full mr-2"
-                />
-                {l.name}
-              </button>
-            ))}
-          </div>
+      <div
+        className={`absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white/80 dark:bg-zinc-800/80 backdrop-blur-lg shadow-lg focus:outline-none z-10 transition-all duration-200 ease-out transform ${
+          isOpen
+            ? "opacity-100 scale-100 translate-y-0"
+            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+        }`}
+      >
+        <div className="py-1">
+          {locales.map((l) => (
+            <button
+              key={l.code}
+              onClick={() => handleLocaleChange(l.code)}
+              className={`flex items-center w-full px-4 py-2 text-sm transition-colors duration-150 ${
+                l.code === locale
+                  ? "bg-zinc-100 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-medium"
+                  : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-700"
+              }`}
+            >
+              <Image
+                src={l.flag}
+                alt={l.name}
+                width={20}
+                height={20}
+                className="rounded-full mr-2"
+              />
+              {l.name}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }
