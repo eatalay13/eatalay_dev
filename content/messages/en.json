@@ -8,7 +8,32 @@
         "linkedIn": "LinkedIn"
     },
     "Home": {
-        "welcome": "Welcome"
+        "welcome": "Welcome",
+        "availability": "Available for Freelance Projects",
+        "hello": "Hello, I'm",
+        "iAm": "Emrah Atalay",
+        "introduction": "A Full-Stack developer with 10+ years of experience creating user-friendly and elegant web applications that solve complex problems.",
+        "viewProjects": "View My Projects",
+        "contactMe": "Contact Me",
+        "skills": "My Expertise",
+        "skillsDescription": "I provide end-to-end solutions with modern development tools and technologies.",
+        "frontend": "Frontend Development",
+        "frontendDescription": "Expertise in building responsive, accessible, and high-performance user interfaces.",
+        "backend": "Backend Development",
+        "backendDescription": "Scalable APIs, database design, and server-side logic development.",
+        "devops": "DevOps Practices",
+        "devopsDescription": "Optimizing software delivery processes with CI/CD, containerization, and cloud services.",
+        "featuredProjects": "Featured Projects",
+        "projectsDescription": "Some of my recent work. Visit the full projects page for more.",
+        "project1Title": "E-Commerce Dashboard",
+        "project1Description": "A modern e-commerce management panel with advanced analytics and inventory management.",
+        "project2Title": "Social Media Platform",
+        "project2Description": "A comprehensive social platform where users can share content and engage with others.",
+        "viewDetails": "View Details",
+        "viewAllProjects": "View All Projects",
+        "letsWork": "Let's Work Together",
+        "ctaDescription": "Starting a new project? Need a developer to contribute to your team? Reach out and let's discuss what we can accomplish.",
+        "getInTouch": "Get in Touch"
     },
     "Languages": {
         "tr": "Turkish",

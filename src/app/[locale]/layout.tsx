@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/index";
 import Navbar from "@/components/Navbar/index";
 import { routing } from "@/i18n/routing";
 import "@/styles/globals.css";
@@ -51,14 +52,25 @@ async function RootLayout({ children }: RootLayoutProps) {
 
   if (!hasLocale(routing.locales, locale)) notFound();
 
+  // Get messages for client-side translations
+  let messages;
+  try {
+    messages = (await import(`../../../content/messages/${locale}.json`))
+      .default;
+  } catch (error) {
+    console.error(`Error loading messages for locale: ${locale}`, error);
+    notFound();
+  }
+
   return (
-    <html lang={locale} dir="ltr">
+    <html lang={locale} dir="ltr" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
       >
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

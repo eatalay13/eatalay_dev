@@ -8,7 +8,32 @@
         "linkedIn": "LinkedIn"
     },
     "Home": {
-        "welcome": "Hoş geldiniz"
+        "welcome": "Hoş geldiniz",
+        "availability": "Freelance Projeler İçin Uygun",
+        "hello": "Merhaba, ben",
+        "iAm": "Emrah Atalay",
+        "introduction": "Full-Stack yazılım geliştirici olarak 10+ yıllık deneyimle karmaşık sorunları çözen, kullanıcı dostu ve şık web uygulamaları geliştiriyorum.",
+        "viewProjects": "Projelerimi İncele",
+        "contactMe": "İletişime Geç",
+        "skills": "Uzmanlık Alanları",
+        "skillsDescription": "Modern yazılım geliştirme araçları ve teknolojileri ile end-to-end çözümler sunuyorum.",
+        "frontend": "Frontend Geliştirme",
+        "frontendDescription": "Duyarlı, erişilebilir ve performansı yüksek kullanıcı arayüzleri oluşturma konusunda uzmanlık.",
+        "backend": "Backend Geliştirme",
+        "backendDescription": "Ölçeklenebilir API'ler, veritabanı tasarımı ve sunucu tarafı mantığı geliştirme.",
+        "devops": "DevOps Süreçleri",
+        "devopsDescription": "CI/CD, konteynerizasyon ve bulut hizmetleri ile yazılım dağıtım süreçlerini optimize etme.",
+        "featuredProjects": "Öne Çıkan Projeler",
+        "projectsDescription": "En son çalıştığım projelerden bazıları. Daha fazlası için projelerin tamamı sayfasını ziyaret edin.",
+        "project1Title": "E-Ticaret Dashboard",
+        "project1Description": "Gelişmiş analitikler ve envanter yönetimi sunan modern bir e-ticaret yönetim paneli.",
+        "project2Title": "Sosyal Medya Platformu",
+        "project2Description": "Kullanıcıların içerik paylaşabildiği ve etkileşime girebildiği kapsamlı bir sosyal platform.",
+        "viewDetails": "Detayları Gör",
+        "viewAllProjects": "Tüm Projeleri Gör",
+        "letsWork": "Birlikte Çalışalım",
+        "ctaDescription": "Yeni bir proje mi başlatıyorsunuz? Ekibinize katkı sağlayabilecek bir yazılım geliştiriciye mi ihtiyacınız var? Bana ulaşın ve neler yapabileceğimizi konuşalım.",
+        "getInTouch": "İletişime Geç"
     },
     "Languages": {
         "tr": "Türkçe",
