@@ -1,371 +1,558 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaLinkedin } from "react-icons/fa";
-
 import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
 import {
-  HiOutlineCode,
-  HiOutlineDesktopComputer,
-  HiOutlineLightBulb,
-} from "react-icons/hi";
+  TbArrowRight,
+  TbBrain,
+  TbBrandGithub,
+  TbBrandLinkedin,
+  TbCode,
+  TbDatabase,
+  TbDeviceDesktop,
+} from "react-icons/tb";
 
+// Ana container
 function HomeIndexContainer() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/70 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-500"></div>
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"></div>
+      <HeroSection />
+      <AboutSection />
+      <SkillsSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <ContactCTA />
+    </>
+  );
+}
 
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            <div className="relative mb-8 group">
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 opacity-70 blur-md group-hover:opacity-100 transition duration-1000"></div>
-              <div className="relative rounded-full p-1 bg-white dark:bg-gray-950">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/30194127"
-                  priority
-                  width={400}
-                  height={400}
-                  alt="Avatar"
-                  className="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover"
-                />
-              </div>
+// Hero Section
+const HeroSection = () => {
+  return (
+    <section className="py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900 -z-10"></div>
+
+      {/* Nokta Deseni */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwwLDAsMC4wNSkiLz48L3N2Zz4=')] dark:bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] bg-[length:20px_20px] -z-10"></div>
+
+      <div className="container px-4 mx-auto max-w-6xl">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Sol Taraf - Metin */}
+          <motion.div
+            className="lg:w-1/2 text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/30 text-teal-500 dark:text-teal-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400 mr-2"></span>
+              Full Stack Developer
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white transition-colors">
-              <span className="inline-block animate-fadeIn">Merhaba, </span>
-              <span className="inline-block animate-fadeIn animation-delay-300">
-                ben &nbsp;
-              </span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 inline-block animate-fadeIn animation-delay-600">
-                Emrah Atalay
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              Merhaba, ben{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-teal-500">
+                  Emrah Atalay
+                </span>
+                <span className="absolute -bottom-1.5 left-0 right-0 h-2 bg-teal-500/10 -z-0"></span>
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto transition-colors animate-fadeIn animation-delay-900">
-              Full Stack Developer olarak modern web teknolojileri ile yenilikçi
-              çözümler geliştiriyorum.
+
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Modern teknolojiler kullanarak kullanıcı odaklı dijital deneyimler
+              tasarlıyor ve geliştiriyorum.
             </p>
-            <div className="flex gap-4 mb-12 animate-fadeIn animation-delay-1200">
+
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link
-                href="/iletisim"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20"
+                href="/contact"
+                className="px-6 py-3 bg-teal-500 hover:bg-teal-600 dark:bg-teal-500 dark:hover:bg-teal-600 text-white font-medium rounded-lg inline-flex items-center transition-all"
               >
                 İletişime Geç
+                <TbArrowRight className="ml-2" />
               </Link>
               <Link
-                href="/proje"
-                className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-gray-300 dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-400/20 dark:focus:ring-gray-700/20"
+                href="/projects"
+                className="px-6 py-3 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 font-medium rounded-lg inline-flex items-center transition-all"
               >
                 Projelerimi Gör
               </Link>
-            </div>{" "}
-            <div className="flex gap-6 animate-fadeIn animation-delay-1500">
+            </div>
+
+            {/* Sosyal Medya */}
+            <div className="flex items-center space-x-4 mt-10 justify-center lg:justify-start">
+              <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                Takip Et:
+              </span>
               <a
                 href="https://github.com/eatalay13"
                 target="_blank"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
               >
-                <FaGithub className="h-7 w-7" />
+                <TbBrandGithub className="w-5 h-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/emrahatalay"
                 target="_blank"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
               >
-                <FaLinkedin className="h-7 w-7" />
+                <TbBrandLinkedin className="w-5 h-5" />
               </a>
             </div>
-          </div>
-        </div>
-      </section>
+          </motion.div>
 
-      {/* About Section */}
-      <section
-        id="about"
-        className="py-20 bg-white dark:bg-gray-950 transition-colors"
-      >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">
-              Hakkımda
-            </h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 transition-colors">
-                8+ yıllık deneyimle, modern web teknolojileri konusunda
-                uzmanlaşmış bir Full Stack geliştiriciyim. Kullanıcı odaklı,
-                performans açısından optimize edilmiş ve ölçeklenebilir
-                uygulamalar geliştirmeye tutkuyla bağlıyım.
-              </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 transition-colors">
-                Frontend&apos;de React, Next.js ve Tailwind CSS; backend&apos;de
-                ise Node.js, .NET Core ve veritabanı teknolojileri ile
-                çalışıyorum. Sürekli öğrenmeye ve yeni teknolojileri keşfetmeye
-                açığım.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  React
-                </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  Next.js
-                </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  Tailwind CSS
-                </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  TypeScript
-                </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  .NET Core
-                </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  SQL
-                </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm transition-colors">
-                  Docker
-                </span>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-sm transition-colors hover:shadow-md duration-300 group">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg inline-block mb-4 transition-colors">
-                    <HiOutlineCode className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">
-                    Web Geliştirme
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 transition-colors">
-                    Modern ve performanslı web uygulamaları geliştiriyorum.
-                  </p>
-                </div>
-                <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-sm transition-colors hover:shadow-md duration-300 group">
-                  <div className="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-lg inline-block mb-4 transition-colors">
-                    <HiOutlineDesktopComputer className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">
-                    Mimari Tasarım
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 transition-colors">
-                    Ölçeklenebilir ve sürdürülebilir yazılım mimarileri
-                    tasarlıyorum.
-                  </p>
-                </div>
-                <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-sm transition-colors hover:shadow-md duration-300 group md:col-span-2">
-                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg inline-block mb-4 transition-colors">
-                    <HiOutlineLightBulb className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">
-                    Problem Çözme
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 transition-colors">
-                    Karmaşık problem senaryolarına yaratıcı çözümler buluyorum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section
-        id="projects"
-        className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors"
-      >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">
-              Projelerim
-            </h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto transition-colors">
-              Kendimi geliştirmek ve yeni teknolojileri öğrenmek için yaptığım
-              projelerden bazıları
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/30194127"
-                  width={400}
-                  height={400}
-                  alt="Proje 1"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">
-                  E-Ticaret Platformu
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 transition-colors">
-                  Next.js, Tailwind CSS ve Stripe ile geliştirilen modern bir
-                  e-ticaret platformu. Hızlı sayfa yüklemeleri ve SEO dostu
-                  yapısıyla öne çıkıyor.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    Next.js
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    Tailwind
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    Stripe
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <a
-                    href="#"
-                    className="text-blue-600 dark:text-blue-400 font-medium transition-colors hover:text-blue-700 dark:hover:text-blue-300"
-                  >
-                    Demo
-                  </a>
-                  <a
-                    href="#"
-                    className="text-blue-600 dark:text-blue-400 font-medium transition-colors hover:text-blue-700 dark:hover:text-blue-300"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/30194127"
-                  priority
-                  width={400}
-                  height={400}
-                  alt="Proje 2"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">
-                  Blog & CMS
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 transition-colors">
-                  Contentful CMS ve Next.js ile geliştirilmiş, içerik yönetimini
-                  kolaylaştıran modern blog platformu.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    React
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    Next.js
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    Contentful
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <a
-                    href="#"
-                    className="text-blue-600 dark:text-blue-400 font-medium transition-colors hover:text-blue-700 dark:hover:text-blue-300"
-                  >
-                    Demo
-                  </a>
-                  <a
-                    href="#"
-                    className="text-blue-600 dark:text-blue-400 font-medium transition-colors hover:text-blue-700 dark:hover:text-blue-300"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <Image
-                  src="https://avatars.githubusercontent.com/u/30194127"
-                  priority
-                  width={400}
-                  height={400}
-                  alt="Proje 3"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors">
-                  Görev Yönetim Uygulaması
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 transition-colors">
-                  React, TypeScript ve .NET Core ile gerçekleştirilen, gerçek
-                  zamanlı güncellemeler sunan görev yönetim uygulaması.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    React
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    TypeScript
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 rounded transition-colors">
-                    .NET Core
-                  </span>
-                </div>
-                <div className="flex justify-between">
-                  <a
-                    href="#"
-                    className="text-blue-600 dark:text-blue-400 font-medium transition-colors hover:text-blue-700 dark:hover:text-blue-300"
-                  >
-                    Demo
-                  </a>
-                  <a
-                    href="#"
-                    className="text-blue-600 dark:text-blue-400 font-medium transition-colors hover:text-blue-700 dark:hover:text-blue-300"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/proje"
-              className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-lg font-medium transition-colors hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white"
-            >
-              Tüm Projeleri Görüntüle
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section - Removed and moved to its own page */}
-      <section className="py-20 bg-white dark:bg-gray-950 transition-colors">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">
-            Benimle İletişime Geçmek İster misiniz?
-          </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto transition-colors">
-            Projeleriniz veya işbirliği fırsatları hakkında konuşmak için
-            iletişim sayfamı ziyaret edin.
-          </p>
-          <Link
-            href="/iletisim"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium transition duration-300 hover:bg-blue-700 focus:ring-4 focus:ring-blue-500/20"
+          {/* Sağ Taraf - Avatar */}
+          <motion.div
+            className="lg:w-1/2 flex justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            İletişim Sayfasına Git
+            <div className="relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full bg-gradient-to-r from-teal-300 to-teal-100 dark:from-teal-900 dark:to-teal-700 blur-2xl opacity-20 -z-10"></div>
+              <div className="relative rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-xl w-56 h-56 md:w-72 md:h-72">
+                <Image
+                  src="https://avatars.githubusercontent.com/u/30194127"
+                  alt="Emrah Atalay"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 224px, 288px"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute top-5 -right-5 animate-pulse">
+                <div className="flex items-center gap-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <TbCode className="text-teal-500" />
+                  <span>Yazılım Geliştirici</span>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-3 -left-3">
+                <div className="flex items-center gap-2 px-3 py-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <span>8+ Yıl Deneyim</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// About Section
+const AboutSection = () => {
+  return (
+    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+      <div className="container px-4 mx-auto max-w-6xl">
+        <SectionHeader
+          title="Hakkımda"
+          subtitle="Kendim ve çalışmalarım hakkında daha fazla bilgi edinebilirsiniz"
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+          <div className="space-y-6">
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              8+ yıldır modern web teknolojileri alanında çalışan bir Full Stack
+              geliştiriciyim. Frontend tarafında{" "}
+              <span className="text-teal-500 font-medium">React</span>,{" "}
+              <span className="text-teal-500 font-medium">Next.js</span> ve{" "}
+              <span className="text-teal-500 font-medium">TypeScript</span>;
+              Backend tarafında ise{" "}
+              <span className="text-teal-500 font-medium">.NET Core</span>,{" "}
+              <span className="text-teal-500 font-medium">Node.js</span> ve
+              çeşitli veritabanı teknolojileri kullanıyorum.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Kullanıcı deneyimini ön planda tutan, performans ve
+              ölçeklenebilirlik konularında optimize edilmiş uygulamalar
+              geliştirmeye odaklanıyorum. Sürekli öğrenmeyi ve yeni
+              teknolojileri keşfetmeyi seviyorum.
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-4">
+              {[
+                "React",
+                "Next.js",
+                "TypeScript",
+                ".NET Core",
+                "Node.js",
+                "SQL",
+                "NoSQL",
+                "Docker",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <InfoCard
+                icon={<TbDeviceDesktop className="w-5 h-5" />}
+                title="Web Geliştirme"
+                description="Frontend ve backend teknolojileri ile kapsamlı web uygulamaları"
+              />
+              <InfoCard
+                icon={<TbDatabase className="w-5 h-5" />}
+                title="Veritabanı Tasarımı"
+                description="Verimli ve ölçeklenebilir veritabanı mimarileri"
+              />
+              <InfoCard
+                icon={<TbCode className="w-5 h-5" />}
+                title="API Geliştirme"
+                description="RESTful ve GraphQL API çözümleri"
+              />
+              <InfoCard
+                icon={<TbBrain className="w-5 h-5" />}
+                title="Problem Çözme"
+                description="Karmaşık sorunlara etkin ve yaratıcı çözümler"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Skills Section
+const SkillsSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const skills = [
+    {
+      name: "Frontend",
+      items: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+      level: 90,
+    },
+    {
+      name: "Backend",
+      items: [".NET Core", "Node.js", "Express", "RESTful API"],
+      level: 85,
+    },
+    {
+      name: "Veritabanı",
+      items: ["SQL Server", "MongoDB", "PostgreSQL", "Redis"],
+      level: 80,
+    },
+    { name: "DevOps", items: ["Git", "Docker", "CI/CD", "Azure"], level: 75 },
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-950">
+      <div className="container px-4 mx-auto max-w-6xl">
+        <SectionHeader
+          title="Yeteneklerim"
+          subtitle="Uzmanlaştığım ve sürekli geliştirdiğim teknolojiler"
+        />
+
+        <div
+          ref={ref}
+          className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12"
+        >
+          {skills.map((skill, index) => (
+            <div key={skill.name} className="space-y-2">
+              <div className="flex justify-between items-center">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                  {skill.name}
+                </h3>
+                <span className="text-sm font-medium text-teal-500">
+                  {skill.level}%
+                </span>
+              </div>
+
+              <div className="h-2 w-full bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-teal-500 rounded-full transition-all duration-1000 ease-out"
+                  style={{
+                    width: isVisible ? `${skill.level}%` : "0%",
+                    transitionDelay: `${index * 150}ms`,
+                  }}
+                ></div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-3">
+                {skill.items.map((item) => (
+                  <span
+                    key={item}
+                    className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Services Section
+const ServicesSection = () => {
+  const services = [
+    {
+      icon: <TbCode className="w-6 h-6" />,
+      title: "Web Geliştirme",
+      description:
+        "SEO dostu, hızlı ve kullanımı kolay web siteleri ve uygulamalar.",
+    },
+    {
+      icon: <TbDeviceDesktop className="w-6 h-6" />,
+      title: "Responsive Tasarım",
+      description: "Tüm cihazlarda sorunsuz çalışan kullanıcı arayüzleri.",
+    },
+    {
+      icon: <TbDatabase className="w-6 h-6" />,
+      title: "Backend Geliştirme",
+      description:
+        "Güvenli, ölçeklenebilir ve performansı yüksek backend sistemleri.",
+    },
+    {
+      icon: <TbBrain className="w-6 h-6" />,
+      title: "Yazılım Danışmanlığı",
+      description: "En uygun teknolojiler ve yöntemler için uzman tavsiyesi.",
+    },
+  ];
+
+  return (
+    <section id="services" className="py-20 bg-white dark:bg-gray-900">
+      <div className="container px-4 mx-auto max-w-6xl">
+        <SectionHeader
+          title="Hizmetlerim"
+          subtitle="Müşterilerime sunduğum profesyonel çözümler"
+        />
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-md transition-all"
+            >
+              <div className="w-12 h-12 bg-teal-50 dark:bg-teal-900/30 text-teal-500 rounded-lg flex items-center justify-center mb-4">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                {service.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Projects Section
+const ProjectsSection = () => {
+  const projects = [
+    {
+      title: "E-Ticaret Platformu",
+      description:
+        "Modern ve kullanıcı dostu bir alışveriş deneyimi sunan e-ticaret web uygulaması.",
+      image: "https://avatars.githubusercontent.com/u/30194127",
+      tags: ["Next.js", "Tailwind CSS", "Stripe"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Blog Sistemi",
+      description:
+        "SEO odaklı, hızlı ve kullanımı kolay bir içerik yönetim sistemi.",
+      image: "https://avatars.githubusercontent.com/u/30194127",
+      tags: ["React", "Node.js", "MongoDB"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Proje Yönetim Uygulaması",
+      description:
+        "Ekiplerin iş akışını ve görevleri takip edebilecekleri kapsamlı yönetim aracı.",
+      image: "https://avatars.githubusercontent.com/u/30194127",
+      tags: [".NET Core", "React", "SQL Server"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-950">
+      <div className="container px-4 mx-auto max-w-6xl">
+        <SectionHeader
+          title="Projelerim"
+          subtitle="En son tamamladığım bazı çalışmalar"
+        />
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex justify-between">
+                  <a
+                    href={project.demoUrl}
+                    className="text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 font-medium text-sm"
+                  >
+                    Demo
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    className="text-teal-500 hover:text-teal-600 dark:hover:text-teal-400 font-medium text-sm"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center px-5 py-2 text-sm font-medium text-teal-500 hover:text-teal-600 dark:hover:text-teal-400"
+          >
+            Tüm Projeleri Gör
+            <TbArrowRight className="ml-1" />
           </Link>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
-}
+};
+
+// Contact CTA Section
+const ContactCTA = () => {
+  return (
+    <section className="py-20 bg-white dark:bg-gray-900">
+      <div className="container px-4 mx-auto max-w-6xl">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Projelerinizi Hayata Geçirelim
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Fikirlerinizi dijital dünyaya taşımak veya mevcut projelerinizi
+            geliştirmek için benimle iletişime geçin. Modern teknolojilerle,
+            ihtiyaçlarınıza özel çözümler sunuyorum.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-lg transition-colors"
+          >
+            İletişime Geç
+            <TbArrowRight className="ml-2" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Ortak Bileşenler
+const SectionHeader = ({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) => (
+  <div className="text-center max-w-3xl mx-auto">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+      {title}
+    </h2>
+    <div className="h-1 w-16 bg-teal-500 mx-auto rounded-full mb-4"></div>
+    <p className="text-gray-600 dark:text-gray-400">{subtitle}</p>
+  </div>
+);
+
+const InfoCard = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
+  <div className="p-5 bg-gray-50 dark:bg-gray-800 rounded-lg">
+    <div className="w-10 h-10 bg-teal-50 dark:bg-teal-900/30 text-teal-500 rounded-lg flex items-center justify-center mb-3">
+      {icon}
+    </div>
+    <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+      {title}
+    </h3>
+    <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+  </div>
+);
 
 export default HomeIndexContainer;

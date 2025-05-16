@@ -1,6 +1,5 @@
-import Footer from "@/components/Footer";
-import PalestineBanner from "@/components/layout/PalestineBanner";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 type PublicLayoutProps = {
   children: React.ReactNode;
@@ -8,11 +7,10 @@ type PublicLayoutProps = {
 
 export default function PublicLayout({ children }: PublicLayoutProps) {
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950">
       <Navbar />
-      <main className="min-h-screen">{children}</main>
+      <main className="flex-grow pt-16">{children}</main>
       <Footer />
-      <PalestineBanner />
-    </>
+    </div>
   );
 }
