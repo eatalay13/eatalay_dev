@@ -1,4 +1,12 @@
 {
+    "Navigation": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımda",
+        "projects": "Projeler",
+        "contact": "İletişim",
+        "gitHub": "GitHub",
+        "linkedIn": "LinkedIn"
+    },
     "Home": {
         "welcome": "Hoş geldiniz"
     },
