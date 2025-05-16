@@ -37,7 +37,7 @@ const Navbar = () => {
       <header
         className={`fixed left-1/2 -translate-x-1/2 z-50 max-w-6xl transition-all duration-500 container rounded-lg ${
           scrollY > 10
-            ? "py-4 top-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm"
+            ? "py-4 top-8 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-lg shadow-sm"
             : "py-5 top-0"
         }`}
       >
@@ -47,7 +47,7 @@ const Navbar = () => {
               <div className="flex items-center justify-center w-9 h-9 rounded-md bg-teal-500 text-white mr-3 transition-transform duration-300 group-hover:rotate-12">
                 <TbCode className="w-5 h-5" />
               </div>
-              <span className="text-xl font-medium text-gray-900 dark:text-white transition-colors">
+              <span className="text-xl font-medium text-zinc-900 dark:text-white transition-colors">
                 Emrah <span className="font-bold text-teal-500">Atalay</span>
               </span>
             </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden flex items-center justify-center w-10 h-10 text-gray-700 dark:text-gray-300 focus:outline-none"
+              className="md:hidden flex items-center justify-center w-10 h-10 text-zinc-700 dark:text-zinc-300 focus:outline-none"
               aria-label="Menüyü aç/kapat"
             >
               {isMenuOpen ? (

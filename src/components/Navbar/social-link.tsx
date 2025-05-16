@@ -14,7 +14,7 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center w-9 h-9 text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+      className="flex items-center justify-center w-9 h-9 text-zinc-700 dark:text-zinc-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
       aria-label={label}
     >
       {icon}

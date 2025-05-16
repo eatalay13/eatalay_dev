@@ -62,7 +62,7 @@ export default function LocaleSwitcher() {
     return (
       <div>
         <button
-          className="flex items-center space-x-1 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/20 transition-colors"
+          className="flex items-center space-x-1 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/20 transition-colors"
           disabled
         >
           <Image
@@ -82,7 +82,7 @@ export default function LocaleSwitcher() {
   return (
     <div className="relative ml-4" ref={dropdownRef}>
       <button
-        className="flex items-center space-x-1 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/20 transition-colors"
+        className="flex items-center space-x-1 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/20 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -107,8 +107,8 @@ export default function LocaleSwitcher() {
                 onClick={() => handleLocaleChange(l.code)}
                 className={`flex items-center w-full px-4 py-2 text-sm ${
                   l.code === locale
-                    ? "bg-gray-100 text-gray-900 font-medium"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-zinc-100 text-zinc-900 font-medium"
+                    : "text-zinc-700 hover:bg-zinc-100"
                 }`}
               >
                 <Image

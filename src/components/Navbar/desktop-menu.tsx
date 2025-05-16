@@ -15,7 +15,7 @@ function DesktopMenu() {
         <NavLink href="/contact">{t("contact")}</NavLink>
       </div>
 
-      <div className="flex items-center space-x-3 border-l border-gray-200 dark:border-gray-700 pl-6">
+      <div className="flex items-center space-x-3 border-l border-zinc-200 dark:border-zinc-700 pl-6">
         <SocialLink
           href="https://github.com/eatalay13"
           icon={<FiGithub className="w-5 h-5" />}
