@@ -6,27 +6,34 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function Footer() {
   const t = useTranslations("Navigation");
+  const f = useTranslations("Footer");
 
   const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-white dark:bg-zinc-800 border-t border-zinc-200 dark:border-zinc-700 py-12">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-4">
+    <footer className="relative py-12 overflow-hidden backdrop-blur-md">
+      {/* Modern gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 via-purple-500/10 to-blue-600/20 dark:from-teal-700/20 dark:via-purple-800/10 dark:to-blue-900/20 -z-10"></div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>
+      <div className="absolute -top-24 -left-24 w-64 h-64 bg-teal-500/10 dark:bg-teal-700/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-purple-500/10 dark:bg-purple-700/10 rounded-full filter blur-3xl"></div>
+
+      <div className="container mx-auto max-w-5xl px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="md:col-span-5">
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
               Emrah Atalay
-            </h3>
-            <p className="text-zinc-600 dark:text-zinc-300 mb-4 max-w-md">
-              Full-Stack Developer, passionate about creating efficient and
-              elegant solutions for web applications.
+            </h3>{" "}
+            <p className="text-zinc-600 dark:text-zinc-300 mb-4 max-w-md text-sm">
+              {f("fullStackDeveloper")}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-5 mt-4">
               <a
                 href="https://github.com/eatalay13"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-colors"
+                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-all hover:scale-110"
                 aria-label="GitHub"
               >
                 <FiGithub className="h-5 w-5" />
@@ -35,14 +42,14 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/emrahatalay"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-colors"
+                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-all hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:info@emrahatalay.com"
-                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-colors"
+                className="text-zinc-500 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400 transition-all hover:scale-110"
                 aria-label="Email"
               >
                 <FiMail className="h-5 w-5" />
@@ -50,11 +57,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">
-              Links
+          <div className="md:col-span-3 md:ml-auto">
+            {" "}
+            <h4 className="text-xs font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-3">
+              {f("links")}
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   href="/"
@@ -90,13 +98,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-4">
-              Contact
+          <div className="md:col-span-3">
+            {" "}
+            <h4 className="text-xs font-semibold text-zinc-900 dark:text-white uppercase tracking-wider mb-3">
+              {f("contactHeading")}
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
+              {" "}
               <li className="text-zinc-600 dark:text-zinc-300">
-                İstanbul, Turkey
+                {f("location")}
               </li>
               <li>
                 <a
@@ -110,12 +120,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-zinc-200 dark:border-zinc-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm">
-            &copy; {currentYear} Emrah Atalay. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-zinc-200/30 dark:border-zinc-700/30 flex flex-col md:flex-row justify-between items-center">
+          {" "}
+          <p className="text-zinc-500 dark:text-zinc-400 text-xs">
+            &copy; {currentYear} Emrah Atalay. {f("copyright")}
           </p>
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2 md:mt-0">
-            Built with Next.js and TailwindCSS
+          <p className="text-zinc-500 dark:text-zinc-400 text-xs mt-2 md:mt-0">
+            {f("builtWith")}
           </p>
         </div>
       </div>
