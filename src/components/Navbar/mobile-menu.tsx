@@ -1,6 +1,6 @@
-import { GitBranchPlus, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
 import LocaleSwitcher from "./locale-switcher";
 import SocialLink from "./social-link";
 
@@ -36,12 +36,12 @@ function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
           <div className="flex items-center space-x-4 pt-3 border-t border-gray-200 dark:border-gray-800 mt-2">
             <SocialLink
               href="https://github.com/eatalay13"
-              icon={<GitBranchPlus className="w-5 h-5" />}
+              icon={<FiGithub className="w-5 h-5" />}
               label={t("gitHub")}
             />
             <SocialLink
               href="https://www.linkedin.com/in/emrahatalay"
-              icon={<Linkedin className="w-5 h-5" />}
+              icon={<FiLinkedin className="w-5 h-5" />}
               label={t("linkedIn")}
             />
             <div className="pl-3 ml-auto">

@@ -1,8 +1,9 @@
 "use client";
 
-import { Code, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+import { TbCode } from "react-icons/tb";
 import DesktopMenu from "./desktop-menu";
 import MobileMenu from "./mobile-menu";
 
@@ -34,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 container rounded-lg ${
+        className={`fixed left-1/2 -translate-x-1/2 z-50 max-w-6xl transition-all duration-500 container rounded-lg ${
           scrollY > 10
             ? "py-4 top-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm"
             : "py-5 top-0"
@@ -44,7 +45,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center group">
               <div className="flex items-center justify-center w-9 h-9 rounded-md bg-teal-500 text-white mr-3 transition-transform duration-300 group-hover:rotate-12">
-                <Code className="w-5 h-5" />
+                <TbCode className="w-5 h-5" />
               </div>
               <span className="text-xl font-medium text-gray-900 dark:text-white transition-colors">
                 Emrah <span className="font-bold text-teal-500">Atalay</span>
@@ -61,9 +62,9 @@ const Navbar = () => {
               aria-label="Menüyü aç/kapat"
             >
               {isMenuOpen ? (
-                <X className="w-6 h-6" />
+                <FiX className="w-6 h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <FiMenu className="w-6 h-6" />
               )}
             </button>
           </div>

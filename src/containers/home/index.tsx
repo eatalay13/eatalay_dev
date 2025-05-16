@@ -1,7 +1,9 @@
-import { ArrowRight, Code, Github, Laptop, Linkedin, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { CiLaptop } from "react-icons/ci";
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { TbCode } from "react-icons/tb";
 
 function HomeContainer() {
   const t = useTranslations("Home");
@@ -30,7 +32,7 @@ function HomeContainer() {
               className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-teal-500 rounded-lg hover:bg-teal-600 transition-colors"
             >
               {t("viewProjects")}
-              <ArrowRight className="w-4 h-4" />
+              <FiArrowRight className="w-4 h-4" />
             </Link>
 
             <Link
@@ -49,7 +51,7 @@ function HomeContainer() {
               className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors"
               aria-label="GitHub"
             >
-              <Github className="w-5 h-5" />
+              <FiGithub className="w-5 h-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/emrahatalay"
@@ -58,14 +60,14 @@ function HomeContainer() {
               className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5" />
+              <FiLinkedin className="w-5 h-5" />
             </a>
             <a
               href="mailto:info@emrahatalay.com"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white hover:bg-teal-100 dark:hover:bg-teal-900/50 transition-colors"
               aria-label="Email"
             >
-              <Mail className="w-5 h-5" />
+              <FiMail className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -97,7 +99,7 @@ function HomeContainer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mb-6">
-              <Code className="w-6 h-6" />
+              <TbCode className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
               {t("frontend")}
@@ -119,7 +121,7 @@ function HomeContainer() {
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mb-6">
-              <Laptop className="w-6 h-6" />
+              <CiLaptop className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
               {t("backend")}
@@ -141,7 +143,7 @@ function HomeContainer() {
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
             <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mb-6">
-              <Laptop className="w-6 h-6" />
+              <CiLaptop className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
               {t("devops")}
@@ -232,7 +234,7 @@ function HomeContainer() {
             className="inline-flex items-center gap-2 px-6 py-3 font-medium text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 rounded-lg hover:bg-teal-100 dark:hover:bg-teal-900/30 transition-colors"
           >
             {t("viewAllProjects")}
-            <ArrowRight className="w-4 h-4" />
+            <FiArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -248,7 +250,7 @@ function HomeContainer() {
           className="inline-flex items-center gap-2 px-8 py-4 font-medium text-teal-700 bg-white rounded-lg hover:bg-teal-50 transition-colors"
         >
           {t("getInTouch")}
-          <ArrowRight className="w-4 h-4" />
+          <FiArrowRight className="w-4 h-4" />
         </Link>
       </section>
     </div>

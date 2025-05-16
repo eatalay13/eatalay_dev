@@ -1,8 +1,8 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function Footer() {
   const t = useTranslations("Navigation");
@@ -29,7 +29,7 @@ export default function Footer() {
                 className="text-gray-500 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400 transition-colors"
                 aria-label="GitHub"
               >
-                <Github className="h-5 w-5" />
+                <FiGithub className="h-5 w-5" />
               </a>
               <a
                 href="https://www.linkedin.com/in/emrahatalay"
@@ -38,14 +38,14 @@ export default function Footer() {
                 className="text-gray-500 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <FiLinkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:info@emrahatalay.com"
                 className="text-gray-500 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-400 transition-colors"
                 aria-label="Email"
               >
-                <Mail className="h-5 w-5" />
+                <FiMail className="h-5 w-5" />
               </a>
             </div>
           </div>

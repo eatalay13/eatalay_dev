@@ -1,10 +1,10 @@
 "use client";
 
-import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { FiGlobe } from "react-icons/fi";
 
 const locales = [
   { code: "en", name: "English", flag: "/flags/us.svg" },
@@ -73,7 +73,7 @@ export default function LocaleSwitcher() {
             className="rounded-full"
           />
           <span className="hidden sm:inline ml-2">{currentLocale.name}</span>
-          <Globe className="h-4 w-4 ml-1" />
+          <FiGlobe className="h-4 w-4 ml-1" />
         </button>
       </div>
     );
@@ -95,7 +95,7 @@ export default function LocaleSwitcher() {
           className="rounded-full"
         />
         <span className="hidden sm:inline ml-2">{currentLocale.name}</span>
-        <Globe className="h-4 w-4 ml-1" />
+        <FiGlobe className="h-4 w-4 ml-1" />
       </button>
 
       {isOpen && (
