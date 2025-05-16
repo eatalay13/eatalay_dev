@@ -19,10 +19,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 container rounded-lg ${
         scrollY > 10
-          ? "py-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm"
-          : "py-5"
+          ? "py-4 top-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm"
+          : "py-5 top-0"
       }`}
     >
       <div className="container px-4 mx-auto max-w-6xl">
