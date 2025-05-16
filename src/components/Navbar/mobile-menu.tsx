@@ -13,10 +13,8 @@ function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
   const t = useTranslations("Navigation");
   return (
     <div
-      className={`md:hidden absolute w-full bg-white dark:bg-zinc-900 transition-all duration-300 ease-in-out ${
-        isMenuOpen
-          ? "max-h-72 border-b border-zinc-200 dark:border-zinc-800"
-          : "max-h-0 overflow-hidden"
+      className={`md:hidden absolute w-full backdrop-blur-lg bg-white/80 dark:bg-slate-900/80 border-slate-200/50 dark:border-slate-800/50 transition-all duration-300 ease-in-out ${
+        isMenuOpen ? "max-h-72 border-b shadow-lg" : "max-h-0 overflow-hidden"
       }`}
     >
       <div className="container px-4 py-4 mx-auto max-w-6xl">
@@ -33,7 +31,7 @@ function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
           <MobileNavLink href="/contact" onClick={toggleMenu}>
             {t("contact")}
           </MobileNavLink>
-          <div className="flex items-center space-x-4 pt-3 border-t border-zinc-200 dark:border-zinc-800 mt-2">
+          <div className="flex items-center space-x-4 pt-3 border-t border-slate-200/50 dark:border-slate-700/50 mt-2">
             <SocialLink
               href="https://github.com/eatalay13"
               icon={<FiGithub className="w-5 h-5" />}
@@ -66,7 +64,7 @@ const MobileNavLink = ({
   <Link
     href={href}
     onClick={onClick}
-    className="px-2 py-3 text-base font-medium text-zinc-800 dark:text-zinc-200 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+    className="px-2 py-3 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
   >
     {children}
   </Link>

@@ -75,7 +75,7 @@ export default function LocaleSwitcher() {
     return (
       <div>
         <button
-          className="flex items-center space-x-1 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/20 transition-colors"
+          className="flex items-center space-x-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-white/20 transition-colors shadow-sm"
           disabled
         >
           <Image
@@ -95,7 +95,7 @@ export default function LocaleSwitcher() {
   return (
     <div className="relative ml-4" ref={dropdownRef}>
       <button
-        className="flex items-center space-x-1 rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/20 transition-colors"
+        className="flex items-center space-x-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-700/60 transition-colors shadow-sm"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -111,7 +111,7 @@ export default function LocaleSwitcher() {
         <FiGlobe className="h-4 w-4 ml-1" />
       </button>
       <div
-        className={`absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg shadow-lg focus:outline-none z-10 transition-all duration-200 ease-out transform ${
+        className={`absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl shadow-xl focus:outline-none z-10 transition-all duration-200 ease-out transform border border-slate-200/20 dark:border-slate-700/20 ${
           isOpen
             ? "opacity-100 scale-100 translate-y-0"
             : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -124,8 +124,8 @@ export default function LocaleSwitcher() {
               onClick={() => handleLocaleChange(l.code)}
               className={`flex items-center w-full px-4 py-2 text-sm transition-colors duration-150 ${
                 l.code === locale
-                  ? "bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100 font-medium"
-                  : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                  ? "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium"
+                  : "text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-slate-700/60"
               }`}
             >
               <Image

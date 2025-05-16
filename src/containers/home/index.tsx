@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CiLaptop } from "react-icons/ci";
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { TbCode } from "react-icons/tb";
+import ContactCTA from "./contact-cta";
 
 function HomeContainer() {
   const t = useTranslations("Home");
@@ -11,82 +12,85 @@ function HomeContainer() {
   return (
     <div className="container mx-auto max-w-6xl px-4 py-24 lg:py-32">
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between gap-12 mb-24">
-        <div className="flex-1 space-y-6">
-          {" "}
-          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+      <section className="relative flex flex-col md:flex-row items-center justify-between gap-12 mb-24">
+        {/* Blur efekti ve dekoratif unsurlar */}
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-300/10 dark:bg-blue-600/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-400/10 dark:bg-blue-500/10 rounded-full filter blur-3xl"></div>
+        <div className="flex-1 space-y-6 relative z-10">
+          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100/80 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 backdrop-blur-sm shadow-sm animate-fade-in-up">
             <span>{t("availability")}</span>
-          </div>{" "}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white animate-fade-in-up animate-delay-100">
             {t("hello")} <br />
             <span className="text-blue-700">{t("iAm")}</span>
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl animate-fade-in-up animate-delay-200">
             {t("introduction")}
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <Link
               href="#projects"
-              className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 transition-colors"
+              className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 transition-colors shadow-md hover:shadow-lg"
             >
               {t("viewProjects")}
               <FiArrowRight className="w-4 h-4" />
             </Link>
-
             <Link
               href="/contact"
-              className="flex items-center gap-2 px-6 py-3 font-medium text-slate-700 dark:text-white bg-slate-100 dark:bg-slate-800 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="flex items-center gap-2 px-6 py-3 font-medium text-slate-700 dark:text-white bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-md hover:shadow-lg"
             >
               {t("contactMe")}
             </Link>
           </div>
           <div className="flex items-center gap-4 pt-4">
-            {" "}
             <a
               href="https://github.com/eatalay13"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors shadow-md hover:shadow-lg hover:scale-105 transform duration-300"
               aria-label="GitHub"
             >
               <FiGithub className="w-5 h-5" />
-            </a>{" "}
+            </a>
             <a
               href="https://www.linkedin.com/in/emrahatalay"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors shadow-md hover:shadow-lg hover:scale-105 transform duration-300"
               aria-label="LinkedIn"
             >
               <FiLinkedin className="w-5 h-5" />
-            </a>{" "}
+            </a>
             <a
               href="mailto:info@emrahatalay.com"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors shadow-md hover:shadow-lg hover:scale-105 transform duration-300"
               aria-label="Email"
             >
               <FiMail className="w-5 h-5" />
             </a>
           </div>
         </div>
-
-        <div className="flex-1 flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl">
+        <div className="flex-1 flex justify-center md:justify-end relative z-10">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/90 dark:border-slate-800/90 shadow-2xl backdrop-blur-sm">
+            {/* Dekoratif halkalar */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/30 to-blue-400/30 blur-lg rounded-full"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/30 via-transparent to-blue-700/30 dark:from-blue-400/20 dark:to-blue-700/20"></div>
             <Image
               src="/images/profile.jpg"
               alt="Emrah Atalay"
               fill
-              className="object-cover"
+              className="object-cover relative z-10"
               priority
             />
           </div>
         </div>
       </section>
-
       {/* Skills Section */}
-      <section className="mb-24">
-        <div className="mb-12 text-center">
-          {" "}
+      <section className="mb-24 relative">
+        {/* Dekoratif arka plan elementleri */}
+        <div className="absolute -top-20 right-0 w-72 h-72 bg-blue-300/10 dark:bg-blue-600/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-10 w-60 h-60 bg-blue-400/10 dark:bg-blue-500/10 rounded-full filter blur-3xl"></div>
+        <div className="mb-12 text-center relative z-10">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
             {t("skills")}
           </h2>
@@ -94,67 +98,64 @@ function HomeContainer() {
             {t("skillsDescription")}
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center text-indigo-600 dark:text-indigo-300 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+          <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/20 dark:border-slate-700/20">
+            <div className="w-12 h-12 bg-blue-100/80 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-300 mb-6 shadow-md">
               <TbCode className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
               {t("frontend")}
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-300 mb-4">
+            <p className="text-slate-600 dark:text-slate-300 mb-4">
               {t("frontendDescription")}
             </p>
             <div className="flex flex-wrap gap-2">
               {["React", "Next.js", "TypeScript", "TailwindCSS"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-full"
+                  className="px-3 py-1 text-sm bg-slate-100/80 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 rounded-full shadow-sm backdrop-blur-sm"
                 >
                   {tech}
                 </span>
               ))}
             </div>
           </div>
-
-          <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center text-indigo-600 dark:text-indigo-300 mb-6">
+          <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/20 dark:border-slate-700/20">
+            <div className="w-12 h-12 bg-blue-100/80 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-300 mb-6 shadow-md">
               <CiLaptop className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
               {t("backend")}
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-300 mb-4">
+            <p className="text-slate-600 dark:text-slate-300 mb-4">
               {t("backendDescription")}
             </p>
             <div className="flex flex-wrap gap-2">
               {[".NET Core", "Node.js", "SQL", "NoSQL"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-full"
+                  className="px-3 py-1 text-sm bg-slate-100/80 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 rounded-full shadow-sm backdrop-blur-sm"
                 >
                   {tech}
                 </span>
               ))}
             </div>
           </div>
-
-          <div className="bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center text-indigo-600 dark:text-indigo-300 mb-6">
+          <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/20 dark:border-slate-700/20">
+            <div className="w-12 h-12 bg-blue-100/80 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-300 mb-6 shadow-md">
               <CiLaptop className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
               {t("devops")}
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-300 mb-4">
+            <p className="text-slate-600 dark:text-slate-300 mb-4">
               {t("devopsDescription")}
             </p>
             <div className="flex flex-wrap gap-2">
               {["Docker", "CI/CD", "Azure", "AWS"].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-full"
+                  className="px-3 py-1 text-sm bg-slate-100/80 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 rounded-full shadow-sm backdrop-blur-sm"
                 >
                   {tech}
                 </span>
@@ -163,44 +164,46 @@ function HomeContainer() {
           </div>
         </div>
       </section>
-
       {/* Featured Projects */}
-      <section id="projects" className="mb-24">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-4">
+      <section id="projects" className="mb-24 relative">
+        {/* Dekoratif arka plan elementleri */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-blue-300/10 dark:bg-blue-600/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-10 -left-20 w-60 h-60 bg-blue-400/10 dark:bg-blue-500/10 rounded-full filter blur-3xl"></div>
+        <div className="mb-12 text-center relative z-10">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
             {t("featuredProjects")}
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             {t("projectsDescription")}
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
           {[1, 2].map((project) => (
             <div
               key={project}
-              className="group bg-white dark:bg-zinc-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="group bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-200/20 dark:border-slate-700/20"
             >
-              <div className="relative h-64">
+              <div className="relative h-64 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-blue-400/5 group-hover:opacity-0 transition-opacity duration-300 z-10"></div>
                 <Image
                   src={`/images/project-${project}.jpg`}
                   alt={`Project ${project}`}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                   {t(`project${project}Title`)}
                 </h3>
-                <p className="text-zinc-600 dark:text-zinc-300 mb-4">
+                <p className="text-slate-600 dark:text-slate-300 mb-4">
                   {t(`project${project}Description`)}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {["React", "Node.js", "TailwindCSS"].map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 text-xs bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-full"
+                      className="px-2 py-1 text-xs bg-slate-100/80 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 rounded-full shadow-sm backdrop-blur-sm"
                     >
                       {tech}
                     </span>
@@ -209,13 +212,13 @@ function HomeContainer() {
                 <div className="flex gap-4">
                   <Link
                     href={`/projects/${project}`}
-                    className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+                    className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                   >
                     {t("viewDetails")} →
                   </Link>
                   <a
                     href="#"
-                    className="text-zinc-600 dark:text-zinc-400 font-medium hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors"
+                    className="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-800 dark:hover:text-slate-200 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -226,32 +229,18 @@ function HomeContainer() {
             </div>
           ))}
         </div>
-
         <div className="text-center mt-12">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-6 py-3 font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/30 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 font-medium text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-900/20 backdrop-blur-sm rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors shadow-md hover:shadow-lg"
           >
             {t("viewAllProjects")}
             <FiArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
-
       {/* Contact CTA */}
-      <section className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl p-10 md:p-16 text-center text-white">
-        <h2 className="text-3xl font-bold mb-4">{t("letsWork")}</h2>
-        <p className="text-lg text-indigo-50 max-w-2xl mx-auto mb-8">
-          {t("ctaDescription")}
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 font-medium text-indigo-700 bg-white rounded-lg hover:bg-indigo-50 transition-colors"
-        >
-          {t("getInTouch")}
-          <FiArrowRight className="w-4 h-4" />
-        </Link>
-      </section>
+      <ContactCTA />
     </div>
   );
 }
