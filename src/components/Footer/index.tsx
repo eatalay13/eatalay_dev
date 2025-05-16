@@ -1,5 +1,6 @@
 "use client";
 
+import { corinthia } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
@@ -19,9 +20,12 @@ export default function Footer() {
       <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-blue-400/5 dark:bg-blue-600/10 rounded-full filter blur-3xl"></div>
 
       <div className="container mx-auto max-w-5xl px-6 relative z-10">
+        {" "}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-12">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            <h3
+              className={`${corinthia.className} text-3xl text-slate-900 dark:text-white mb-2 text-shadow-sm`}
+            >
               Emrah Atalay
             </h3>
             <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm">

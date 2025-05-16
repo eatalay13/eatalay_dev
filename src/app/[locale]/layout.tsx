@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar/index";
 import { routing } from "@/i18n/routing";
 import "@/styles/globals.css";
 import { env } from "@/utils/env";
-import { geistMono, geistSans } from "@/utils/fonts";
+import { jetBrainsMono } from "@/utils/fonts";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -65,7 +65,7 @@ async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang={locale} dir="ltr" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}
+        className={`${jetBrainsMono.variable} antialiased bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
