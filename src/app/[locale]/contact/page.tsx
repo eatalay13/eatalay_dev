@@ -1,6 +1,12 @@
 import ContactContainer from "@/containers/contact";
 
-function ContactPage() {
+async function ContactPage() {
+  function simulateLoading() {
+    return new Promise((resolve) => {
+      setTimeout(resolve, 5000);
+    });
+  }
+  await simulateLoading();
   return <ContactContainer />;
 }
 
