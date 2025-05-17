@@ -80,6 +80,7 @@ function HomeContainer() {
               src="/images/profile.jpg"
               alt="Emrah Atalay"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover relative z-10"
               priority
             />

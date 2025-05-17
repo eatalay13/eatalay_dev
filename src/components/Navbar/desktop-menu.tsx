@@ -8,13 +8,13 @@ function DesktopMenu() {
   const t = useTranslations("Navigation");
   return (
     <nav className="hidden md:flex items-center">
-      <div className="flex space-x-1 mr-6">
+      <div className="flex space-x-2 mr-8">
         <NavLink href="/">{t("home")}</NavLink>
         <NavLink href="/#about">{t("about")}</NavLink>
         <NavLink href="/projects">{t("projects")}</NavLink>
         <NavLink href="/contact">{t("contact")}</NavLink>
       </div>
-      <div className="flex items-center space-x-3 border-l border-slate-200/50 dark:border-slate-700/50 pl-6">
+      <div className="flex items-center space-x-4 border-l border-slate-200/50 dark:border-slate-700/50 pl-8">
         <SocialLink
           href="https://github.com/eatalay13"
           icon={<FiGithub className="w-5 h-5" />}

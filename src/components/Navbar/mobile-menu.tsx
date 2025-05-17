@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import LocaleSwitcher from "./locale-switcher";
 import SocialLink from "./social-link";
@@ -60,14 +61,40 @@ const MobileNavLink = ({
   href: string;
   onClick: () => void;
   children: React.ReactNode;
-}) => (
-  <Link
-    href={href}
-    onClick={onClick}
-    className="px-2 py-3 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-  >
-    {children}
-  </Link>
-);
+}) => {
+  const pathname = usePathname();
+
+  // i18n önekini kaldırmak için yoldan locale kısmını çıkarıyoruz
+  const normalizedPath = pathname.split("/").slice(2).join("/");
+  const normalizedHref = href === "/" ? "/" : href.replace(/^\//, "");
+
+  // Anasayfa için özel durum kontrolü
+  const isHome =
+    href === "/" && (pathname === "/" || pathname.split("/").length === 2);
+
+  const isActive =
+    isHome ||
+    pathname === href ||
+    (normalizedHref !== "/" &&
+      (normalizedPath === normalizedHref ||
+        normalizedPath.startsWith(normalizedHref + "/")));
+
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`px-3 py-3 text-base font-medium flex items-center rounded-lg transition-all duration-300 ${
+        isActive
+          ? "bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 text-white shadow-md"
+          : "text-slate-800 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+      }`}
+    >
+      {isActive && (
+        <span className="w-1.5 h-1.5 rounded-full bg-white mr-2 animate-pulse"></span>
+      )}
+      {children}
+    </Link>
+  );
+};
 
 export default MobileMenu;

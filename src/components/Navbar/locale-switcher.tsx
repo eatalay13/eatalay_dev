@@ -1,11 +1,13 @@
 "use client";
 
+import { cn } from "@/utils";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FiGlobe } from "react-icons/fi";
 
+// Sabit verileri bileşen dışına çıkartıyoruz, böylece her render'da yeniden oluşturulmayacak
 const locales = [
   { code: "en", name: "English", flag: "/flags/us.svg" },
   { code: "tr", name: "Türkçe", flag: "/flags/tr.svg" },
@@ -17,15 +19,59 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
   const [mounted, setMounted] = useState<boolean>(false);
 
+  // currentLocale'i memoize ediyoruz, böylece her render'da yeniden hesaplanmayacak
+  const currentLocale = useMemo(
+    () => locales.find((l) => l.code === locale) || locales[0],
+    [locale]
+  );
+
+  // Toggle fonksiyonunu memoize ediyoruz
+  const toggleDropdown = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
+
+  // Dil değiştirme fonksiyonunu memoize ediyoruz, böylece her render'da yeniden oluşturulmayacak
+  const handleLocaleChange = useCallback(
+    (newLocale: string) => {
+      // Pathnames in Next.js locale system are formatted as /{locale}/{path}
+      // We need to determine the rest of the path after the locale
+      const segments = pathname.split("/");
+
+      // Remove the first empty segment and the locale segment
+      segments.splice(0, 2);
+
+      // Create a new pathname with the new locale
+      const restOfPath = segments.join("/");
+      const newPathname = `/${newLocale}${restOfPath ? `/${restOfPath}` : ""}`;
+
+      router.push(newPathname);
+      setIsOpen(false);
+    },
+    [pathname, router]
+  );
+
+  // Dropdown sınıfları için memoize edilmiş dinamik değer
+  const dropdownClasses = useMemo(
+    () =>
+      cn(
+        "absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white/50 dark:bg-slate-800/50",
+        "backdrop-blur-xl shadow-xl focus:outline-none z-10 transition-all duration-200 ease-out transform",
+        "border border-slate-200/20 dark:border-slate-700/20",
+        isOpen
+          ? "opacity-100 scale-100 translate-y-0"
+          : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+      ),
+    [isOpen]
+  );
+
+  // Client tarafında render edilip edilmediğini kontrol ediyoruz
   useEffect(() => {
     setMounted(true);
   }, []);
-  const currentLocale = locales.find((l) => l.code === locale) || locales[0];
 
-  // Handle outside click to close dropdown
+  // Dropdown dışına tıklandığında kapanması için olay dinleyicisi
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -42,7 +88,7 @@ export default function LocaleSwitcher() {
     };
   }, []);
 
-  // Close dropdown with Escape key
+  // Escape tuşu ile dropdown'ı kapatmak için olay dinleyicisi
   useEffect(() => {
     function handleEscapeKey(event: KeyboardEvent) {
       if (event.key === "Escape" && isOpen) {
@@ -55,27 +101,17 @@ export default function LocaleSwitcher() {
       document.removeEventListener("keydown", handleEscapeKey);
     };
   }, [isOpen]);
-  function handleLocaleChange(newLocale: string) {
-    // Pathnames in Next.js locale system are formatted as /{locale}/{path}
-    // We need to determine the rest of the path after the locale
-    const segments = pathname.split("/");
 
-    // Remove the first empty segment and the locale segment
-    segments.splice(0, 2);
-
-    // Create a new pathname with the new locale
-    const restOfPath = segments.join("/");
-    const newPathname = `/${newLocale}${restOfPath ? `/${restOfPath}` : ""}`;
-
-    router.push(newPathname);
-    setIsOpen(false);
-  }
-
+  // Client tarafında render edilene kadar görünüm
   if (!mounted) {
     return (
       <div>
         <button
-          className="flex items-center space-x-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-white/20 transition-colors shadow-sm"
+          className={cn(
+            "flex items-center space-x-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-2",
+            "text-sm font-medium text-slate-700 dark:text-slate-300",
+            "hover:bg-slate-100/60 dark:hover:bg-white/20 transition-colors shadow-sm"
+          )}
           disabled
         >
           <Image
@@ -83,6 +119,7 @@ export default function LocaleSwitcher() {
             alt={currentLocale.name}
             width={20}
             height={20}
+            style={{ height: "auto" }}
             className="rounded-full"
           />
           <span className="hidden sm:inline ml-2">{currentLocale.name}</span>
@@ -95,8 +132,12 @@ export default function LocaleSwitcher() {
   return (
     <div className="relative ml-4" ref={dropdownRef}>
       <button
-        className="flex items-center space-x-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-700/60 transition-colors shadow-sm"
-        onClick={() => setIsOpen(!isOpen)}
+        className={cn(
+          "flex items-center space-x-1 rounded-full bg-white/20 backdrop-blur-sm px-3 py-2",
+          "text-sm font-medium text-slate-700 dark:text-slate-300",
+          "hover:bg-slate-100/60 dark:hover:bg-slate-700/60 transition-colors shadow-sm"
+        )}
+        onClick={toggleDropdown}
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -105,34 +146,31 @@ export default function LocaleSwitcher() {
           alt={currentLocale.name}
           width={20}
           height={20}
+          style={{ height: "auto" }}
           className="rounded-full"
         />
         <span className="hidden sm:inline ml-2">{currentLocale.name}</span>
         <FiGlobe className="h-4 w-4 ml-1" />
       </button>
-      <div
-        className={`absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl shadow-xl focus:outline-none z-10 transition-all duration-200 ease-out transform border border-slate-200/20 dark:border-slate-700/20 ${
-          isOpen
-            ? "opacity-100 scale-100 translate-y-0"
-            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-        }`}
-      >
+      <div className={dropdownClasses}>
         <div className="py-1">
           {locales.map((l) => (
             <button
               key={l.code}
               onClick={() => handleLocaleChange(l.code)}
-              className={`flex items-center w-full px-4 py-2 text-sm transition-colors duration-150 ${
+              className={cn(
+                "flex items-center w-full px-4 py-2 text-sm transition-colors duration-150",
                 l.code === locale
                   ? "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium"
                   : "text-slate-700 dark:text-slate-300 hover:bg-slate-100/80 dark:hover:bg-slate-700/60"
-              }`}
+              )}
             >
               <Image
                 src={l.flag}
                 alt={l.name}
                 width={20}
                 height={20}
+                style={{ height: "auto" }}
                 className="rounded-full mr-2"
               />
               {l.name}

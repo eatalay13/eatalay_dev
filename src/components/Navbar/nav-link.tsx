@@ -1,4 +1,6 @@
+import { cn } from "@/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 type NavLinkProps = {
@@ -7,12 +9,48 @@ type NavLinkProps = {
 };
 
 function NavLink({ href, children }: NavLinkProps) {
+  const pathname = usePathname();
+
+  // i18n önekini kaldırmak için yoldan locale kısmını çıkarıyoruz
+  const normalizedPath = pathname.split("/").slice(2).join("/");
+  const normalizedHref = href === "/" ? "/" : href.replace(/^\//, "");
+
+  // Anasayfa için özel durum kontrolü
+  const isHome =
+    href === "/" && (pathname === "/" || pathname.split("/").length === 2);
+
+  const isActive =
+    isHome ||
+    pathname === href ||
+    (normalizedHref !== "/" &&
+      (normalizedPath === normalizedHref ||
+        normalizedPath.startsWith(normalizedHref + "/")));
+
   return (
     <Link
       href={href}
-      className="px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+      className={cn(
+        "relative px-4 py-2 text-sm font-medium group overflow-hidden rounded-md transition-all duration-300",
+        isActive
+          ? "text-white dark:text-white bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 shadow-md"
+          : "text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+      )}
     >
-      {children}
+      <span className="relative z-10">{children}</span>
+      <span
+        className={cn(
+          "absolute inset-0 transition-all duration-300 ease-out bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 opacity-0 group-hover:opacity-100",
+          isActive
+            ? "opacity-100"
+            : "-translate-y-full group-hover:translate-y-0"
+        )}
+      ></span>
+      <span
+        className={cn(
+          "absolute bottom-0 left-0 h-0.5 w-full bg-blue-600 dark:bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+          isActive ? "opacity-0" : ""
+        )}
+      ></span>
     </Link>
   );
 }
