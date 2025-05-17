@@ -48,7 +48,7 @@ function ScrollProgressBar() {
   }, [updateScrollValues]);
 
   return (
-    <div className="absolute bottom-0.5 left-0 w-full h-[3px] bg-transparent px-1 overflow-hidden rounded-lg">
+    <div className="absolute bottom-0.5 left-0 w-full h-[3px] bg-transparent overflow-hidden rounded-lg">
       <div
         className="h-full bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 transition-all duration-300 ease-out rounded-lg shadow-lg"
         style={{
