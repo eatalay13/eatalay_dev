@@ -64,9 +64,7 @@ async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang={locale} dir="ltr" className="scroll-smooth">
-      <body
-        className={`${jetBrainsMono.variable} antialiased bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}
-      >
+      <body className={`${jetBrainsMono.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}

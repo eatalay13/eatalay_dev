@@ -7,6 +7,29 @@
         "gitHub": "GitHub",
         "linkedIn": "LinkedIn"
     },
+    "Contact": {
+        "title": "İletişime Geçin",
+        "subtitle": "Projeleriniz veya işbirliği fırsatları için bana ulaşın.",
+        "form": {
+            "name": "Adınız",
+            "email": "E-posta Adresiniz",
+            "subject": "Konu",
+            "message": "Mesajınız",
+            "send": "Gönder",
+            "sending": "Gönderiliyor...",
+            "success": "Mesajınız başarıyla gönderildi!",
+            "error": "Mesaj gönderilirken bir hata oluştu."
+        },
+        "contactInfo": {
+            "title": "İletişim Bilgileri",
+            "subtitle": "Aşağıdaki kanallardan benimle iletişime geçebilirsiniz.",
+            "email": "E-posta",
+            "phone": "Telefon",
+            "location": "Konum",
+            "locationValue": "Bitlis, Türkiye",
+            "socialMedia": "Sosyal Medya"
+        }
+    },
     "Footer": {
         "fullStackDeveloper": "Web uygulamaları için verimli ve şık çözümler yaratma konusunda tutkulu bir Full-Stack Geliştirici.",
         "links": "Bağlantılar",
