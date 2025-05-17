@@ -21,6 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       default: t("title"),
       template: `%s • ${t("title")}`,
     },
+    alternates: {
+      canonical: env.SITE_URL,
+      languages: {
+        tr: `${env.SITE_URL}/tr`,
+        en: `${env.SITE_URL}/en`,
+      },
+    },
     description: t("description"),
     openGraph: {
       ...imageData,
@@ -52,20 +59,10 @@ async function RootLayout({ children }: RootLayoutProps) {
 
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  // Get messages for client-side translations
-  let messages;
-  try {
-    messages = (await import(`../../../content/messages/${locale}.json`))
-      .default;
-  } catch (error) {
-    console.error(`Error loading messages for locale: ${locale}`, error);
-    notFound();
-  }
-
   return (
     <html lang={locale} dir="ltr" className="scroll-smooth">
       <body className={`${jetBrainsMono.variable} antialiased`}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale}>
           <Navbar />
           {children}
           <Footer />
