@@ -41,7 +41,12 @@
         "viewAllProjects": "View All Projects",
         "letsWork": "Let's Work Together",
         "ctaDescription": "Starting a new project? Need a developer to contribute to your team? Reach out and let's discuss what we can accomplish.",
-        "getInTouch": "Get in Touch"
+        "getInTouch": "Get in Touch",
+        "directContact": "Direct Contact",
+        "fastResponse": "Fast Response",
+        "professionalService": "Professional Service",
+        "customSolutions": "Custom Solutions",
+        "contactInfo": "Contact Information"
     },
     "Languages": {
         "tr": "Turkish",

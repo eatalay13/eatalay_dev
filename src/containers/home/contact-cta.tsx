@@ -1,128 +1,146 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import { useState } from "react";
+import { FiArrowRight, FiMail, FiMessageCircle } from "react-icons/fi";
 
 function ContactCTA() {
   const t = useTranslations("Home");
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Fare efekti için mouse pozisyonunu takip et
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
   return (
-    <section
-      className="bg-gradient-to-r from-blue-600/80 to-blue-700/80 rounded-2xl p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl border border-blue-400/20"
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      style={{
-        backgroundPosition: isHovering
-          ? `calc(50% + ${
-              (mousePosition.x - window.innerWidth / 2) * 0.02
-            }px) calc(50% + ${
-              (mousePosition.y - window.innerHeight / 2) * 0.02
-            }px)`
-          : "50% 50%",
-      }}
+    <motion.section
+      className="relative rounded-xl overflow-hidden mx-auto"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
     >
-      {/* Dekoratif blur efektleri - daha belirgin ve modern */}
-      <div
-        className="absolute -top-20 -left-20 w-60 h-60 bg-blue-300/30 rounded-full filter blur-3xl animate-pulse-slow"
-        style={{
-          transform: isHovering
-            ? `translate(${
-                (mousePosition.x - window.innerWidth / 2) * 0.02
-              }px, ${(mousePosition.y - window.innerHeight / 2) * 0.02}px)`
-            : "none",
-        }}
-      ></div>
-      <div
-        className="absolute -bottom-20 -right-20 w-60 h-60 bg-indigo-400/30 rounded-full filter blur-3xl animate-pulse-slow"
-        style={{
-          transform: isHovering
-            ? `translate(${
-                (mousePosition.x - window.innerWidth / 2) * -0.02
-              }px, ${(mousePosition.y - window.innerHeight / 2) * -0.02}px)`
-            : "none",
-          animationDelay: "2s",
-        }}
-      ></div>
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/20 rounded-full filter blur-3xl"
-        style={{
-          transform: isHovering
-            ? `translate(calc(-50% + ${
-                (mousePosition.x - window.innerWidth / 2) * 0.01
-              }px), calc(-50% + ${
-                (mousePosition.y - window.innerHeight / 2) * 0.01
-              }px))`
-            : "translate(-50%, -50%)",
-        }}
-      ></div>
-      {/* Işık efektleri */}
-      <div
-        className="absolute top-0 right-0 w-40 h-40 bg-cyan-300/30 rounded-full filter blur-xl animate-pulse-slow"
-        style={{ animationDelay: "1.5s" }}
-      ></div>
-      <div
-        className="absolute bottom-0 left-0 w-40 h-40 bg-indigo-300/30 rounded-full filter blur-xl animate-pulse-slow"
-        style={{ animationDelay: "3s" }}
-      ></div>
-      {/* Parıltı efektleri */}
-      <div className="absolute top-10 left-1/4 w-3 h-3 bg-white/80 rounded-full filter blur-sm animate-pulse-slow"></div>
-      <div
-        className="absolute top-20 right-1/3 w-2 h-2 bg-white/70 rounded-full filter blur-sm animate-pulse-slow"
-        style={{ animationDelay: "1s" }}
-      ></div>
-      <div
-        className="absolute bottom-20 left-1/3 w-2 h-2 bg-white/70 rounded-full filter blur-sm animate-pulse-slow"
-        style={{ animationDelay: "3s" }}
-      ></div>
-      <div
-        className="absolute bottom-10 right-1/4 w-1 h-1 bg-white/90 rounded-full filter blur-sm animate-pulse-slow"
-        style={{ animationDelay: "2s" }}
-      ></div>
-      <div
-        className="absolute top-1/3 left-10 w-1 h-1 bg-white/90 rounded-full filter blur-sm animate-pulse-slow"
-        style={{ animationDelay: "4s" }}
-      ></div>
-      {/* Overlay gradient */}
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/40 via-blue-500/20 to-indigo-600/40 backdrop-blur-sm -z-10"
-        style={{
-          opacity: isHovering ? 0.9 : 1,
-        }}
-      ></div>
-      <div className="relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100 drop-shadow-sm">
-          {t("letsWork")}
-        </h2>
-        <p className="text-lg text-blue-50/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-          {t("ctaDescription")}
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 font-medium text-blue-700 bg-white/90 backdrop-blur-sm rounded-lg hover:bg-white transition-all duration-300 shadow-2xl hover:shadow-blue-500/20 transform hover:-translate-y-1 border border-white/50 relative group"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-        >
-          <span className="absolute -inset-1 rounded-lg bg-gradient-to-r from-blue-400/20 to-indigo-400/20 opacity-0 blur group-hover:opacity-100 transition-opacity -z-10"></span>
-          {t("getInTouch")}
-          <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </Link>
+      {/* Arka plan ve süsleyici öğeler */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-800"></div>
+
+      {/* Dekoratif şekiller */}
+      <svg
+        className="absolute top-0 right-0 h-20 w-20 md:h-32 md:w-32 text-indigo-500/20"
+        viewBox="0 0 100 100"
+        fill="currentColor"
+      >
+        <circle cx="75" cy="25" r="20" />
+        <circle cx="25" cy="75" r="15" />
+        <circle cx="85" cy="85" r="25" />
+      </svg>
+
+      <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-gradient-to-tr from-blue-400/20 to-indigo-500/30 blur-2xl"></div>
+
+      <div className="absolute h-full w-1/4 right-0 top-0 bg-white/5 skew-x-12"></div>
+
+      {/* İçerik katmanı */}
+      <div className="relative grid md:grid-cols-5 gap-4 p-6 sm:p-8 md:p-12">
+        {/* Sol taraftaki içerik (3 sütun) */}
+        <div className="md:col-span-3 text-white">
+          <motion.span
+            className="inline-block py-1 px-3 mb-4 text-xs font-medium bg-white/10 backdrop-blur-sm rounded-full text-blue-50"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            {t("letsWork")}
+          </motion.span>
+
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold mb-4 tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
+              {t("letsWork")}
+            </span>
+          </motion.h2>
+
+          <motion.p
+            className="text-blue-100/80 text-lg mb-6 max-w-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            {t("ctaDescription")}
+          </motion.p>
+
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-white text-indigo-700 font-medium rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-50 hover:translate-y-[-2px] hover:shadow-blue-600/20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-indigo-600"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <FiMessageCircle className="mr-2" />
+              {t("getInTouch")}
+              <FiArrowRight
+                className={`ml-2 transition-transform duration-300 ${
+                  isHovered ? "translate-x-1" : ""
+                }`}
+              />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Sağ taraftaki içerik (2 sütun) */}
+        <div className="md:col-span-2 flex items-center justify-center md:justify-end">
+          <motion.div
+            className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-white w-full max-w-xs"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <div className="flex items-center mb-4">
+              {" "}
+              <div className="h-10 w-10 rounded-full bg-indigo-500/30 flex items-center justify-center mr-3">
+                <FiMail className="h-5 w-5 text-white" />
+              </div>
+              <h3 className="font-semibold">{t("directContact")}</h3>
+            </div>
+
+            <ul className="space-y-3 text-sm text-blue-100/80">
+              <li className="flex items-center">
+                <div className="h-2 w-2 rounded-full bg-green-400 mr-2"></div>
+                <span>{t("fastResponse")}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-2 w-2 rounded-full bg-green-400 mr-2"></div>
+                <span>{t("professionalService")}</span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-2 w-2 rounded-full bg-green-400 mr-2"></div>
+                <span>{t("customSolutions")}</span>
+              </li>
+            </ul>
+
+            <div className="mt-6 pt-4 border-t border-white/10">
+              <Link
+                href="/contact"
+                className="text-sm font-medium text-white flex items-center hover:text-blue-200 transition-colors"
+              >
+                {t("contactInfo")}
+                <FiArrowRight className="ml-1 h-3 w-3" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

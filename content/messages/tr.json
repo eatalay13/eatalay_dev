@@ -41,7 +41,12 @@
         "viewAllProjects": "Tüm Projeleri Gör",
         "letsWork": "Birlikte Çalışalım",
         "ctaDescription": "Yeni bir proje mi başlatıyorsunuz? Ekibinize katkı sağlayabilecek bir yazılım geliştiriciye mi ihtiyacınız var? Bana ulaşın ve neler yapabileceğimizi konuşalım.",
-        "getInTouch": "İletişime Geç"
+        "getInTouch": "İletişime Geç",
+        "directContact": "Direkt İletişim",
+        "fastResponse": "Hızlı Yanıt",
+        "professionalService": "Profesyonel Hizmet",
+        "customSolutions": "Özel Çözümler",
+        "contactInfo": "İletişim Bilgileri"
     },
     "Languages": {
         "tr": "Türkçe",
