@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function Footer() {
-  const t = useTranslations("Navigation");
   const f = useTranslations("Footer");
 
   const currentYear = new Date().getFullYear();

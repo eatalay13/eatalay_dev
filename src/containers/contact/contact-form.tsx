@@ -23,6 +23,7 @@ export default function ContactForm() {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitStatus("success");
     } catch (error) {
+      console.error("Form gönderim hatası:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

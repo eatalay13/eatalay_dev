@@ -52,7 +52,7 @@ function LoadingIndicator() {
     }, 400);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [codeTags.length]);
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-[200px] relative overflow-hidden">
       {/* 3D Kod Uzayı Animasyonu */}
@@ -223,7 +223,7 @@ function LoadingIndicator() {
                 repeatType: "loop",
               }}
             >
-              // {loadingText}
+              {"//"} {loadingText}
             </motion.span>
             <span>);</span>
             <span className="block w-full h-1"></span>
