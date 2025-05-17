@@ -14,8 +14,9 @@ function HomeContainer() {
       {/* Hero Section */}
       <section className="relative flex flex-col md:flex-row items-center justify-between gap-12 mb-24">
         {/* Blur efekti ve dekoratif unsurlar */}
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-300/10 dark:bg-blue-600/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-400/10 dark:bg-blue-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-300/20 dark:bg-blue-600/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-blue-400/20 dark:bg-blue-500/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-50 right-70 w-60 h-60 bg-amber-400/20 dark:bg-amber-500/20 rounded-full filter blur-3xl"></div>
         <div className="flex-1 space-y-6 relative z-10">
           <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100/80 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 backdrop-blur-sm shadow-sm animate-fade-in-up">
             <span>{t("availability")}</span>
