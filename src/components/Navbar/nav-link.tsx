@@ -30,25 +30,17 @@ function NavLink({ href, children }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "relative px-4 py-2 text-sm font-medium group overflow-hidden rounded-md transition-all duration-300",
+        "relative px-4 py-2 text-sm font-medium group overflow-hidden transition-all duration-300",
         isActive
-          ? "text-white dark:text-white bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 shadow-md"
+          ? "text-blue-900 dark:text-white"
           : "text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
       )}
     >
       <span className="relative z-10">{children}</span>
       <span
         className={cn(
-          "absolute inset-0 transition-all duration-300 ease-out bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 opacity-0 group-hover:opacity-100",
-          isActive
-            ? "opacity-100"
-            : "-translate-y-full group-hover:translate-y-0"
-        )}
-      ></span>
-      <span
-        className={cn(
-          "absolute bottom-0 left-0 h-0.5 w-full bg-blue-600 dark:bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-          isActive ? "opacity-0" : ""
+          "absolute bottom-0 left-0 h-0.5 w-full bg-blue-600 dark:bg-blue-500 group-hover:opacity-100 transition-opacity duration-300",
+          isActive ? "opacity-100" : "opacity-0"
         )}
       ></span>
     </Link>
