@@ -43,7 +43,7 @@
         "availability": "Freelance Projeler İçin Uygun",
         "hello": "Merhaba, ben",
         "iAm": "Emrah Atalay",
-        "introduction": "Full-Stack yazılım geliştirici olarak 10+ yıllık deneyimle karmaşık sorunları çözen, kullanıcı dostu ve şık web uygulamaları geliştiriyorum.",
+        "introduction": "Full-Stack yazılım geliştirici olarak 8+ yıllık deneyimle karmaşık sorunları çözen, kullanıcı dostu ve şık web uygulamaları geliştiriyorum.",
         "viewProjects": "Projelerimi İncele",
         "contactMe": "İletişime Geç",
         "skills": "Uzmanlık Alanları",
@@ -84,5 +84,16 @@
     "LocaleSwitcher": {
         "label": "Dil değiştir",
         "switchLocale": "Dili {locale} olarak değiştir"
+    },
+    "About": {
+        "title": "Hakkımda",
+        "introduction": "8+ yıllık deneyimle, modern web teknolojileri konusunda uzmanlaşmış bir Full Stack geliştiriciyim. Kullanıcı odaklı, performans açısından optimize edilmiş ve ölçeklenebilir uygulamalar geliştirmeye tutkuyla bağlıyım.",
+        "tech_stack": "Frontend'de React, Next.js ve Tailwind CSS; backend'de ise Node.js, .NET Core ve veritabanı teknolojileri ile çalışıyorum. Sürekli öğrenmeye ve yeni teknolojileri keşfetmeye açığım.",
+        "web_development_title": "Web Geliştirme",
+        "web_development_description": "Modern ve performanslı web uygulamaları geliştiriyorum.",
+        "architecture_title": "Mimari Tasarım",
+        "architecture_description": "Ölçeklenebilir ve sürdürülebilir yazılım mimarileri tasarlıyorum.",
+        "problem_solving_title": "Problem Çözme",
+        "problem_solving_description": "Karmaşık problem senaryolarına yaratıcı çözümler buluyorum."
     }
 }

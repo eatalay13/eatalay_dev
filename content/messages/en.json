@@ -43,7 +43,7 @@
         "availability": "Available for Freelance Projects",
         "hello": "Hello, I'm",
         "iAm": "Emrah Atalay",
-        "introduction": "A Full-Stack developer with 10+ years of experience creating user-friendly and elegant web applications that solve complex problems.",
+        "introduction": "A Full-Stack developer with 8+ years of experience creating user-friendly and elegant web applications that solve complex problems.",
         "viewProjects": "View My Projects",
         "contactMe": "Contact Me",
         "skills": "My Expertise",
@@ -84,5 +84,16 @@
     "LocaleSwitcher": {
         "label": "Change language",
         "switchLocale": "Switch to {locale}"
+    },
+    "About": {
+        "title": "About Me",
+        "introduction": "I'm a Full Stack developer with 8+ years of experience, specialized in modern web technologies. I'm passionate about developing user-focused, performance-optimized, and scalable applications.",
+        "tech_stack": "I work with React, Next.js, and Tailwind CSS on the frontend; and Node.js, .NET Core, and database technologies on the backend. I'm continuously learning and open to exploring new technologies.",
+        "web_development_title": "Web Development",
+        "web_development_description": "I develop modern and performant web applications.",
+        "architecture_title": "Architecture Design",
+        "architecture_description": "I design scalable and sustainable software architectures.",
+        "problem_solving_title": "Problem Solving",
+        "problem_solving_description": "I find creative solutions to complex problem scenarios."
     }
 }

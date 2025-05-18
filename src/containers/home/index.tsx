@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CiLaptop } from "react-icons/ci";
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { TbCode } from "react-icons/tb";
+import AboutSection from "./about-section";
 import ContactCTA from "./contact-cta";
 
 function HomeContainer() {
@@ -87,6 +88,10 @@ function HomeContainer() {
           </div>
         </div>
       </section>
+
+      {/* About Section */}
+      <AboutSection />
+
       {/* Skills Section */}
       <section className="mb-24 relative">
         {/* Dekoratif arka plan elementleri */}
