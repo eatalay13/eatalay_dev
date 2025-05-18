@@ -38,6 +38,12 @@
         "copyright": "Tüm hakları saklıdır.",
         "builtWith": "❤️ ile kodlandı."
     },
+    "Error": {
+        "title": "Bir sorun oluştu",
+        "default": "Bu sayfa şu anda görüntülenemiyor.",
+        "errorCode": "Hata kodu",
+        "tryAgain": "Tekrar Dene"
+    },
     "Home": {
         "welcome": "Hoş geldiniz",
         "availability": "Freelance Projeler İçin Uygun",

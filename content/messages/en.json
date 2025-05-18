@@ -38,6 +38,12 @@
         "copyright": "All rights reserved.",
         "builtWith": "Built with ❤️."
     },
+    "Error": {
+        "title": "An error occurred",
+        "default": "This page cannot be displayed at the moment.",
+        "errorCode": "Error code",
+        "tryAgain": "Try Again"
+    },
     "Home": {
         "welcome": "Welcome",
         "availability": "Available for Freelance Projects",
