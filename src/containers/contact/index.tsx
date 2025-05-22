@@ -45,7 +45,7 @@ function ContactContainer() {
           >
             <span className="text-blue-600 dark:text-blue-400">
               {t("title").split(" ")[0]}
-            </span>{" "}
+            </span>
             {t("title").split(" ").slice(1).join(" ")}
           </motion.h1>
 
@@ -56,7 +56,7 @@ function ContactContainer() {
             animate={{ width: "40%", opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           ></motion.div>
-        </div>{" "}
+        </div>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative"
           initial={{ opacity: 0 }}

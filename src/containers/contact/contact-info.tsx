@@ -100,7 +100,7 @@ export default function ContactInfo() {
             {t("title")}
           </h3>
           <p className="text-slate-600 dark:text-slate-300">{t("subtitle")}</p>
-        </motion.div>{" "}
+        </motion.div>
         <div className="space-y-4">
           {contactItems.map((item, index) => (
             <motion.a
@@ -140,7 +140,7 @@ export default function ContactInfo() {
               </div>
             </motion.a>
           ))}
-        </div>{" "}
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

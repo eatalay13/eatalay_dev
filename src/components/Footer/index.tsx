@@ -19,7 +19,6 @@ export default function Footer() {
       <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-blue-400/5 dark:bg-blue-600/10 rounded-full filter blur-3xl"></div>
 
       <div className="container mx-auto max-w-5xl px-6 relative z-10">
-        {" "}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-12">
             <h3

@@ -15,9 +15,8 @@ function ContactCTA() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      {" "}
       {/* Arka plan ve süsleyici öğeler */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-800 dark:from-indigo-900 dark:to-blue-950"></div>{" "}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-800 dark:from-indigo-900 dark:to-blue-950"></div>
       {/* Dekoratif şekiller */}
       <svg
         className="absolute top-0 right-0 h-20 w-20 md:h-32 md:w-32 text-indigo-500/20 dark:text-indigo-400/10"
@@ -27,14 +26,13 @@ function ContactCTA() {
         <circle cx="75" cy="25" r="20" />
         <circle cx="25" cy="75" r="15" />
         <circle cx="85" cy="85" r="25" />
-      </svg>{" "}
+      </svg>
       <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-gradient-to-tr from-blue-400/20 to-indigo-500/30 dark:from-blue-500/10 dark:to-indigo-600/20 blur-2xl"></div>
       <div className="absolute h-full w-1/4 right-0 top-0 bg-white/5 dark:bg-white/3 skew-x-12"></div>
       {/* İçerik katmanı */}
       <div className="relative grid md:grid-cols-5 gap-4 p-6 sm:p-8 md:p-12">
         {/* Sol taraftaki içerik (3 sütun) */}
         <div className="md:col-span-3 text-white">
-          {" "}
           <motion.span
             className="inline-block py-1 px-3 mb-4 text-xs font-medium bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-full text-blue-50"
             initial={{ opacity: 0, x: -20 }}
@@ -43,7 +41,7 @@ function ContactCTA() {
             transition={{ delay: 0.1 }}
           >
             {t("letsWork")}
-          </motion.span>{" "}
+          </motion.span>
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-4 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +52,7 @@ function ContactCTA() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white dark:from-blue-300 dark:to-white/90">
               {t("letsWork")}
             </span>
-          </motion.h2>{" "}
+          </motion.h2>
           <motion.p
             className="text-blue-100/80 dark:text-blue-200/70 text-lg mb-6 max-w-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -71,7 +69,6 @@ function ContactCTA() {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            {" "}
             <Link
               href="/contact"
               className="inline-flex items-center px-6 py-3 bg-white dark:bg-white/90 text-indigo-700 dark:text-indigo-800 font-medium rounded-lg shadow-lg transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-50/90 hover:translate-y-[-2px] hover:shadow-blue-600/20 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-indigo-600"
@@ -85,7 +82,6 @@ function ContactCTA() {
 
         {/* Sağ taraftaki içerik (2 sütun) */}
         <div className="md:col-span-2 flex items-center justify-center md:justify-end">
-          {" "}
           <motion.div
             className="bg-white/10 dark:bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 dark:border-white/5 text-white w-full max-w-xs"
             initial={{ opacity: 0, x: 30 }}
@@ -94,12 +90,11 @@ function ContactCTA() {
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             <div className="flex items-center mb-4">
-              {" "}
               <div className="h-10 w-10 rounded-full bg-indigo-500/30 dark:bg-indigo-600/20 flex items-center justify-center mr-3">
                 <FiMail className="h-5 w-5 text-white" />
               </div>
               <h3 className="font-semibold">{t("directContact")}</h3>
-            </div>{" "}
+            </div>
             <ul className="space-y-3 text-sm text-blue-100/80 dark:text-blue-200/70">
               <li className="flex items-center">
                 <div className="h-2 w-2 rounded-full bg-green-400 dark:bg-green-300 mr-2"></div>
@@ -113,7 +108,7 @@ function ContactCTA() {
                 <div className="h-2 w-2 rounded-full bg-green-400 dark:bg-green-300 mr-2"></div>
                 <span>{t("customSolutions")}</span>
               </li>
-            </ul>{" "}
+            </ul>
             <div className="mt-6 pt-4 border-t border-white/10 dark:border-white/5">
               <Link
                 href="/contact"
