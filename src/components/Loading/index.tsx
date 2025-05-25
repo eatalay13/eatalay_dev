@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
 function LoadingIndicator() {
   const [progress, setProgress] = useState(0);
   const [activeTag, setActiveTag] = useState(0);
-  const t = useTranslations("Contact");
+  const t = useTranslations("Common");
 
-  const loadingText = t("form.sending");
+  const loadingText = t("loading");
 
   // HTML, CSS, JS, React, API tags dizisi
   const codeTags = [

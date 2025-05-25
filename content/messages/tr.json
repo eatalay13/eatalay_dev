@@ -1,4 +1,14 @@
 {
+    "Common": {
+        "loading": "Yükleniyor...",
+        "error": "Bir hata oluştu",
+        "notFound": "Sayfa bulunamadı",
+        "goBack": "Geri Dön",
+        "contactMe": "İletişime Geç",
+        "viewProjects": "Projeleri Görüntüle",
+        "viewAllProjects": "Tüm Projeleri Görüntüle",
+        "learnMore": "Daha Fazla Bilgi Edinin"
+    },
     "Navigation": {
         "home": "Ana Sayfa",
         "about": "Hakkımda",
@@ -8,26 +18,19 @@
         "linkedIn": "LinkedIn"
     },
     "Contact": {
-        "title": "İletişime Geçin",
-        "subtitle": "Projeleriniz veya işbirliği fırsatları için bana ulaşın.",
-        "form": {
-            "name": "Adınız",
-            "email": "E-posta Adresiniz",
-            "subject": "Konu",
-            "message": "Mesajınız",
-            "send": "Gönder",
-            "sending": "Gönderiliyor...",
-            "success": "Mesajınız başarıyla gönderildi!",
-            "error": "Mesaj gönderilirken bir hata oluştu."
-        },
+        "title": "İletişim",
+        "subtitle": "Projeleriniz veya işbirliği fırsatları için benimle iletişime geçin. Size en kısa sürede dönüş yapacağım.",
         "contactInfo": {
-            "title": "İletişim Bilgileri",
-            "subtitle": "Aşağıdaki kanallardan benimle iletişime geçebilirsiniz.",
+            "directContact": "İletişim Bilgileri",
+            "socialMedia": "Sosyal Medya",
             "email": "E-posta",
             "phone": "Telefon",
-            "location": "Konum",
-            "locationValue": "Bitlis, Türkiye",
-            "socialMedia": "Sosyal Medya"
+            "location": "Konum"
+        },
+        "cta": {
+            "title": "Birlikte Çalışmaya Hazır mısınız?",
+            "description": "Projelerinizi hayata geçirmek için doğru kişiyi mi arıyorsunuz? Hemen iletişime geçin!",
+            "button": "E-posta Gönder"
         }
     },
     "Footer": {

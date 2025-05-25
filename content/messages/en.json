@@ -1,4 +1,14 @@
 {
+    "Common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "notFound": "Page not found",
+        "goBack": "Go Back",
+        "contactMe": "Contact Me",
+        "viewProjects": "View Projects",
+        "viewAllProjects": "View All Projects",
+        "learnMore": "Learn More"
+    },
     "Navigation": {
         "home": "Home",
         "about": "About",
@@ -8,26 +18,19 @@
         "linkedIn": "LinkedIn"
     },
     "Contact": {
-        "title": "Get in Touch",
-        "subtitle": "Contact me for your projects or collaboration opportunities.",
-        "form": {
-            "name": "Your Name",
-            "email": "Your Email",
-            "subject": "Subject",
-            "message": "Your Message",
-            "send": "Send Message",
-            "sending": "Sending...",
-            "success": "Your message has been sent successfully!",
-            "error": "There was an error sending your message."
-        },
+        "title": "Contact",
+        "subtitle": "Get in touch for your projects or collaboration opportunities. I'll get back to you as soon as possible.",
         "contactInfo": {
-            "title": "Contact Information",
-            "subtitle": "You can reach out to me through the following channels.",
+            "directContact": "Contact Information",
+            "socialMedia": "Social Media",
             "email": "Email",
             "phone": "Phone",
-            "location": "Location",
-            "locationValue": "Bitlis, Turkey",
-            "socialMedia": "Social Media"
+            "location": "Location"
+        },
+        "cta": {
+            "title": "Ready to Work Together?",
+            "description": "Looking for the right person to bring your projects to life? Get in touch now!",
+            "button": "Send Email"
         }
     },
     "Footer": {
