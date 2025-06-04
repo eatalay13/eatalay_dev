@@ -1,9 +1,9 @@
 "use client";
 
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/utils";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FiGlobe } from "react-icons/fi";
 
@@ -31,22 +31,11 @@ export default function LocaleSwitcher() {
   const toggleDropdown = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
-
   // Dil değiştirme fonksiyonunu memoize ediyoruz, böylece her render'da yeniden oluşturulmayacak
   const handleLocaleChange = useCallback(
     (newLocale: string) => {
-      // Pathnames in Next.js locale system are formatted as /{locale}/{path}
-      // We need to determine the rest of the path after the locale
-      const segments = pathname.split("/");
-
-      // Remove the first empty segment and the locale segment
-      segments.splice(0, 2);
-
-      // Create a new pathname with the new locale
-      const restOfPath = segments.join("/");
-      const newPathname = `/${newLocale}${restOfPath ? `/${restOfPath}` : ""}`;
-
-      router.push(newPathname);
+      // next-intl navigation kullanarak otomatik locale yönetimi
+      router.push(pathname, { locale: newLocale });
       setIsOpen(false);
     },
     [pathname, router]

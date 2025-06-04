@@ -1,6 +1,5 @@
+import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 
 type NavLinkProps = {

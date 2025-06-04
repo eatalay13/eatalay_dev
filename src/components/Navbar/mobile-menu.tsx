@@ -1,6 +1,5 @@
+import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { FiGithub, FiLinkedin, FiYoutube } from "react-icons/fi";
 import LocaleSwitcher from "./locale-switcher";
 import SocialLink from "./social-link";

@@ -1,8 +1,8 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { FiArrowRight, FiMail, FiMessageCircle } from "react-icons/fi";
 
 function ContactCTA() {

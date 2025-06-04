@@ -1,6 +1,6 @@
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { CiLaptop } from "react-icons/ci";
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { TbCode } from "react-icons/tb";
