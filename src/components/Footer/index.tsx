@@ -49,7 +49,7 @@ export default function Footer() {
                 <FiLinkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:emrahatalay92@gmail.com"
+                href="mailto:info@eatalay.dev"
                 className="text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-110"
                 aria-label="Email"
               >
