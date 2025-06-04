@@ -92,8 +92,8 @@ export default function ContactOptions() {
     {
       icon: <FiGithub className="w-6 h-6" />,
       title: "GitHub",
-      value: "github.com/eatalaydev",
-      href: "https://github.com/eatalaydev",
+      value: "github.com/emrahatalay",
+      href: "https://github.com/emrahatalay",
       type: "social" as const,
     },
     {

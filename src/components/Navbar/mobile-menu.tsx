@@ -33,7 +33,7 @@ function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
           </MobileNavLink>
           <div className="flex items-center space-x-4 pt-3 border-t border-slate-200/50 dark:border-slate-700/50 mt-2">
             <SocialLink
-              href="https://github.com/eatalaydev"
+              href="https://github.com/emrahatalay"
               icon={<FiGithub className="w-5 h-5" />}
               label={t("gitHub")}
             />

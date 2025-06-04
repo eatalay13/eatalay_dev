@@ -31,7 +31,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-5 mt-4">
               <a
-                href="https://github.com/eatalaydev"
+                href="https://github.com/emrahatalay"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-110"

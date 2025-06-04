@@ -46,7 +46,7 @@ function HomeContainer() {
           </div>
           <div className="flex items-center gap-4 pt-4">
             <a
-              href="https://github.com/eatalaydev"
+              href="https://github.com/emrahatalay"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors shadow-md hover:shadow-lg hover:scale-105 transform duration-300"

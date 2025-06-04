@@ -16,7 +16,7 @@ function DesktopMenu() {
       </div>
       <div className="flex items-center space-x-4 border-l border-slate-200/50 dark:border-slate-700/50 pl-8">
         <SocialLink
-          href="https://github.com/eatalaydev"
+          href="https://github.com/emrahatalay"
           icon={<FiGithub className="w-5 h-5" />}
           label={t("gitHub")}
         />
