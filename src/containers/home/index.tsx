@@ -46,7 +46,7 @@ function HomeContainer() {
           </div>
           <div className="flex items-center gap-4 pt-4">
             <a
-              href="https://github.com/eatalay13"
+              href="https://github.com/eatalaydev"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors shadow-md hover:shadow-lg hover:scale-105 transform duration-300"
@@ -64,7 +64,7 @@ function HomeContainer() {
               <FiLinkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:info@emrahatalay.com"
+              href="mailto:info@eatalay.dev"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors shadow-md hover:shadow-lg hover:scale-105 transform duration-300"
               aria-label="Email"
             >

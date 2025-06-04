@@ -15,7 +15,8 @@
         "projects": "Projeler",
         "contact": "İletişim",
         "gitHub": "GitHub",
-        "linkedIn": "LinkedIn"
+        "linkedIn": "LinkedIn",
+        "youtube": "YouTube"
     },
     "Contact": {
         "title": "İletişim",
@@ -86,9 +87,9 @@
         "de": "Almanca"
     },
     "Meta": {
-        "title": "Emrah Atalay - Full-Stack Developer",
-        "description": "Emrah Atalay - Full-Stack Developer - Portfolio Kişisel Web Sitesi",
-        "keywords": "Emrah Atalay, Full-Stack Developer, Portfolio, Software Engineer, Web Developer, Frontend Developer, Backend Developer"
+        "title": "Emrah Atalay Kişisel Web Sitesi | Full Stack Developer",
+        "description": "Full Stack Developer olarak, modern web teknolojilerini kullanarak kullanıcı dostu, ölçeklenebilir ve performans odaklı yenilikçi çözümler geliştiriyorum. Frontend ve backend alanlarında edindiğim deneyimle projelerin tüm aşamalarında etkin bir şekilde katkı sağlıyorum.",
+        "keywords": "Emrah Atalay,Full Stack Developer,Frontend Developer,Backend Developer,.Net,C#,Java,Spring,Python,Asp.Net,Asp.Net Core,Unity,Oyun Geliştirme,Oyun Programlama,Oyun Motoru,Oyun Geliştirici,Oyun Tasarımı,Oyun Tasarımcısı,Oyun Geliştiricisi,Web Geliştirme,Next.js,React,Node.js,TypeScript,JavaScript"
     },
     "LocaleSwitcher": {
         "label": "Dil değiştir",

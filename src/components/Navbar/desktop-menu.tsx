@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiYoutube } from "react-icons/fi";
 import LocaleSwitcher from "./locale-switcher";
 import NavLink from "./nav-link";
 import SocialLink from "./social-link";
@@ -16,7 +16,7 @@ function DesktopMenu() {
       </div>
       <div className="flex items-center space-x-4 border-l border-slate-200/50 dark:border-slate-700/50 pl-8">
         <SocialLink
-          href="https://github.com/eatalay13"
+          href="https://github.com/eatalaydev"
           icon={<FiGithub className="w-5 h-5" />}
           label={t("gitHub")}
         />
@@ -24,6 +24,11 @@ function DesktopMenu() {
           href="https://www.linkedin.com/in/emrahatalay"
           icon={<FiLinkedin className="w-5 h-5" />}
           label={t("linkedIn")}
+        />
+        <SocialLink
+          href="https://youtube.com/@emrahatalay"
+          icon={<FiYoutube className="w-5 h-5" />}
+          label={t("youtube")}
         />
         <LocaleSwitcher />
       </div>

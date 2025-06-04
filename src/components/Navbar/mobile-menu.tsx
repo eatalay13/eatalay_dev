@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiYoutube } from "react-icons/fi";
 import LocaleSwitcher from "./locale-switcher";
 import SocialLink from "./social-link";
 
@@ -34,7 +34,7 @@ function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
           </MobileNavLink>
           <div className="flex items-center space-x-4 pt-3 border-t border-slate-200/50 dark:border-slate-700/50 mt-2">
             <SocialLink
-              href="https://github.com/eatalay13"
+              href="https://github.com/eatalaydev"
               icon={<FiGithub className="w-5 h-5" />}
               label={t("gitHub")}
             />
@@ -42,6 +42,11 @@ function MobileMenu({ isMenuOpen, toggleMenu }: MobileMenuProps) {
               href="https://www.linkedin.com/in/emrahatalay"
               icon={<FiLinkedin className="w-5 h-5" />}
               label={t("linkedIn")}
+            />
+            <SocialLink
+              href="https://youtube.com/@emrahatalay"
+              icon={<FiYoutube className="w-5 h-5" />}
+              label={t("youtube")}
             />
             <div className="pl-3 ml-auto">
               <LocaleSwitcher />

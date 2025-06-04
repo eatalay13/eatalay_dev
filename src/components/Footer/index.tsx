@@ -2,7 +2,7 @@
 
 import { corinthia } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiYoutube } from "react-icons/fi";
 
 export default function Footer() {
   const f = useTranslations("Footer");
@@ -31,7 +31,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-5 mt-4">
               <a
-                href="https://github.com/eatalay13"
+                href="https://github.com/eatalaydev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-110"
@@ -54,6 +54,15 @@ export default function Footer() {
                 aria-label="Email"
               >
                 <FiMail className="h-5 w-5" />
+              </a>
+              <a
+                href="https://youtube.com/@emrahatalay"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-110"
+                aria-label="YouTube"
+              >
+                <FiYoutube className="h-5 w-5" />
               </a>
             </div>
           </div>
